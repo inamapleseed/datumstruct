@@ -1,0 +1,19 @@
+<?php 
+$_['heading_title']                     = 'Power Image Manager :: Local File System Driver';
+$_['text_localfilesystem_description']  = 'The default driver used to browse your local files';
+$_['entry_localfilesystem_alias']       = 'Alias';
+$_['entry_localfilesystem_path']        = 'Root folder';
+$_['entry_localfilesystem_status']      = 'Enabled';
+$_['entry_localfilesystem_URL']   = 'HTTP Root URL';
+$_['help_localfilesystem_path']         = 'This is the starting folder for the image manager.';
+$_['help_localfilesystem_URL']    = 'This is the URL where the files can be accessed. If there is no http root, you won\'t be able to add images from this volume to products directly';
+$_['text_yes']                          = 'Yes';
+$_['text_no']                           = 'No';
+$_['button_save']                       = 'Save';
+$_['button_cancel']                     = 'Cancel';
+$_['button_cancel']                     = 'Cancel';
+$_['text_edit']                         = 'Add / Edit FTP Setting';
+$_['error_localfilesystem_alias']       = 'Alias is required!';
+$_['error_localfilesystem_path']        = 'Root folder is required';
+$_['error_alias_exist']                 = 'Volume with such alias aalready exist. Please choose another alias for your volume.';
+$_['error_warning']                     = 'Warning: Please check the form carefully for errors!';

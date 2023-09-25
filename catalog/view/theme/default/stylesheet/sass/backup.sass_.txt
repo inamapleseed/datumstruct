@@ -1,0 +1,1924 @@
+@import 'functions'
+
+$i: !important
+
+$border_color: #ccc
+$nocolor: transparent
+
+$toggle_width: 36px
+$indent_width: 30px
+$a_padding: 7px 8px
+$round_handle: 22
+
+$active: #393939
+$inactive: #e1e1e1
+
+$color: #337ab7
+
+.input-group-btn
+    background: red
+    & > .btn
+        height: 100% // 
+
+input[type="password"] + i.fa-eye
+    z-index: 2
+    pointer-events: auto
+
+input[type="password"] + i.fa-eye:hover,
+input[type="text"] + i.fa-eye
+    color: $color
+
+.desktop
+    .max-offset
+        width: 100vw
+        max-width: 100vw
+        margin-left: calc(-50vw + 50%)
+    .row .max-offset
+        margin-left: calc(-50vw + calc(50% - 9px))
+.mobile
+    .max-offset
+        width: 100vw
+        max-width: 100vw
+        margin-left: calc(-50vw + 50%)
+
+    .row .max-offset
+        margin-left: calc(-50vw + calc(50% - 0px))
+
+.fcs
+    a
+        text-decoration: underline
+div[class*='col-'] 
+    & > .form-group
+        //margin: 0px
+
+#google_recaptcha
+    @media (max-width: 540px)
+        transform: scale(0.8)
+        transform-origin: 0
+
+.nav-pills > li > a,
+.nav a,
+.modal-content
+    border-radius: 0px
+
+.nav-justified > li
+    width: auto $i
+
+body
+    opacity: 0
+    font-size: 14px
+    transition: all 0.3s ease
+
+    -webkit-transition-delay: 2s
+    transition-delay: 2s
+
+body[style*='padding-top']
+    opacity: 1
+    transition: all 0.3s ease
+
+    @media (max-width: 991px)
+        .container
+            min-width: 100%
+
+body.common-home
+    .newsletter-section,
+    footer
+        margin-top: 0px
+
+body
+    .newsletter-section
+        padding: 20px
+        border-top: 1px solid $border_color
+        margin-top: 30px
+        & + footer
+            margin-top: 0px
+.owl-description
+    
+    &.background-type-light_image
+        color: #333
+        
+    &.background-type-dark_image
+        color: #fff
+
+    .owl-description-texts
+        padding: 15px // Extra gutter
+
+        display: flex
+        display: -ms-flexbox
+
+        flex-direction: column 
+        -ms-flex-direction: column
+        justify-content: center
+
+        line-height: 142%
+        font-weight: 300
+
+        text-shadow: 0px 0px 1px 2px rgba(#000, 0.6)
+
+        .owl-text-0
+            font-size: 34px
+            margin-bottom: 22px
+        .owl-text-1
+            font-size: 22px
+            margin-bottom: 18px
+        .owl-text-2
+            font-size: 18px
+            margin-bottom: 14px
+        .owl-text-3
+            font-size: 14px
+.section-space
+    padding: 100px 0px
+    @media (max-width: 991px)
+        padding: 75px 0px
+    @media (max-width: 767px)
+        padding: 50px 0px
+    &.slideshow
+        padding: 0px
+        
+.footer-upper-contet
+    display: flex
+    display: -ms-flex
+    flex-wrap: wrap
+    -ms-flex-wrap: wrap
+
+    & >  *
+        flex: 1
+        -ms-flex: 1 1 auto
+        &:last-child
+            flex: 0
+            -ms-flex: 0 1 auto
+
+        @media (max-width: 767px)
+            width: 50%
+            flex: initial
+            -ms-flex: initial
+            padding-bottom: 15px
+            &:nth-child(even)
+                padding-left: 15px
+
+        @media (max-width: 540px)
+            width: 100%
+            &:nth-child(even)
+                padding-left: 0px
+.footer-social-icons
+    padding: 10px 0px 0px
+    width: 100%
+    & > *
+        display: inline-block
+        & + a
+            margin-left: 10px
+
+.fixed-header
+    transition: all 0.1s linear
+
+$nav_border_color: #4d5158
+$padding: 18px 10px
+.header-mobile
+    .mobile-account
+        display: flex
+        display: -ms-flexbox
+        justify-content: center 
+        border-bottom: 1px solid $nav_border_color
+        & > a
+            flex: 1
+            text-align: center
+            text-overflow: ellipsis
+            display: block
+            i
+                font-size: 16px
+            & + a
+                border-left: 1px solid $nav_border_color
+            color: white
+            font-size: 16px
+            padding: $padding
+    .mobile-search
+        padding: $padding
+        .search-custom input
+            height: 34px
+            width: calc(100% - 42px) // Search button is 41px
+        .search-box
+            width: 100%
+
+$menu_width: 260px // Default
+
+.sidr
+    width: $menu_width
+    background: #333333
+    box-shadow: none
+    z-index: 100
+
+@media (max-width: 991px)
+    #mobileNav
+        &::before
+            content: ''
+            width: 0px
+            height: 100%
+            position: fixed
+            right: 0px
+            top: 0px
+            z-index: 10
+            opacity: 0
+            background: $nocolor
+            transform: translateX(50%)
+            transition: opacity 0.3s ease
+    .sidr-custom-open
+        #mobileNav
+            &::before
+                content: ''
+                width: 100%
+                opacity: 1
+                transform: translateX(0%)
+                background: rgba(#000, 0.9)
+        &.closing
+            #mobileNav::before
+                opacity: 0
+                transition: all 0.3s ease
+@media (min-width: 992px)
+    body
+        position: relative $i
+        left: 0px $i
+        width: 100% $i
+    .fixed-header
+        left: 0px $i
+    #sidr
+        display: none $i
+header
+    box-shadow: 0px 0px 3px rgba(#000, 0.3)
+.header-container
+    display: grid
+    display: -ms-grid
+    grid-template-columns: auto 1fr // Width of columns
+    -ms-grid-columns: auto 1fr
+    grid-template-rows: auto auto // Height of rows
+    -ms-grid-rows: auto auto
+
+    grid-column-gap: 15px // Follow Bootstrap
+    
+    @media (max-width: 991px)
+        grid-template-columns: 1fr auto 1fr // Width of columns
+        -ms-grid-columns: 1fr auto 1fr
+
+        align-items: center
+        padding: 10px 8px 
+        .header-mobile-links
+            grid-column: 1 / 1
+            .header-links
+                display: flex
+                display: -ms-flexbox
+    @media (max-width: 767px)
+        padding: 10px 0px 
+
+            
+    .header-logo
+        grid-column: 1 / 1      // By grid colum lines
+        grid-row: 1 / 3         // By grid row lines
+        // IE
+        -ms-grid-column: 1
+        -ms-grid-row: 1
+        -ms-grid-column-span: 1 // Expand 1 grid width to right
+        -ms-grid-row-span: 2    // Expand 1 grid height to to bottom
+
+        display: flex
+        display: -ms-flexbox
+        flex-direction: column
+        justify-content: center
+
+        @media (max-width: 991px)
+            grid-column: 2 / 3
+            grid-row: 1 / 1
+            // IE
+            -ms-grid-column: 2
+            -ms-grid-row: 1
+            -ms-grid-column-span: 1 // Expand 1 grid width to right
+            -ms-grid-row-span: 1    // Expand 1 grid height to to bottom
+        
+    .header-top
+        grid-column: 2 / 3
+        grid-row: 1 / 2
+        // IE
+        -ms-grid-column: 2
+        -ms-grid-row: 1
+        -ms-grid-column-span: 1 // Expand 1 grid width to right
+        -ms-grid-row-span: 1    // Expand 1 grid height to to bottom
+
+        display: flex
+        display: -ms-flexbox
+        align-items: center
+        justify-content: flex-end
+
+        padding: 8px 0px 0px
+
+        @media (max-width: 991px)
+            grid-column: 3 / 4
+            grid-row: 1 / 1
+            // IE
+            -ms-grid-column: 3
+            -ms-grid-row: 1
+            -ms-grid-column-span: 1 // Expand 1 grid width to right
+            -ms-grid-row-span: 1    // Expand 1 grid height to to bottom
+
+            padding: 0px
+
+    .header-menu
+        grid-column: 2 / 3
+        grid-row: 2 / 3
+        // IE
+        -ms-grid-column: 2
+        -ms-grid-row: 2
+        -ms-grid-column-span: 1 // Expand 1 grid width to right
+        -ms-grid-row-span: 1    // Expand 1 grid height to to bottom
+
+        display: flex
+        display: -ms-flexbox
+        flex-direction: row
+        justify-content: flex-end
+
+        #main-menu
+            display: table
+            box-shadow: none
+            position: relative
+            z-index: 0
+
+            li:not(:first-child)
+                border-left: 0px
+            &, a
+                border-radius: 0px
+                background: $nocolor
+                background-color: $nocolor
+
+            & > li > a
+                padding: 12px
+                padding-left: 0px
+                padding-right: 30px
+            & > li:last-child > a
+                padding-right: 0px
+            a
+                display: flex
+                display: -ms-flexbox
+                align-items: center
+                color: inherit
+                font-weight: normal
+                text-shadow: none
+                padding: 4px 14px
+
+                .sub-arrow
+                    position: relative
+                    top: 3px
+                    left: auto
+                    right: auto
+                    bottom: auto
+                    margin: 0px
+                    margin-left: 6px
+
+            ul
+                padding: 0px
+
+    .header-links > a,           
+    #account > a[data-toggle="dropdown"],
+    #cart > a,
+    ._search > a
+        color: inherit
+        width: 41px
+        padding: 10px
+        text-align: center
+        position: relative
+        display: table
+
+        & > i
+            font-size: 18px  
+
+    #cart > a
+        .badge
+            position: absolute
+            top: 100%
+            left: 100%
+            background: red
+            height: 20px
+            width: 20px
+            transform: translate(-100%, -100%)
+            & > span
+                position: absolute
+                top: 50%
+                left: 50%
+                transform: translate(-50%, -50%)
+                font-size: 10px
+                
+.search-custom
+    padding-right: 10px
+    .search-box
+        display: flex
+        display: -ms-flexbox
+        white-space: nowrap
+        padding: 2px
+        border: 1px solid $border_color
+        border-radius: 50px
+        overflow: hidden
+        background: white
+        width: 210px
+
+        input, button
+            border: 0px
+            min-width: 0px
+            width: auto
+            height: auto
+            min-height: 0px
+            &, &:focus
+                outline: 0px
+        input
+            flex: 1
+            padding: 5px 0px 4px 12px
+            border-radius: 50px 0px 0px 50px // For IE
+            box-shadow: none $i
+        button
+            padding: 0px 14px 0px
+            vertical-align: middle
+            line-height: 1
+
+            i
+                vertical-align: top
+
+            &, &:hover, &:focus
+                background-color: $nocolor
+                background: $nocolor
+                box-shadow: none
+
+#fullpage-search
+    .search-box
+        width: 100%
+        input
+            width: calc(100% - 46px) 
+
+#fullpage-search
+    position: fixed
+    z-index: 10
+    width: 100%
+    height: 100%
+    background: rgba(#fff, 0.95)
+    top: 0px
+    left: 0px
+    display: none
+
+
+#fullpage-search .container
+    position: relative
+    top: 50%
+
+
+#fullpage-search #search
+    margin: 0px auto
+    transform: translateY(-50%)
+    max-width: 768px
+
+
+#fullpage-search-open
+    cursor: pointer
+
+
+.fx-close 
+    position: absolute
+    right: 32px
+    top: 32px
+    width: 32px
+    height: 32px
+    opacity: 0.6
+    cursor: pointer
+
+.fx-close:hover 
+    opacity: 1
+
+.fx-close:before, 
+.fx-close:after 
+    position: absolute
+    left: 15px
+    content: ' '
+    height: 33px
+    width: 2px
+    background-color: #333
+
+.fx-close:before 
+    transform: rotate(45deg)
+
+.fx-close:after 
+    transform: rotate(-45deg)
+
+#tops
+    @media (max-width: 767px)
+        width: 100%
+
+.customer-account
+    padding: 0px
+    +marginSide(-15)
+
+    i
+        font-size: 36px
+        color: #666666 
+        line-height: 24px
+        padding-bottom: 10px
+        padding-top: 10px
+
+    & > li 
+        list-style-type: none
+        
+        a
+            font-size: 14px
+            padding: 10px
+            border: 1px solid #EEE
+            margin-bottom: 5px
+            text-align: center
+            color: inherit
+            display: block
+
+            &:hover
+                background-color: #666666
+                cursor: pointer
+                +transition(background-color 0.3s ease)
+            
+                &, i
+                    color:#FFFFFF
+$max_width: 991px
+$dropdown_menu_padding: 12px
+#cart
+    margin-bottom: 0px
+    &:not(.slide-out-cart)
+        .cart-header-text
+            display: none
+    .img-thumbnail
+        max-width: 70px
+
+    @media (max-width: $max_width)
+        position: initial
+    &::before
+        content: ''
+        position: fixed
+        top: 0px
+        left: 0px
+        +square(0)
+        opacity: 0
+        transition: opacity 0.3s ease
+        z-index: 1
+    &.open
+        @media (max-width: $max_width)
+            &::before
+                opacity: 1
+                +square(100%)
+                background: rgba(#000, 0.9)
+
+    .btn-primary
+        color: white
+        &:hover, &:focus
+            color: #333333
+
+    .cart_close
+        +square(43)
+        position: absolute
+        top: 0px
+        right: 0px
+        transform: translate(50%, -50%)
+        background: $nocolor
+        padding: 0px
+        border: 0px
+        &, &:hover, &:focus
+            outline: none
+            outline: 0px
+
+    .dropdown-menu
+        border-radius: 0px
+        min-width: 430px
+        border: 1px solid #ccc
+        padding: $dropdown_menu_padding
+        background: #fff
+        z-index: 1001
+        @media (max-width: $max_width)
+            position: fixed
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+
+        @media (max-width: 430px)
+            width: calc(100% - 30px)
+            min-width: 0px
+
+        ul
+            margin: 0px
+
+        #cart-total
+            font-size: 14px
+            font-weight: 600
+            padding: 10px 2px 20px
+            width: 100%
+            display: block
+            border-bottom: 1px solid #ccc 
+
+        .cart-dorpdown-items
+            max-height: 170px
+            overflow: auto
+            .item
+                padding: 12px 2px
+                display: table
+                width: 100%
+                & > *
+                    display: table-cell
+                    vertical-align: top
+
+                    &:first-child
+	                    width: 70px
+                & + .item
+	                border-top: 1px solid #ccc
+            .item-name
+                padding-right: 10px
+
+        .cart-dorpdown-item-charges > span
+	        display: block
+
+    li
+        p
+            margin: 0px
+
+    .item-details
+        padding-left: 8px
+
+    .cart-dorpdown-indicator
+        padding: 20px 28px
+        border-bottom: 1px solid $border_color
+        & > span#cart-total:only-child
+            padding: 0px
+            border: 0px
+        @media (max-width: 767px)
+            padding: 10px 0px
+
+    .cart-dorpdown-footer,
+    .cart-dropdown-order-totals,
+    .cart-dorpdown-items 
+        height: 100%
+        max-height: 200px
+        overflow: auto
+        .item
+            padding: 8px
+            display: table
+            width: 100%
+
+            table
+                margin: 0px
+    .cart-dorpdown-footer
+        min-width: 0px
+        .btn
+            padding: 12px
+            min-width: auto
+
+        & > *
+            width: calc(50% - 5px)
+            float: left
+            clear: none
+
+            & + *
+                margin-left: 10px
+
+    .cart-dropdown-empty
+        padding: 20px 20px 25px
+        i
+            font-size: 32px
+            margin-bottom: 10px
+
+    // Free shipping
+    .free-shipping-indicator
+        vertical-align: top $i
+        white-space: normal
+
+        $free_shipping_font_size: 14px
+
+        .free-shipping-text
+            font-size: $free_shipping_font_size
+            
+        .free-shipping-group
+            position: relative
+
+            & > *
+                display: inline-block
+                vertical-align: middle
+            
+        $icon_size: 38
+        .free-shipping-icon
+            +square($icon_size)
+            border-radius: #{$icon_size}px
+            background: $border_color
+            position: relative
+            margin-left: -8px
+
+            i::before
+                position: absolute
+                top: calc(50% - 1px)
+                left: calc(50% + 2px)
+                transform: translate(-50%, -50%) scaleX(-1)
+                color: $active
+                font-size: 20px
+
+        .free-shipping-progress
+            background: $border_color
+            padding: 5px 6px
+            padding-right: 0px
+            width: calc(100% - #{$icon_size}px)
+            overflow: hidden
+            
+            .free-shipping-progress-bar
+                height: 10px
+                width: 0px
+                display: block
+                background: $active
+                border-radius: 50px
+                transition: all 0.3s ease
+
+            &.freed + .free-shipping-icon
+                background: $active
+                i:before
+                    color: white
+
+        $bottom_angle_size: 5px
+        .free-shipping-label
+            position: absolute
+            bottom: calc(100% + #{$bottom_angle_size})
+            left: 50%
+            transform: translateX(-50%)
+            background: $active
+            color: white
+            padding: 0px 6px
+            border-radius: 3px
+
+            &:after
+                content: ''
+                position: absolute
+                top: 100%
+                left: 50%
+                transform: translateX(-50%)
+                border: $bottom_angle_size solid $nocolor
+                border-top-color: $active
+#cart.slide-out-cart
+    
+    .dropdown-menu
+        display: flex
+        display: -ms-flexbox
+
+        flex-direction: column
+        -ms-flex-direction: column
+
+        position: fixed
+        top: 0px
+        right: 0px
+        left: auto
+        bottom: auto
+        height: 100%
+        margin-top: 0px
+        transition: all 0.3s ease
+        transform: translate(100%, 0px)
+
+        overflow: hidden
+
+        padding: 0px
+        .cart_close
+            position: relative
+            transform: none
+
+            background: image('close.png') center center no-repeat
+            background-size: 100% 100%
+
+        .cart-dorpdown-items
+            padding-left: $dropdown_menu_padding
+            padding-right: $dropdown_menu_padding
+            max-height: none
+            height: 100%
+            align-items: stretch
+        .cart-header
+            margin-bottom: 0px
+            border-bottom: 1px solid $border_color
+            display: table
+            width: 100%
+            & > *
+                display: inline-block
+                vertical-align: middle
+
+            .cart-header-text
+                padding: $dropdown_menu_padding
+                width: calc(100% - 47px)
+                
+                font-size: 20px
+                font-weight: 300
+            .cart_close
+                float: right 
+
+        .cart-dropdown-order-totals,
+        .cart-dorpdown-indicator
+            padding-left: $dropdown_menu_padding
+            padding-right: $dropdown_menu_padding
+
+        .cart-dropdown-order-totals table
+            margin-bottom: 0px
+
+        .cart-dorpdown-footer,
+        .cart-dropdown-order-totals
+            height: auto
+            max-height: none
+            overflow: initial
+            flex: 0
+            -ms-flex: 0 0 auto
+
+        .cart-dorpdown-footer
+            padding: $dropdown_menu_padding
+            flex: 0
+            -ms-flex: 0 0 auto
+            
+    &.open 
+        .dropdown-menu
+            transform: translate(0px, 0px)
+
+
+/* Category Filter */
+
+$toggle_width: 36px
+$indent_width: 3px
+$a_padding: 7px 8px
+
+$filter_container_gap: 14px
+
+$filter_btn_with: 150px
+#filter_group_tigger_open
+    position: fixed
+    top: 50%
+    left: -54px
+    transform: translateY(-50%) rotate(90deg)
+    z-index: 10
+
+    width: $filter_btn_with
+    padding: 10px
+
+
+#filter-groups
+    @media (max-width: 767px)
+        position: fixed
+        top: 0px
+        left: 0px
+        opacity: 0
+        z-index: 999
+        +square(100%)
+        padding: 40px 15px 15px
+        overflow: auto
+        background: white
+        transition: all 0.3s ease
+        transform: translateX(-100%)
+        &.open
+            opacity: 1
+            transform: translateX(0%)
+        #filter_group_tigger_close
+            z-index: 2
+
+    & > div
+        margin: 0px
+        margin-bottom: $filter_container_gap
+
+    .panel,
+    .list-group,
+    .list-group-item
+        border-radius: 0px
+
+    .panel
+        border: 0px
+
+        .list-group
+            border: 1px solid $border_color
+            .list-group-item.item-header
+                border-top: 0px
+
+            .list-group-item:last-child
+                border-bottom: 0px
+
+    .list-group:not(:first-child)
+        margin-top: $filter_container_gap
+
+
+#side-categories
+
+    .list-group-item:not(.item-header)
+        padding: 0px
+
+    .side-categories-level-1 + .side-categories-level-1
+        border-top: 1px solid $border_color
+
+    .group
+        &:not(:last-child)
+            border-bottom: 1px solid $border_color
+
+        .item
+            display: table
+            width: calc(100% + 1px)
+            box-sizing: border-box
+
+            .item
+                border-left: $indent_width solid #e1e1e1
+
+            & > *
+                display: table-cell
+                vertical-align: middle
+
+            a
+                padding: $a_padding
+
+                &:hover
+                    background: $border_color
+                    color: #fff
+
+            .toggle
+                width: $toggle_width
+                text-align: center
+                border-left: 1px solid $border_color
+                position: relative
+
+                &::before
+                    content: ''
+                    +square(0)
+                    border: 5px solid $nocolor
+                    border-bottom: 0px
+                    border-top-color: $border_color
+                    display: block
+                    position: absolute
+                    top: 50%
+                    left: 50%
+                    transform: translate(-50%, -50%)
+
+                &:hover
+                    background: $border_color
+                    color: #fff
+                    &::before
+                        border-top-color: white
+
+                & + a
+                    width: calc(100% - calc(#{$toggle_width} + 1px))
+
+            &.active + .sub
+                display: block
+                border-top: 1px solid $border_color
+
+        .sub
+            display: none
+
+#side-manufacturer
+    display: block
+    // border: 1px solid $border_color
+    .list-group-item
+        padding: 7px 15px 
+
+    label
+        display: block
+        padding: 0px
+        position: relative
+        cursor: pointer
+        input 
+            position: relative
+            top: 2px
+            margin-right: 6px
+
+#side-price
+    // border: 1px solid $border_color 
+    // padding: 16px 14px 16px
+    .list-group-item:not(.item-header)
+        padding-top: 16px
+        padding-bottom: 24px
+
+    #price_max, #price_min
+        padding: 8px
+        min-height: 0px
+        height: auto
+        text-align: right
+
+    .price-container
+        display: table
+        width: 100%
+        margin-bottom: 20px
+        
+        > *
+            width: 50%
+            display: table
+            float: left
+
+            > *
+                display: table-cell
+
+            .input-group-addon
+                background: $nocolor
+                border: 0px
+
+            &:first-child
+                .input-group-addon
+                    padding-left: 0px
+            .input-group
+                flex: 0
+            input 
+                max-width: 100%
+                border-radius: 0px
+
+    .ui-slider-horizontal
+        height: 5px
+        position: relative
+        margin: auto
+        margin-top: 12px
+        width: calc(100% - #{$round_handle}px)
+
+    .ui-slider-handle:focus
+    .ui-slider-handle 
+        background: $active
+        +square($round_handle)
+        display: block        
+        position: absolute
+        top: 2px
+        border-radius: 10px
+        outline: none $i
+        transform: translate(-50%, -50%)
+        cursor: pointer
+        z-index: 1
+    
+        & +.ui-slider-handle
+            &,
+            &:focus
+                z-index: 2
+    
+    .ui-slider-handle+.ui-slider-handle 
+        left: 100%
+    
+    .ui-slider-range 
+        background: $active
+        height: 100%
+        position: relative
+        z-index: 1
+/* End Category Filter */ 
+
+h2:not(.swal2-title)
+    text-align: center
+    margin-bottom: 68px
+    text-transform: uppercase
+    &::after
+        content: ''
+        width: 68px
+        height: 6px
+        background: $border_color
+        display: block
+        margin: 22px auto 0px
+
+    @media (max-width: 767px)
+        margin-bottom: 40px
+        &::after
+            width: 30px
+
+.account-account
+    .account-container
+        a
+            max-width: 868px
+            width: 100%
+            border: 1px solid $border_color
+            color: inherit
+            display: block
+            margin: 0px auto 24px
+            border-radius: 5px
+            padding: 14px 14px 14px 86px
+            position: relative
+
+            h3.account-sub-heading
+                magin-bottom: 0px
+                text-transform: uppercase
+
+            p
+                margin-bottom: 0px
+            
+            .icon-font
+                +square(47)
+                position: absolute
+                display: block
+                text-align: center
+                top: 50%
+                left: 20px
+                transform: translateY(-50%)
+                
+
+            .icon-font::before
+                font-family: 'icomoon'
+                line-height: 1
+                display: table
+                font-size: 28px
+                position: absolute
+                top: 50%
+                left: 50%
+                transform: translate(-50%, -50%)
+
+            .icon-addressbook:before
+                content: "\e900"
+            
+            .icon-history:before 
+                content: "\e901"
+        
+            .icon-profile:before 
+                content: "\e902"
+            
+            .icon-updatePassword:before 
+                content: "\e903"
+
+$form_control_margin: 24px
+$form_control_height: 46px
+.login-container
+    max-width: 270px
+    width: 100%
+    margin: auto
+
+    .login-forgotten
+        margin-top: $form_control_margin
+
+    #column-left
+        width: 100%
+        padding: 0px
+
+    .dsl-wrap
+        margin-top: 24px
+
+    .dsl-button
+        width: 100%
+        border-radius: 0px
+
+        .l-side
+            position: relative
+            border-right: 0px
+            width: 60px
+
+            .dsl-icon
+                position: absolute
+                top: 50%
+                left: 50%
+                transform: translate(-50%, -50%)
+                height: calc(100% - 8px)
+                width: calc(100% - 8px)
+                background-size: contain
+
+        .r-side
+            width: 100%
+            text-align: center
+
+    .d_socail_login_header
+        text-align: center
+        width: 100%
+        display: table
+        table-layout: fixed
+
+        & > *
+            display: table-cell
+            position: relative
+
+            &:nth-child(2)
+                width: 70px
+                white-space: nowrap
+                font-size: 24px
+                font-weight: 500
+                text-align: center
+                padding: 0px 16px
+
+            &:nth-child(1), &:nth-child(3)
+                &::before
+                    content: ''
+                    display: block
+                    width: 100%
+                    height: 1px
+                    background: #333
+                    top: 50%
+                    left: 0px
+                    position: absolute
+
+.form-group
+    margin-bottom: $form_control_margin
+
+.btn
+    border-radius: 0px
+    text-align: center
+    text-transform: uppercase
+    transition: all 0.3s ease
+
+// Account and Checkout page only
+body[class*='account'], 
+body[class*='account']
+    .btn-primary, .btnt-default
+        min-width: 170px
+        min-height: $form_control_height
+        height: $form_control_height
+        padding: 13px
+        
+.btn-navbar,
+#compare-total,
+.form-control[type="checkbox"],
+.form-control[type="radio"],
+.input-group-btn, 
+.btn-group .btn
+    width: auto
+    min-width: 0px
+    min-height: 0px
+    height: auto
+
+.form-control[type="checkbox"],
+.form-control[type="radio"]
+    display: inline-block
+    position: relative
+    top: 2px
+    margin-top: 0px
+    margin-right: 3px
+
+.input-group
+    display: flex
+    display: -ms-flex
+    flex: 1
+    -ms-flex: 1 1 auto
+    .input-group-addon
+        width: auto
+        display: flex
+        height: auto
+        flex-direction: column
+        justify-content: center
+        border: 0px
+        background: $nocolor
+
+    .input-group-btn + input
+        min-width: 0px $i
+        width: 80px
+
+.input-group-addon + input
+    padding: 4px
+    text-align: center
+
+textarea
+    resize: none
+
+#register-form
+
+    @media (min-width: 768px)
+        .left
+            .form-group
+                margin-right: 0px
+        .right
+            .form-group
+                margin-left: 0px
+.form-group
+    label.col-sm-2
+        text-align: left
+
+.account-address
+    #content
+        td
+            vertical-align: middle
+table
+    thead
+        tr
+            td
+                font-weight: bold
+                text-transform: uppercase
+
+.inline-link 
+    padding: 0px 4px 0px
+    & + .inline-link
+        border-left: 1px solid $border_color
+    &:first-child
+        padding-left: 0px
+    &:last-child
+        padding-right: 0px
+
+#cartSummary
+    tbody
+        tr + tr
+            border-top: 1px solid $border_color
+        tr:last-child
+            td
+                border-bottom: 1px solid $border_color 
+    td
+        @media (min-width: 768px)
+            &:not(:nth-child(2))
+                width: auto $i
+
+        button.btn-danger
+            &, &:hover, &:focus
+                background: $nocolor
+                background-color: $nocolor
+                border: 0px
+                padding: 0px
+                width: auto
+                min-width: 0px
+                height: auto
+                min-height: auto
+                outline: none
+
+            i
+                &::before
+                    content: image('delete.png')
+    @media (max-width: 767px)
+        table
+            td
+                padding: 0px
+                span.column-label
+                    display: inline-block
+
+        thead
+            td:not(:first-child)
+                display: none
+        tbody
+            tr
+                width: 100%
+                display: flex
+                flex-wrap: wrap
+
+                display: -ms-flexbox
+                -ms-flex-wrap: wrap
+
+                position: relative
+                padding: 15px 0px
+
+                td:first-child
+                    flex: 0
+                    -ms-flex: 0 0 auto
+                    padding-bottom: 15px
+                td:first-child + *
+                    padding: 0px 45px 15px 15px
+                   
+                .cart-price
+                    span
+                        font-weight: 600
+                        display: inline-block
+                        & + span
+                            padding-right: 7px
+
+                .input-number
+                    flex: 1
+                    -ms-flex: 1 1 auto
+
+                &, &:last-child
+                    td
+                        display: flex
+                        border-top-color:    $nocolor
+                        border-bottom-color: $nocolor
+                        border-left-color:   $nocolor
+                        border-right-color:  $nocolor
+                    td:nth-child(2)
+                        flex-direction: column
+                        -ms-flex-direction: column
+
+                    td.text-right
+                        justify-content: right
+                    &:nth-last-child(2)
+                        width: 100%
+
+            .btn.remove
+                position: absolute
+                top: 0px
+                right: 0px
+                &, &:hover, &:focus
+                    padding: 14px
+
+    @media (max-width: 540px)
+        td:nth-last-child(3)
+            flex: 1
+            -ms-flex: 1 1 auto
+
+        td:nth-last-child(2)
+            width: 100% $i
+
+        .cart-price
+            flex-direction: column
+            -ms-flex-direction: column
+            margin: -7px 0px 7px
+
+            span
+                font-size: 13px
+                font-weight: 600
+            span + span
+                display: none $i
+
+            font-size: 18px
+            font-weight: 300
+
+.quickcheckout-checkout
+    #content
+        #payment-address,#shipping-address
+            .quickcheckout-content
+  
+            label.control-label
+                display: none
+            .form-control
+                margin-bottom: 20px
+                & + .text-danger
+                    margin-top: -20px
+                    margin-bottom: 20px
+
+        .quickcheckout-heading
+            background: $nocolor
+            padding: 0px
+            padding-bottom: 20px
+            font-weight: bold
+
+            i
+                display: none
+        .quickcheckout-content
+            border: 0px
+            padding: 0px
+
+            .col-sm-6
+                padding: 0px 0px
+
+            @media (min-width: 768px)
+                .left
+                    padding-right: 10px
+                .right
+                    padding-left: 10px            
+
+        #payment-method, #shipping-method
+            tr:first-child
+                td
+                    border-top: 0px
+
+        #terms
+            padding: 30px 0px
+            input[name="agree"]
+                position: relative
+                top: 2px
+
+        .image
+            img
+                max-width: 100px
+
+
+.checkout-success
+
+    .line-1
+        font-size: 24px
+        font-weight: bold
+        margin-bottom: 24px
+    .line-2
+        margin-bottom: 24px
+        span
+            text-decoration: underline
+    .line-3
+        margin-bottom: 24px
+
+        a
+            text-decoration: underline
+
+
+    .line-4
+        margin-bottom: 30px
+
+
+.maintainance-box
+    min-height: 600px
+    padding: 80px 20px
+
+    h2
+        text-transform: uppercase
+
+    i
+        font-size: 98px
+        display: block
+        margin: 30px 0px
+
+.quickcheckout-content
+    table
+        margin-bottom: 0px
+
+.image-zoom,
+.image-zoom-hover
+    .image-container
+        overflow: hidden
+        display: block
+        img
+            transform: scale(1)
+            transition: all 0.3s ease
+    &:hover, &:focus
+        img
+            transform: scale(1.2)
+
+.product-block
+    text-align: center
+    flex-direction: column
+    -ms-flex-direction: column
+    display: flex
+    display: -ms-flexbox
+    padding-bottom: 14px
+    border: 1px solid $border_color
+    
+    img
+        width: 100%
+    .more-options-text
+        z-index: 1
+        width: 100%
+        color: white
+        font-size: 13px
+        padding: 6px 10px
+        background: #fdd835
+        text-shadow: 0px 1px 1px rgba(#000, 0.3)
+    
+
+    .product-button
+        @media (min-width: 992px)
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+            opacity: 0
+
+            display: flex
+            display: -ms-flexbox
+            flex-wrap: nowrap
+            -ms-flex-wrap: nowrap
+
+            transition: opacity 0.3s ease
+    
+        @media (max-width: 991px)
+            width: 100%
+            display: flex
+            display: -ms-flexbox
+            & > *
+                flex: 1
+                ms-flex: 1 1 auto
+
+    &:hover, &:focus
+        .product-button
+            opacity: 1
+
+    .product-name
+        padding: 14px 7px 7px
+
+    .product-details
+        margin: auto auto 0px
+        .price
+            font-size: 18px
+            .price-old
+                font-size: 13px
+                opacity: 0.6
+// Module / Related product
+$padding_side: 32px
+.featured-module
+    .featured
+        padding: 0px $padding_side
+
+    .slick-nav
+        width: $padding_side
+        height: 100%
+        background: #a1a1a1
+        z-index: 1
+        top: 0px
+
+        &.left, &.prev
+            left: -$padding_side
+        &.right, &.next
+            right: -$padding_side
+
+$slider_gap: 7.5px
+$slider_list_negate: -$slider_gap
+
+.featured-module, .related-products
+
+    .owl-stage
+        display: flex
+        display: -ms-flexbox
+    .slick-track
+        display: flex
+        display: -ms-flexbox
+
+    .product-block
+        height: auto
+    .slick-slide 
+        margin: 0px $slider_gap
+    .slick-list
+        margin: 0px $slider_list_negate
+    
+// Category / Search 
+$gutter: 15px
+$gutter_px: 15
+.product-view
+    display: flex
+    display: -ms-flexbox
+    flex-wrap: wrap
+    .product-image-block
+        flex-direction: column
+        height: 100% // For IE
+    @media (max-width: 767px)
+        padding: $gutter
+    & > *
+        border: 1px solid $border_color
+
+.product-special,
+.product-category
+    .product-view
+        +paddingSide($gutter_px)
+        & > *
+            margin-bottom: $gutter
+            width: calc(33.3333% - 10px)
+            @media (max-width: 1199px) AND (min-width: 541px)
+                width: calc(50% - 8px) //
+                &:nth-child(even)
+                    margin-left: $gutter
+            @media (max-width: 540px)
+                width: 100%
+            @media (min-width: 1200px)
+                &:not(:nth-child(3n+1)):not(:first-child)
+                    margin-left: $gutter
+
+.product-search
+    .product-view
+        +paddingSide($gutter_px)
+        & > *
+            margin-bottom: $gutter
+            width: calc(25% - 12px)
+            @media (max-width: 1199px) AND (min-width: 992px)
+                width: calc(33.3333% - 12px)
+                &:not(:nth-child(3n+1)):not(:first-child)
+                    margin-left: $gutter
+            @media (max-width: 991px) AND (min-width: 541px)
+                width: calc(50% - 10px)
+                &:nth-child(even)
+                    margin-left: $gutter
+            @media (max-width: 540px)
+                width: 100%
+            @media (min-width: 1200px)
+                &:not(:nth-child(4n+1)):not(:first-child)
+                    margin-left: $gutter
+.search-container
+    text-align: center
+    max-width: 400px
+    width: calc(100% - 30px)
+    margin: 0px auto 70px
+    .search-description
+        margin-bottom: 24px
+    .search-options
+        display: flex
+        display: -ms-flexbox
+
+        select
+            max-width: 150px
+
+        select, input
+            border-radius: 0px
+
+        input
+            margin-left: 15px
+
+        @media (max-width: 540px)
+            flex-direction: column
+            & > *
+                width: 100%
+                max-width: 100% $i
+            input
+                margin-left: 0px
+                display: flex
+                display: -ms-flexbox
+                flex: 1
+                -ms-flex: 1 1 auto
+
+            select
+                margin-bottom: 15px
+
+// Inner Product
+$nav_width: 22px
+$slider_sides: $nav_width + 4
+$pagination_space: 20px
+$dot_size: $pagination_space * 0.5
+$dot_size_active: $pagination_space * 1.2
+.product-product 
+    .thumbnails
+        overflow: initial
+
+    #product    // Options
+        max-width: 250px
+    .product-image-column
+        margin-bottom: 25px
+        
+    .product-image-main-container
+        margin-bottom: 20px
+        overflow: hidden
+        .slick-nav
+            width: 64px
+            height: 100%
+            position: absolute
+            top: 0px
+            background: #a1a1a1
+            z-index: 1
+            opacity: 0
+            transition: all 0.3s ease
+
+            &.left, &.prev
+                left: 0px
+                transform: translateX(-100%)
+            &.right, &.next
+                right: 0px
+                transform: translateX(100%)
+        &:hover, &:focus
+            .slick-nav
+                opacity: 1
+                &.left, &.prev
+                    transform: translateX(0%)
+                &.right, &.next
+                    transform: translateX(0%)
+
+    .product-image-additional-container
+        padding: 0px $slider_sides
+
+        img
+            border: 1px solid $border_color
+            padding: 2px
+
+            &:focus, &:hover, &.slick-current.slick-active
+                border-width: 3px
+                padding: 0px
+
+        .slick-nav
+            background: #a1a1a1
+            display: block
+            width: $nav_width
+            height: 100%
+            position: absolute
+            top: 0px
+            &.left, &.prev 
+                left: -$slider_sides
+            &.right, &.next
+                right: -$slider_sides
+            
+
+
+.input-group-flex
+    margin: 50px 0px
+    display: flex
+    display: -ms-flexbox
+    & > span
+        display: flex
+        flex-direction: column
+        justify-content: center
+        padding-right: 10px
+
+.order-not-found
+    line-height: 1.8
+    padding: 18px 18px 20px
+    i
+        display: block
+        font-size: 42px
+        margin: auto auto 16px
+
+
+.order-product-list
+    
+    .nav
+        display: table
+        width: 100% 
+        & > li:not(:only-child)
+            width: 50%
+            display: table-cell
+        li:not(.active) a
+            background: $inactive
+$gap: 13px
+.order-product-item-list
+    padding: 15px 0px
+    display: flex
+    display: -ms-flexbox
+    flex-wrap: wrap
+    -ms-flex-wrap: wrap
+    img
+        width: 100%
+
+    & > *
+        margin-right: $gap
+        margin-bottom: $gap
+
+        @media (min-width: 768px)
+            &
+                width: calc(calc(100% - #{$gap * 2}) / 3)
+                &:nth-child(3n)
+                    margin-right: 0px
+
+        @media (max-width: 767px)
+            &
+                width: calc(calc(100% - #{$gap * 1}) / 2)
+                &:nth-child(2n)
+                    margin-right: 0px
+
+.account-order
+    #content
+        table
+            @media (max-width: 767px)
+                thead
+                    display: none
+                tbody
+                    tr
+                        width: 100%
+                        margin-bottom: 10px
+                        border: 1px solid $border_color
+                        
+                        display: grid
+                        display: -ms-grid
+                        grid-template-columns: auto 1fr 1fr // Width of columns
+                        -ms-grid-columns: auto 1fr 1fr
+                        grid-template-rows: auto auto // Height of rows
+                        -ms-grid-rows: auto auto
+                        
+                        td
+                            border: 0px
+
+                            &:first-child
+                                grid-column: 1 / 1      // By grid colum lines
+                                grid-row: 1 / 3         // By grid row lines
+                                // IE
+                                -ms-grid-column: 1
+                                -ms-grid-row: 1
+                                -ms-grid-column-span: 1 // Expand 1 grid width to right
+                                -ms-grid-row-span: 2    // Expand 1 grid height to to bottom
+
+                                display: flex
+                                flex-direction: column
+                                justify-content: center
+                                text-align: center
+
+                                border-right: 1px solid $border_color
+                            
+                            &:nth-child(3), 
+                            &:nth-child(5)
+                                justify-content: right
+                                display: flex
+                                display: -ms-flex
+.testimonial_view
+    display: flex
+    display: -ms-flex
+    flex-wrap: wrap
+    -ms-flex-wrap: wrap
+
+    $gap: 15px
+    
+    .testimonial_block
+        border: 1px solid $border_color
+        padding: 10px 14px
+        margin-bottom: $gap
+        width: 100%
+
+        @media (min-width: 541px)
+            margin-right: $gap
+        @media (min-width: 541px) and (max-width: 767px)
+            width: calc(calc(100% - #{$gap}) /2)
+            &:nth-child(2n)
+                margin-right: 0px
+        @media (min-width: 768px) and (max-width: 1199px)
+            $offset_gap: $gap * 2
+            width: calc(calc(100% - #{$offset_gap}) /3)
+            &:nth-child(3n)
+                margin-right: 0px
+        @media (min-width: 1200px)
+            $offset_gap: $gap * 3
+            width: calc(calc(100% - #{$offset_gap}) /4)
+            &:nth-child(4n)
+                margin-right: 0px
+        
+.contact-body
+    display: flex
+    -ms-display: flex
+    flex-wrap: wrap
+    -ms-flex-wrap: wrap
+    & > .form-group
+        +marginSide(0)
+        min-width: 100%
+    @media (min-width: 541px)
+        & > *:not(:last-child)
+            flex: 1
+            -ms-flex: 1 1 auto
+            min-width: 50%
+
+            &:nth-child(even)
+                padding-left: 15px
+            &:last-child
+                flex: 1
+                -ms-flex: 1 1 auto
+    
+
+.contact-footer
+    .form-group
+        +marginSide(0)
+    #google_recaptcha
+        float: left
+        @media (max-width: 767px)
+            float: none
+            margin-bottom: 15px
+
+#shipping-address > .quickcheckout-content,            
+#payment-address > .quickcheckout-content,
+#shipping-new,
+#payment-new
+    display: flex
+    display: -ms-flexbox
+
+    flex-wrap: wrap
+    -ms-flex-wrap: wrap
+
+    justify-content: space-between
+    
+    @media (min-width: 768px)
+        .col-sm-6
+            width: calc(50% - 7.5px)
+
+#payment-existing, #shipping-existing
+    &, & + div
+        width: 100%
+
+#custom-field-payment, #custom-field-shipping
+    display: block $i
+    clear: both
+    width: 100%

@@ -1,0 +1,136 @@
+<?php
+    class ControllerCommonMenu extends Controller{
+        public function index($menu_id = 0){ 
+            $menu_id = (int)$menu_id;
+
+            $menus = "";
+
+            if($menu_id){
+                $this->load->model('common/menu');
+
+                $menus = $this->model_common_menu->getMenu($menu_id);
+
+                if($menus){
+                    $raw = $menus;
+                    $menus = array();
+                    $this->arrangeMenu($menus, $raw);
+                }
+
+			}
+
+            return $menus;
+		}
+		
+        private function arrangeMenu(&$list, $menus, $level = 0) { 
+			foreach($menus as $index => $menu) {
+
+				$menu['child'] = array();
+
+				$this->setActive($menu);
+				$this->setName($menu);
+
+				$check_href = '_' . $menu['href'];
+				$check_href = strtolower($check_href);
+
+				if( !strpos($check_href, 'http') ){
+					$menu['href'] = $this->url->link($menu['href']);
+				}
+				else{
+					$search = OLD_DOMAIN;
+					$replace = array_fill(0, count($search), HTTPS_SERVER);
+					$menu['href'] = str_replace($search, $replace, $menu['href']);
+				}
+
+				if(!$menu['level']) {
+					$list[] = $menu;
+				}
+				else{
+
+					$last_key = 0;
+
+					if( is_array($list) ) {
+						$cache_list = $list; 
+						end($cache_list);
+						$last_key = key($cache_list);
+					}
+
+					$current_level = $menu['level'];
+					$sub_menus = array();
+
+					for($i = $index; $i < count($menus); $i++) { 
+						if( !($current_level - $menus[$i]['level']) ) {
+							$menus[$i]['level'] -= 1;
+							$sub_menus[] = $menus[$i];	
+						}
+						else{
+							break;
+						}
+					}
+
+					$current_level -= 1;
+
+					$this->arrangeMenu($list[$last_key]['child'], $sub_menus, $current_level);
+
+					foreach($list[$last_key]['child'] as $child) {
+						if($child['active']) {
+							$list[$last_key]['active'] = "active";
+						}
+					}
+
+				}
+			}
+        } // End function
+        
+        private function setName(&$current_menu) {
+			
+			$language_id = $this->config->get('config_language_id');
+
+			if( isset($current_menu['name']) ) {
+				$name_arr = safe_decode($current_menu['name']);
+
+				if( is_array($name_arr) && isset($name_arr[$language_id])) {
+					$current_menu['name'] = $name_arr[$language_id];
+				}
+				elseif( is_array($name_arr) && $name_arr ) {
+					$get_first = array_reverse($name_arr);
+					$get_first = end($get_first);
+					$current_menu['name'] = $get_first;
+				}
+				else{
+					// Lol?? no text ??
+				}
+
+			}
+		} // End function
+
+		private function setActive(&$current_menu = array()) {
+			$current_menu['active'] = '';
+
+			if( isset($current_menu['href']) ) {
+				$href = '_' . $current_menu['href'];
+				$route = 'common/home';
+				if(!$this->customer->isLogged()) {
+					$route = 'account/login';
+				}
+				elseif( isset($this->request->get['route']) ) {
+					$route = $this->request->get['route'];
+				}
+
+				if( strpos($href, $route) ) {
+
+					if( isset($this->request->get['product_id']) ) {
+						$route .= '&product_id=' . (int)$this->request->get['product_id'];
+					}
+					elseif( isset($this->request->get['path']) ) {
+						$route .= '&path=' . (int)$this->request->get['path'];
+					}
+					elseif( isset($this->request->get['information_id']) ) {
+						$route .= '&information_id=' . (int)$this->request->get['information_id'];
+					}
+
+					$current_menu['active'] = 'active';
+				}
+			}
+		} // End function
+
+    }

@@ -1,0 +1,31 @@
+<?php 
+$_['heading_title']         = 'Power Image Manager :: FTP Driver';
+$_['text_ftp_description']  = 'Connects to FTP servers';
+$_['entry_ftp_alias']       = 'Alias';
+$_['entry_ftp_path']        = 'Root folder';
+$_['help_user_path']        = 'This is the starting folder for the image manager.';
+$_['help_ftp_path']         = 'This is the starting folder for the image manager.';
+$_['entry_ftp_URL']         = 'HTTP Root URL';
+$_['help_ftp_URL']          = 'This is the URL where the files can be accessed. If there is no http root, you won\'t be able to add images from this volume to products directly';
+
+$_['entry_ftp_title']       = 'Title';
+$_['entry_ftp_host']        = 'FTP Host';
+$_['entry_ftp_port']        = 'FTP Port';
+$_['entry_ftp_user']        = 'FTP user';
+$_['entry_ftp_pass']        = 'FTP pass';
+$_['entry_ftp_root']        = 'FTP Root';
+$_['entry_ftp_status']      = 'Enable FTP';
+$_['text_yes']              = 'Yes';
+$_['text_no']               = 'No';
+$_['button_save']           = 'Save';
+$_['button_cancel']         = 'Cancel';
+$_['button_cancel']         = 'Cancel';
+$_['text_edit']             = 'Add / Edit FTP Setting';
+$_['error_ftp_host']        = 'FTP Host required!';
+$_['error_ftp_port']        = 'FTP Port required!';
+$_['error_ftp_user']        = 'FTP user required!';
+$_['error_ftp_pass']        = 'FTP pass required!';
+$_['error_ftp_title']       = 'Title is required!';
+$_['error_ftp_alias']       = 'Alias is required!';
+$_['error_ftp_path']        = 'Root folder is required';
+$_['error_warning']         = 'Warning: Please check the form carefully for errors!';

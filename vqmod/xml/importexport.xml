@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+	<name>Import export Combo</name>
+	<version>1.1</version>
+	<code>Import export Combo</code>
+	<author>WebX it solutions</author>
+	<link>http://webxitsolutions.com</link>
+	<file name="admin/view/template/common/menu.tpl">
+		<operation error="skip">
+			<search position="before"><![CDATA[<li id="reports"><a class="parent"><i class="fa fa-bar-chart-o fa-fw"></i> <span><?php echo $text_reports; ?></span></a>]]></search>
+			<add><![CDATA[
+				<li id="excelpoint"><a class="parent"><i class="fa fa-file-excel-o"></i> <span>Import Export Combo</span></a>
+					<ul>
+					  <li><a href="<?php echo $excel_import_port; ?>">Import Point</a></li>
+					  <li><a href="<?php echo $excel_export_port; ?>">Export Point</a></li>
+					 </ul>
+				</li>
+				]]></add>
+		</operation>		
+	</file>
+	<file name="admin/controller/common/menu.php">
+		<operation error="skip">
+			<search position="before"><![CDATA[$data['upload'] = $this->url->link('tool/upload', 'token=' . $this->session->data['token'], true);]]></search>
+			<add><![CDATA[
+				$data['excel_import_port'] = $this->url->link('tool/excel_import', 'token=' . $this->session->data['token'], true);
+				$data['excel_export_port'] = $this->url->link('tool/excel_export', 'token=' . $this->session->data['token'], true);
+				]]></add>
+		</operation>	
+	</file>
+	<file name="admin/controller/common/menu.php">
+		<operation error="skip">
+			<search position="before"><![CDATA[$data['upload'] = $this->url->link('tool/upload', 'token=' . $this->session->data['token'], 'SSL');]]></search>
+			<add><![CDATA[
+				$data['excel_import_port'] = $this->url->link('tool/excel_import', 'token=' . $this->session->data['token'], 'SSL');
+				$data['excel_export_port'] = $this->url->link('tool/excel_export', 'token=' . $this->session->data['token'], 'SSL');
+				]]></add>
+		</operation>
+	</file>
+	<file name="admin/controller/common/column_left.php">
+		<operation error="skip">
+			<search position="before"><![CDATA[$report = array();]]></search>
+			<add><![CDATA[
+				$excel = array();
+			if ($this->user->hasPermission('access', 'tool/excel_export')) {		
+				$excel[] = array(
+					'name'	   => 'Import Point',
+					'href'     => $this->url->link('tool/excel_import', 'token=' . $this->session->data['token'], true),
+					'children' => array()		
+				);					
+			}
+			
+			if ($this->user->hasPermission('access', 'tool/excel_export')) {	
+				$excel[] = array(
+					'name'	   => 'Export Point',
+					'href'     => $this->url->link('tool/excel_export', 'token=' . $this->session->data['token'], true),
+					'children' => array()		
+				);			
+			}
+			
+			if ($excel) {	
+				$data['menus'][] = array(
+					'id'       => 'excel-point',
+					'icon'	   => 'fa-bar-chart-o fa-fw', 
+					'name'	   => 'Import Export Combo',
+					'href'     => '',
+					'children' => $excel
+				);
+			}
+				]]></add>
+		</operation>
+	</file>
+</modification>

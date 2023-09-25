@@ -1,0 +1,223 @@
+<?php
+
+$_['heading_title'] = 'manyFeed Generator for Google Merchant/Shopping - генератор разных фидов для Google Merchant / Shopping'; 
+$_['text_module']         									= 'Модули';
+$_['text_success']        									= 'Успешно сохранено';
+$_['text_edit']              								= 'Редактировать';
+$_['text_yes']      	  									= 'Да';
+$_['text_no']	      	  									= 'Нет';
+$_['text_content_top']    									= 'Верх страницы';
+$_['text_content_bottom'] 									= 'Низ страницы';
+$_['text_column_left']    									= 'Левая колонка';
+$_['text_column_right']   									= 'Правая колонка';
+$_['text_feed']        = 'Каналы продвижения';
+$_['tab_template_setting']  = 'Создание описаний товаров в фиде (шаг 1)';
+$_['tab_template_setting_default']  = 'Новое описание';
+$_['tab_general_setting']  = 'Настройка ссылок и файлов  (шаг 3)';
+$_['tab_general_setting_2']  = 'Настройка ссылок и файлов';
+$_['tab_ocext_feed_generator_google'] = 'OCext Google Merchant XML';
+$_['tab_ym_categories'] = 'Синхронизация категорий Google и категорий магазина';
+$_['tab_ym_filter_data'] = 'Создание группы товаров для фида (шаг 2)';
+
+$_['text_ym_filter_data_filter_datas']   = 'Группа товаров для фидов';
+$_['text_ym_filter_data_new_filter']   = 'Новая группа товаров';
+$_['text_ym_filter_data_new_filter_name']   = 'Новая группа товаров';
+$_['text_ym_filter_data_new_filter_name_title']   = 'Название группы товаров';
+
+$_['text_ym_filter_data_categories']     = 'Категории. Если не указаны - будут использованы все категории<div class="small_text">Укажите категории, из которых нужно выгружать товары в XML</div>';
+$_['text_ym_filter_data_manufacturers']     = 'Производители. Если не указаны - будут учитываться все производители<div class="small_text">Укажите производителей, товары которых нужно выгружать в XML</div>';
+$_['text_ym_filter_data_attributes']     = 'Вычеркнуть атрибуты. Вычеркнутые данные не будут передаваться в XML';
+$_['text_ym_filter_data_options']     = 'Вычеркнуть опции. Вычеркнутые данные не будут передаваться в XML';
+$_['text_ym_filter_data_manufacturers_empty'] = 'Производителей не найдено';
+$_['text_ym_filter_data_options_empty'] = 'Опций не найдено';
+$_['text_ym_filter_data_attributes_empty'] = 'Атрибутов не найдено';
+$_['text_ym_filter_data_templates_setting_empty'] = 'Описания товаров в фиде еще не создавались. Выгрузка будет cо стандартным набором тегов';
+$_['text_ym_filter_data_templates_setting_0'] = 'Выгружать стндартный набор тегов';
+$_['text_ym_filter_data_categories_name'] = 'Категории';
+$_['text_ym_filter_data_manufacturers_name'] = 'Производители';
+$_['text_ym_filter_data_all_data']   = 'Выбрать одно описание для всех...';
+$_['text_ym_filter_data_prioritet']   = 'Укажите приоритет настроек (если будут пересекаться разные описания категории и производителя, то данным будет присвоено описание с наименьшим значением этого поля)';
+$_['text_categories_empty']   = 'Категории отсутствуют';
+$_['text_manufacturers_empty']   = 'Производители отсутствуют';
+$_['text_attributes_empty']   = 'Атрибуты отсутствуют';
+$_['text_options_empty']   = 'Опции отсутствуют';
+$_['text_setting_title']    = 'Название этого описания';
+$_['text_setting_offer_name']    = 'Способ формирования названия товара - <b>title</b>';
+$_['text_setting_name_name']    = 'Название товара из карточки товара';
+$_['text_setting_name_meta_title']    = 'Meta-title товара';
+$_['text_setting_name_seo_h1']    = 'SEO h1 товара';
+$_['text_setting_name_composite']    = 'Составлять из разных элементов';
+$_['text_setting_name_composite_help'] = '<div class="small_text">Используйте составные названия, чтобы повысить привлекательность и релевантность</div>';
+$_['text_setting_name_composite_new_element']    = 'Добавить элемент';
+$_['text_setting_name_composite_num_element']    = 'Порядковый номер элемента';
+$_['text_setting_name_composite_element_name'] = 'Название товара';
+$_['text_setting_name_composite_element_meta_title'] = 'Meta-title товара (при пустом значении, продукт не будет выгружаться)';
+$_['text_setting_name_composite_element_seo_h1'] = 'SEO h1 товара (при пустом значении, продукт не будет выгружаться)';
+$_['text_setting_name_composite_element_product_id'] = 'ID товара (из карточки товара - product_id)';
+$_['text_setting_name_composite_element_model'] = 'Модель';
+$_['text_setting_name_composite_element_composite'] = 'Составлять из разных элементов...';
+$_['text_setting_name_composite_element_composite_sort_order'] = 'Порядковый номер элемента';
+$_['text_setting_name_composite_element_composite_status'] = 'Источник элемента';
+$_['text_setting_name_composite_element_sku'] = 'SKU';
+$_['text_setting_name_composite_element_upc'] = 'UPC';
+$_['text_setting_name_composite_element_ean'] = 'EAN';
+$_['text_setting_name_composite_element_jan'] = 'JAN';
+$_['text_setting_name_composite_element_isbn'] = 'ISBN';
+$_['text_setting_name_composite_element_mpn'] = 'MPN';
+$_['text_setting_name_composite_element_text_field'] = 'Текстовое поле';
+$_['text_setting_name_composite_element_location'] = 'Расположение (из карточки товара - location)';
+$_['text_setting_name_composite_element_manufacturer_id'] = 'Производитель (указанный в карточке товара)';
+$_['text_setting_name_composite_element_price'] = 'Цена';
+$_['text_setting_name_composite_element_weight'] = 'Вес (поле - weight)';
+$_['text_setting_name_composite_element_length_width_height'] = 'Габариты (из карточки товара - length / width / height)';
+$_['text_setting_name_composite_element_category_id'] = 'Название категории';
+$_['text_setting_name_composite_element_product_type'] = 'Полный путь размещения товара product_type';
+
+$_['text_setting_name_composite_element_option_id'] = 'Из опции...';
+$_['text_setting_name_composite_element_attribute_id'] = 'Из атрибута...';
+$_['text_setting_disable_this_product'] = 'Товары, которым присвоено это описание не должны попасть в фид';
+$_['text_setting_name_composite_element_self'] = ' - это поле нашел модуль в таблице товаров базы данных';
+$_['text_setting_offer_composite_category_id'] = 'Будет выбрана категория, в которой находится товар';
+$_['text_setting_offer_composite_attribute_id_empty'] = 'Нет созданных атрибутов (характеристик)';
+$_['text_setting_offer_composite_option_id_empty'] = 'Нет созданных опций';
+$_['text_setting_name_composite_sort_order'] = 'Порядковый номер элемента';
+$_['text_setting_description'] = 'Источник для описания - <b>description</b>';
+$_['text_setting_description_description']    = 'Описание товара';
+$_['text_setting_description_meta_keyword']    = 'Meta-keyword товара';
+$_['text_setting_description_meta_description']    = 'Meta-description товара';
+$_['text_setting_description_seo_h1']    = 'SEO h1 товара';
+$_['text_setting_add_option_descr']    = 'Добавить опции в описание<div class="small_text">В фид Google Merchant невозможно передать свои характеристики или опции, кроме разершенных Google. Рекомендуется добавлять их к описанию товара</div>';
+$_['text_setting_add_attribute_descr']    = 'Добавить атрибуты в описание<div class="small_text">В фид Google Merchant невозможно передать свои характеристики или опции, кроме разершенных Google. Рекомендуется добавлять их к описанию товара</div>';
+
+$_['text_setting_description_meta_title']    = 'Meta-title товара';
+$_['text_setting_description_option_id']    = 'Собирать из опций товара';
+$_['text_setting_description_attribute_id']    = 'Собирать из атрибутов товара';
+$_['text_setting_age'] = 'Источник для возрастной категории товара - <b>age</b><div class="small_text">Если включено, то нужно выбрать единицы измерения, в которых у Вас указывается данная информация. Допустимые значения - года, месяца. Для годов (unit="year"): 0, 6, 12, 16, 18. Для месяцев (unit="month"): 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12</div>';
+$_['text_setting_age_unit_year'] = 'Значения заданы в годах (будет передано unit="year")';
+$_['text_setting_age_unit_month'] = 'Значения заданы в месяцах (будет передано unit="month")';
+$_['text_setting_rec'] = 'Передавать похожие товары - <b>rec</b>';
+
+$_['text_setting_sale_price'] = 'Если товар идет по акции, передавать цену по акции?';
+$_['text_setting_ymlprice'] = 'Укажите на какой процент, нужно менять цены<div class="small_text">Если дробь, разделитель точка, например, -10.5 (минус десять целых пять десятых) - будет означать, что цену нужно понизить на 10.5%. Для повышения цены не нужно указывать "+". Просто не указывайте минус перед числом</div>';
+$_['text_setting_store'] = 'Указывать, что данный продукт можно купить в торговой точке - <b>store</b><div class="small_text">Не указывайте этот параметр, если у Вас нет стационарной точки продаж, или товар невозможно купить в торговой точке продаж</div>';
+$_['text_setting_pickup'] = 'Самовывоз - <b>pickup</b>';
+$_['text_setting_delivery'] = 'Наличие доставки у данного товара - <b>delivery</b><div class="small_text">Если продукт невозможно доставить - не указывайте этот параметр. Если есть доставка, в т.ч. в другие регионы, а не только по собственному - включите этот элемент</div>';
+$_['text_setting_offer_stock_statuses_empty'] = 'Список статусов пуст. Если не указать статус, то доступность товара будет определяться по остаткам';
+$_['text_setting_status'] = 'Это описание активно';
+$_['text_setting_no_title'] = 'Без названия';
+$_['text_setting_offer_available_in_stock'] = 'Укажите статус склада, который означает, что товар в наличии - <b>in stock (в наличии)</b><div class="small_text">Вы принимаете заказы на товар и готовы выполнить их немедленно. Выбирайте это значение, если уверены, что заказ будет своевременно доставлен или отгружен покупателю (например, если этот товар уже есть на складе)</div>';
+$_['text_setting_offer_available_out_of_stock'] = 'Укажите статус склада, который означает, что товара нет в наличии <b>out of stock (нет в наличии)</b><div class="small_text">Вы пока не принимаете заказы на этот товар или он не доступен для покупки</div>';
+$_['text_setting_offer_available_preorder'] = 'Укажите статус склада, который означает, что товар отгружается под заказ - <b>preorder (предзаказ)</b><div class="small_text">Вы принимаете заказы на товар, но он ещё не поступил в продажу. Чтобы указать, когда начнется отправка заказов, используйте атрибут availability date (дата поступления)</div>';
+$_['text_setting_count_pictures'] = 'Максимальное количество дополнительных изображений';
+$_['text_setting_pictures_sizes'] = 'Размер изображения (ширина и высота одинаковая), рекомендуется 500, минимально 100';
+$_['text_setting_no_pictures'] = 'Передавать продукты без изображений';
+$_['text_setting_gtin'] = 'Источник данных для <b>gtin</b><div class="small_text">UPC (для США), EAN (для Европы), JAN (для Японии) и ISBN</div>';
+$_['text_setting_mpn'] = 'Источник данных для кода производителя - <b>mpn</b>';
+$_['text_setting_brand'] = 'Источник данных для марки товара - <b>brand</b>';
+$_['text_setting_currencies'] = 'Валюта цен';
+$_['text_setting_price_from'] = 'Цена товара ОТ (включительно) <div class="small_text">Не указывайте ничего (оставьте пустым), если неважно ОТ какой цены</div>';
+$_['text_setting_price_to'] = 'Цена товара ДО (включительно) <div class="small_text">Не указывайте ничего (оставьте пустым), если неважно ДО какой цены</div>';
+$_['text_setting_product_id_from'] = 'Product_id ОТ (включительно) <div class="small_text">Не указывайте ничего (оставьте пустым), если неважно ОТ какого ID продукта</div>';
+$_['text_setting_product_id_to'] = 'Product_id ДО (включительно) <div class="small_text">Не указывайте ничего (оставьте пустым), если неважно ДО какого ID продукта</div>';
+$_['text_setting_shipping'] = 'Стоимость, вид и регион доставки - <b>shipping</b>';
+$_['text_setting_shipping_help'] = '<div class="small_text">Этот атрибут используется для определения стоимости доставки. Указав его для товара, вы переопределяете настройки, заданные в Google Merchant Center. country (страна). Код государства, куда доставляется товар, в соответствии со стандартом ISO 3166. Не является обязательным. Например, KZ, RU, UA, BL, US. Service (служба доставки) – название метода доставки. Этот атрибут не является обязательным. Например, курьером. Price (цена) – фиксированная стоимость доставки. Указывать ее обязательно. Например, 200</div>';
+$_['text_setting_condition'] = 'Состояние товара <b>condition</b>';
+$_['text_setting_product_type'] = 'Источник данных для типа товара <b>product_type</b><div class="small_text">Этот атрибут определяет категорию описываемых товаров, однако при необходимости вы можете использовать собственную классификацию, например, название категории на сайте</div>';
+$_['text_setting_google_product_category'] = 'Категория продукта Google <b>google_product_category</b><div class="small_text">Полный путь категории Google, куда нужно разместить товары</div>';
+$_['text_setting_adult'] = 'Товар для взрослых - <b>adult</b>';
+$_['text_setting_divide_on_option'] = 'Создавать вариации товара по опции...<div class="small_text">Если включено и у товара есть указанная ниже опция, то товары будут создаваться, как вариации. Для вариаций важно, чтобы у товара было уникальное значение у одного из тегов: </div>';
+$_['text_setting_type_variation'] = 'Опция является...';
+$_['text_setting_add_to_title_option_value_name'] = 'Добавить в название значение опции';
+
+$_['text_setting_custom_elements'] = 'Дополнительные теги (custom_label)';
+$_['text_setting_custom_elements_name_element'] = 'Название элемента';
+$_['text_setting_custom_elements_field_element'] = 'Данные внутри элемента';
+$_['text_setting_attribute_age_group'] = 'Источник данных о возрастной группе товара - <b>age_group</b><div class="small_text">Допустимые значения: newborn, infant, toddler, kids, adult</div>';
+$_['text_setting_attribute_gender'] = 'Источник данных о принадлежности к полу - <b>gender</b><div class="small_text">Допустимые значения: male, female, unisex</div>';
+
+$_['text_setting_color'] = 'Источник данных о цвете - <b>color</b>';
+$_['text_setting_material'] = 'Источник данных о цвете - <b>material</b>';
+$_['text_setting_pattern'] = 'Источник данных о цвете - <b>pattern</b>';
+$_['text_setting_size_system'] = 'Источник данных о цвете - <b>size_system</b><div class="small_text">Допустимые значения: AU,BR,CN,DE,EU,FR,IT,JP,MEX,UK,US';
+$_['text_setting_size_type'] = 'Источник данных о типе размера - <b>size_type</b><div class="small_text">Допустимые значения: regular, petite, plus, big and tall, maternity';
+$_['text_setting_size'] = 'Источник данных о размере - <b>size</b>';
+$_['text_setting_adwords_redirect'] = 'Источник для ссылки отслеживания AddWords - <b>adwords_redirect</b>';
+$_['text_setting_promotion_id'] = 'Источник для идентификатора промоакции - <b>promotion_id</b>';
+
+$_['text_setting_available_by_quantity'] = 'Количество по реальным остаткам в товаре (или в сооответствующем значении опции, если включена передача вариаций по опциям)</div>';
+$_['text_setting_identifier_exists'] = 'Имеет идентификатор - <b>identifier_exists</b>';
+$_['text_setting_identifier_exists_no_tag'] = 'Не выводить тег';
+$_['text_setting_identifier_exists_yes_to_tag'] = 'Выводить да';
+$_['text_setting_identifier_exists_no_to_tag'] = 'Выводить нет';
+$_['text_setting_multipack'] = 'Источник данных для количества товара в одном товаре - <b>multipack</b>';
+$_['text_setting_is_bundle'] = 'Источник данных для класса энергоэффктивности - <b>energy_efficiency_class</b>';
+
+$_['text_google_categories_language'] = 'Импортировать список категорий (предыдущие категории будут удалены)';
+
+$_['text_error_google_categories_language_code'] = 'Не выбран язык';
+
+
+$_['text_setting_dispublic_quantity'] = 'Выгружать товары с нулевыми остатками <div class="small_text">Если выбрать "Выключено", то товары, у которых нулевые остатки не попадут в XML файл. Если выбрать "Включено", то данные товары будут со статусом, как это указано выбрано выше</div>';
+$_['text_setting_attribute_sintaxis'] = 'Оформление атрибутов, если будут добавлены в описание';
+$_['text_setting_price_currencies_from'] = 'Конвертировать цену (из значения price в карточке товара): укажите валюту, в которой цена';
+$_['text_setting_price_currencies_to'] = 'Конвертировать цену (из значения price в карточке товара): укажите валюту, в которую нужно конвертировать цену';
+$_['text_setting_currencies_empty'] = 'Конвертировать цену (из значения price в карточке товара) в указанную валюту';
+$_['entry_template_setting_attribute_sintaxis_0'] = 'Название группы атрибутов: название атрибута - значение атрибута';
+$_['entry_template_setting_attribute_sintaxis_1'] = 'Название атрибута - значение атрибута';
+$_['text_template_setting_sample_setting'] = 'Взять за основу ранее созданное описание...';
+$_['text_feed']    = 'Каналы продвижения';
+$_['text_success']     = 'Настройки модуля обновлены!';
+$_['text_ym_categories_filter_ym_category_last_child']     = 'Название Google категории';
+$_['text_ym_categories_filter_status']     = 'Показать по состоянию';
+$_['text_ym_categories_filter_status_']     = 'Показывать все';
+$_['text_ym_categories_filter_status_1']     = 'Активные';
+$_['text_ym_categories_filter_status_2']     = 'В корзине';
+$_['text_ym_categories_filter_category_id']     = 'Показывать по заполнению своими категориями';
+$_['text_ym_categories_filter_category_id_']     = 'Показывать все';
+$_['text_ym_categories_filter_category_id_1']     = 'Только с моими категориями';
+$_['text_ym_status_1']     = 'В корзину';
+$_['text_ym_status_0']     = 'Активная';
+$_['column_ym_category_path']     = 'Полный путь к категории Google. Разделитель - ">" - обязателен!<div class="small_text">Нельзя придумывать свои категории - ссылка на список допустимых категорий см. ниже</div>';
+$_['column_ym_category_last_child']     = 'Категория Google, в которой будет размещен товар<div class="small_text">Товар будет размещен в последней категории данного пути</div>';
+$_['column_category_id']     = 'Связать категории магазина с категорями Google <div class="small_text">У товаров отмеченных категори, добавится тег google_product_category с соответствующей категорией Google</div>';
+$_['column_ym_status']     = 'Отправить в корзину';
+$_['text_ym_categories_categories_empty'] = 'Категорий не найдено';
+$_['text_ym_filter_data_manufacturers_empty'] = 'Производителей не найдено';
+$_['text_ym_filter_data_options_empty'] = 'Опций не найдено';
+$_['text_ym_filter_data_attributes_empty'] = 'Атрибутов не найдено';
+
+$_['text_general_setting_yml_currencies'] = 'Валюта цен';
+$_['text_general_setting_count_custom_elements'] = 'Количество дополнительных (custom_label) - для использования в Google Merchant - не более 5-ти';
+$_['text_general_setting_status'] = 'Статус модуля';
+$_['text_general_setting_enable'] = 'Включен';
+$_['text_general_setting_disable'] = 'Выключен';
+$_['text_general_setting_name'] = 'Название магазина<div class="small_text">Название, которое выводится в списке найденных на в Google Покупки товаров. Желательно до 70 символов. Не более 150</div>';
+$_['text_general_setting_filename_export'] = 'Имя файла, в который будет записан XML фид. Только латинские буквы и цифры<div class="small_text">Файл создается всякий раз, как вызовается ссылка</div>';
+$_['text_general_setting_path_token_export'] = 'Ссылка на файл - введите код, который защитит от несанкционированного вызова. Только латинские буквы и цифры<div class="small_text">Данную ссылку можно вызывать через планировщик или самостоятельно, для обновления файла</div>';
+$_['text_general_setting_copy'] = 'Скопировать ссылку';
+$_['text_general_setting_empty_token'] = 'Ссылка еще не сохранялась - нажмите Сохранить';
+
+$_['text_general_setting_filter_data_template'] = 'Группа товаров';
+$_['text_general_setting_filter_data_file_and_link'] = 'Файл и ссылка, формирующая этот файл';
+$_['text_general_setting_filter_data_empty'] = 'Создайте хотя бы одну товаров для возможности создать фид';
+$_['text_general_setting_content_language_id'] = 'Язык контента';
+$_['text_general_setting_store_url'] = 'URL магазина';
+
+
+$_['error_permission']     = 'У Вас нет прав для сохранения';
+$_['text_no_results']     = 'Нет результатов';
+$_['text_no_gcats']     = 'Категории не импортировались';
+$_['text_need_select']     = 'Необходимо выбрать';
+$_['text_select']     = 'Выбрать';
+$_['text_disable'] = 'Выключено';
+$_['text_enable'] = 'Включено';
+$_['text_delete'] = 'Удалить';
+$_['button_filter']     = 'Фильтр';
+$_['button_cancel']     = 'Отменить';
+
+
+$_['text_ocext_plugin_microdata']     = 'Плагин микроразметки JSON LD для расширенных сниппетов в поисковиках';
+$_['text_ocext_plugin_microdata_breadcrumps_status']     = 'Включить микроразметку для хлебных крошек';
+$_['text_ocext_plugin_microdata_product_status']     = 'Включить микроразметку для продуктов';
+$_['tab_welcome_extecom'] = 'Информация и поддержка';
+?>

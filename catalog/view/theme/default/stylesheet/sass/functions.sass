@@ -1,0 +1,79 @@
+@function is-number($value)
+  @return type-of($value) == 'number'
+  
+@function is-percentage($value) 
+    @return is-number($value) and unit($value) == '%'
+
+@function image($image)
+    @return url('../../image/' + $image)
+
+@function root($image)
+    @return url('../image/' + $image)
+
+=marginSide($px) 
+    @if is-number($px)
+        margin-left: $px + 0px
+        margin-right: $px + 0px
+    @else
+        margin-left: $px
+        margin-right: $px
+
+=paddingSide($px)
+    @if is-number($px)
+        padding-left: $px + 0px
+        padding-right: $px + 0px
+    @else
+        padding-left: $px
+        padding-right: $px
+
+=paddingTopBottom($px)
+    @if is-number($px)
+        padding-top: $px + 0px
+        padding-bottom: $px + 0px
+    @else
+        padding-top: $px
+        padding-bottom: $px
+        
+=square($px)
+    @if is-percentage($px)
+        width: $px 
+        height: $px 
+    @else
+        width: $px + 0px
+        height: $px + 0px
+
+=transition($command)
+    -webkit-transition: $command
+    -moz-transition: $command
+    -o-transition: $command
+    transition: $command 
+
+=absolute-center-center()
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+
+=absolute-right-center()
+    position: absolute
+    top: 50%
+    right: 0px
+    transform: translateY(-50%)
+
+=absolute-left-center()
+    position: absolute
+    top: 50%
+    left: 0px
+    transform: translateY(-50%)
+
+=absolute-center-top()
+    position: absolute
+    top: 0px
+    left: 50%
+    transform: translateX(-50%)
+
+=absolute-center-bottom()
+    position: absolute
+    bottom: 0px
+    left: 50%
+    transform: translateX(-50%)

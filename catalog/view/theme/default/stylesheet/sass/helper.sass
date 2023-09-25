@@ -1,0 +1,424 @@
+@import 'icon'
+@import 'functions'
+
+html
+body
+    padding: 0px
+    margin: 0px
+    width: 100%
+    min-height: 100%
+
+h1, h2, h3, h4, h5, h6
+    margin-top: 0px
+
+label, button, a
+    &:focus, &:hover
+        outline: none
+        outline: 0px
+
+a:hover,
+a:focus,
+a:visited,
+a
+    text-decoration: none
+    outline: none
+    outline: 0px
+    box-shadow: none
+    
+a, button, input, select
+    &:hover, &:focus
+        outline: none
+        outline: 0px
+        box-shadow: none
+        
+label,
+.btn
+a[target],
+a[href],
+a.pointer,
+.pointer 
+    cursor: pointer
+
+.lh100, .lh-100, .line-height-100
+    line-height: 100%
+.upper, .text-upper
+    text-transform: uppercase
+.lower, .text-lower
+    text-transform: lowercase
+.underline
+    text-decoration: underline
+.nowrap
+    white-space: nowrap
+.wrap
+    white-space: wrap
+.truncate
+    text-overflow: ellipsis
+    overflow: hidden
+    white-space: nowrap
+    display: block
+    &.flex
+        display: flex
+
+.bold
+    font-weight: 700
+.semi-bold
+    font-weight: 600
+.medium
+    font-weight: 500
+.normal
+    font-weight: 400
+.light
+    font-weight: 300
+
+.fixed
+    position: fixed
+.absolute
+    position: absolute
+.relative
+    position: relative
+.position-left-top
+    top: 0px
+    left: 0px
+.position-right-top
+    top: 0px
+    right: 0px
+.position-left-bottom
+    bottom: 0px
+    left: 0px
+.position-bottom-left
+    bottom: 0px
+    left: 0px
+.position-bottom-right
+    bottom: 0px
+    right: 0px
+.position-center-top
+    top: 0px
+    left: 50%
+    transform: translateX(-50%)
+.position-center-center
+    top: 50%
+    left: 50%
+    right: auto
+    bottom: auto
+    transform: translate(-50%, -50%)
+.position-bottom-center
+    bottom: 0px
+    left: 50%
+    right: auto
+    top: auto
+    transform: translateX(-50%)
+
+// From Bottom Up
+@media (max-width: 540px)
+    //
+@media (max-width: 767px)
+    //
+@media (max-width: 991px)
+    //
+@media (max-width: 1199px)
+    //
+@media (max-width: 1399px)
+    //
+.fixed-header
+	background: white
+	position: fixed
+	z-index: 9
+	width: 100%
+	left: 0px
+	top: 0px
+
+/* Bootstrap correction */
+.dropdown-menu
+    background: white
+    
+.panel-title 
+    padding: 0px
+    & > a
+        display: block
+        padding: 10px 15px
+
+.panel-heading
+    padding: 0
+
+.gmap
+    width: 100%
+    height: 400px
+
+.w100, .w-100, .width-100
+    width: 100%
+.h100, .h-100, .height-100
+    height: 100%
+.m0, .m-0, .margin-0
+    margin: 0px
+.p0, .p-0, .padding-0
+    padding: 0px
+// From Top Down
+.margin-auto
+    +marginSide(auto)
+
+.block
+    display: block
+.table
+    display: table
+.inline
+    display: iniine
+.flex
+    display: -webkit-box
+    display: -moz-box
+    display: -ms-flexbox
+    display: -webkit-flex
+    display: flex
+.flex-0
+    flex: 0
+.flex-1
+    flex: 1
+.flex-column
+    flex-direction: column
+.flex-column-reverse
+    flex-direction: column-reverse
+.flex-row-reverse
+    flex-direction: row-reverse
+.flex-wrap
+    flex-wrap: wrap
+.flex-nowrap
+    flex-wrap: nowrap
+
+@media (min-width: 541px)
+    //
+@media (min-width: 768px)
+    .margin-sm-auto
+        +marginSide(auto)
+    .text-sm-left
+        text-align: left
+    .text-sm-center
+        text-align: center
+    .text-sm-right
+        text-align: right
+    .fixed-sm
+        position: fixed
+    .absolute-sm
+        position: absolute
+    .relative-sm
+        position: relative
+    .position-sm-left-top
+        top: 0px
+        left: 0px
+    .position-sm-right-top
+        top: 0px
+        right: 0px
+    .position-sm-left-bottom
+        bottom: 0px
+        left: 0px
+    .position-sm-bottom-right
+        bottom: 0px
+        right: 0px
+    .position-sm-center-top
+        top: 0px
+        left: 50%
+        transform: translateX(-50%)
+    .position-sm-center-center
+        top: 50%
+        left: 50%
+        right: auto
+        bottom: auto
+        transform: translate(-50%, -50%)
+    .position-sm-bottom-center
+        bottom: 0px
+        left: 50%
+        right: auto
+        top: auto
+        transform: translateX(-50%)
+    .m-sm0, .m-sm-0, .margin-sm-0
+        margin: 0px
+    .p-sm0, .p-sm-0, .padding-sm-0
+        padding: 0px
+    .float-sm-left
+        float: left
+    .float-sm-none
+        float: none
+    .float-sm-right
+        float: right
+    .block-sm
+        display: block
+    .table-sm
+        display: table
+    .inline-sm
+        display: iniine
+    .flex-sm
+        display: flex
+    .flex-sm-0
+        flex: 0 0 auto
+    .flex-sm-1
+        flex: 1 1 auto
+    .flex-sm-column
+        flex-direction: column
+    .flex-sm-column-reverse
+        flex-direction: column-reverse
+    .flex-sm-row-reverse
+        flex-direction: row-reverse
+    .flex-sm-wrap
+        flex-wrap: wrap
+    .flex-sm-nowrap
+        flex-wrap: nowrap
+@media (min-width: 992px)
+    .margin-md-auto
+        +marginSide(auto)
+    .text-md-left
+        text-align: left
+    .text-md-center
+        text-align: center
+    .text-md-right
+        text-align: right
+    .fixed-md
+        position: fixed
+    .absolute-md
+        position: absolute
+    .relative-md
+        position: relative
+    .position-md-left-top
+        top: 0px
+        left: 0px
+    .position-md-right-top
+        top: 0px
+        right: 0px
+    .position-md-left-bottom
+        bottom: 0px
+        left: 0px
+    .position-md-bottom-right
+        bottom: 0px
+        right: 0px
+    .position-md-center-top
+        top: 0px
+        left: 50%
+        transform: translateX(-50%)
+    .position-md-center-center
+        top: 50%
+        left: 50%
+        right: auto
+        bottom: auto
+        transform: translate(-50%, -50%)
+    .position-md-bottom-center
+        bottom: 0px
+        left: 50%
+        right: auto
+        top: auto
+        transform: translateX(-50%)
+    .m-md0, .m-md-0, .margin-md-0
+        margin: 0px
+    .p-md0, .p-md-0, .padding-md-0
+        padding: 0px
+    .float-md-left
+        float: left
+    .float-md-none
+        float: none
+    .float-md-right
+        float: right
+    .block-md
+        display: block
+    .table-md
+        display: table
+    .inline-md
+        display: iniine
+    .flex-md
+        display: flex
+    .flex-md-0
+        flex: 0 0 auto
+    .flex-md-1
+        flex: 1 1 auto
+    .flex-md-column
+        flex-direction: column
+    .flex-md-column-reverse
+        flex-direction: column-reverse
+    .flex-md-row-reverse
+        flex-direction: row-reverse
+    .flex-md-wrap
+        flex-wrap: wrap
+    .flex-md-nowrap
+        flex-wrap: nowrap
+@media (min-width: 1200px)
+    .margin-lg-auto
+        +marginSide(auto)
+    .text-lg-left
+        text-align: left
+    .text-lg-center
+        text-align: center
+    .text-lg-right
+        text-align: right
+    .fixed-lg
+        position: fixed
+    .absolute-lg
+        position: absolute
+    .relative-lg
+        position: relative
+    .position-lg-left-top
+        top: 0px
+        left: 0px
+    .position-lg-right-top
+        top: 0px
+        right: 0px
+    .position-lg-left-bottom
+        bottom: 0px
+        left: 0px
+    .position-lg-bottom-right
+        bottom: 0px
+        right: 0px
+    .position-lg-center-top
+        top: 0px
+        left: 50%
+        transform: translateX(-50%)
+    .position-lg-center-center
+        top: 50%
+        left: 50%
+        right: auto
+        bottom: auto
+        transform: translate(-50%, -50%)
+    .position-lg-bottom-center
+        bottom: 0px
+        left: 50%
+        right: auto
+        top: auto
+        transform: translateX(-50%)
+    .m-lg0, .m-lg-0, .margin-lg-0
+        margin: 0px
+    .p-lg0, .p-lg-0, .padding-lg-0
+        padding: 0px
+    .float-lg-left
+        float: left
+    .float-lg-none
+        float: none
+    .float-lg-right
+        float: right
+    .block-lg
+        display: block
+    .table-lg
+        display: table
+    .inline-lg
+        display: iniine
+    .flex-lg
+        display: flex
+    .flex-lg-0
+        flex: 0 0 auto
+    .flex-lg-1
+        flex: 1 1 auto
+    .flex-lg-column
+        flex-direction: column
+    .flex-lg-column-reverse
+        flex-direction: column-reverse
+    .flex-lg-row-reverse
+        flex-direction: row-reverse
+    .flex-lg-wrap
+        flex-wrap: wrap
+    .flex-lg-nowrap
+        flex-wrap: nowrap
+@media (min-width: 1400px)
+    //
+
+#ToTop
+    z-index: 1
+
+// Bootstrap resets
+.form-horizontal .checkbox, .form-horizontal .checkbox-inline, .form-horizontal .radio, .form-horizontal .radio-inline
+    padding-top: 0px
+
+.form-control
+    border-radius: 0px

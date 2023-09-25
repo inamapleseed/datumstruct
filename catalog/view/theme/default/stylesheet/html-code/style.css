@@ -1,0 +1,13 @@
+.html-code-box {
+	margin-bottom: 20px;
+}
+
+.html-code-content {
+	border: 1px solid #dddddd;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+.html-code-content p {
+	margin: 0;
+}

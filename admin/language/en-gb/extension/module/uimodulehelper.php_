@@ -1,0 +1,4 @@
+<?php
+    $_ = array(
+        'heading_title'  =>  'UI Module Helper',
+    ); 

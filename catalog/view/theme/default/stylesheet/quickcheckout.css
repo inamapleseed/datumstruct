@@ -1,0 +1,140 @@
+.quickcheckout-heading {
+	font-size: 16px;
+	color: #000000;
+	margin-top: 10px;
+	background: #eeeeee;
+	padding: 10px;
+}
+.quickcheckout-content {
+	border: 1px solid #dddddd;
+	padding: 10px;	
+	margin-bottom: 10px;
+}
+.or {
+	text-align: center;
+	width: 100%;
+	font-size: 24px;
+	color: #aaaaaa;
+}
+.hide {
+	display: none !important;
+}
+#quickcheckoutconfirm .col-sm-6 {
+	float: none !important;
+	vertical-align: top;
+}
+table.quickcheckout-cart {
+	width: 100%;
+	border-collapse: collapse;
+	border-top: 1px solid #DDDDDD;
+	border-left: 1px solid #DDDDDD;
+	border-right: 1px solid #DDDDDD;
+}
+.quickcheckout-cart thead td {
+	background-color: #F7F7F7;
+	border-bottom: 1px solid #DDDDDD;
+	color: #4D4D4D;
+	font-weight: bold;
+	padding: 7px;
+}
+.quickcheckout-cart tbody td {
+	border-bottom: 1px solid #eeeeee;
+	vertical-align: top;
+	padding: 7px;
+}
+.quickcheckout-cart td.image {
+	width: 10%;
+	text-align: center;
+}
+.quickcheckout-cart td.image img {
+	border: 1px solid #DDDDDD;
+}
+.quickcheckout-cart td.name {
+	width: 30%;
+	text-align: left;
+}
+.quickcheckout-cart td.quantity {
+	width: 20%;
+	text-align: left;
+	min-width: 150px !important;
+}
+.quickcheckout-cart td.quantity > img, .quickcheckout-cart td.quantity > a {
+	position: relative;
+	top: 4px;
+	cursor: pointer;
+}
+.quickcheckout-cart td.price1 {
+	text-align: right;
+	width: 20%;
+}
+.quickcheckout-cart td.total {
+	width: 20%;
+	text-align: right;
+	padding-right: 10px;
+}
+#voucher-heading {
+	background: #eeeeee;
+	cursor: pointer;
+	width: 100%;
+	padding: 10px;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+#coupon-heading {
+	background: #eeeeee;
+	cursor: pointer;
+	width: 100%;
+	padding: 10px;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+#reward-heading {
+	background: #eeeeee;
+	cursor: pointer;
+	width: 100%;
+	padding: 10px;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+#voucher-content {
+	display: none;
+}
+#coupon-content {
+	display: none;
+	margin-bottom:15px;
+}
+#reward-content {
+	display: none;
+	margin-bottom:15px;
+}
+.checkout-content {
+	display: block !important;
+}
+.fa-5x {
+	font-size: 5em !important;
+}
+#payment {
+	overflow: hidden;
+}
+/* Custom themes may need this */
+/*
+select {
+	width: 100%;
+}
+.text-right {
+	text-align: right;
+}
+.text-left {
+	text-align: left;
+}
+.text-center {
+	text-align: center;
+}
+#quickcheckoutconfirm .input-group {
+	width: 100%;
+}
+*/
+.readonly-white,
+.form-control.readonly-white[readonly]{
+	background: white;
+}

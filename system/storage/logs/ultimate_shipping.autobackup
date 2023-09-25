@@ -1,0 +1,25 @@
+EXTENSION	SETTING	NUMBER	SUB-SETTING	SUB-NUMBER	SUB-SUB-SETTING	VALUE
+ultimate_shipping	autocomplete_preloading					0
+ultimate_shipping	autosave					0
+ultimate_shipping	charge	1	charges			
+ultimate_shipping	charge	1	group			
+ultimate_shipping	charge	1	title_admin			
+ultimate_shipping	charge	1	title_en-gb			
+ultimate_shipping	charge	1	type			flat
+ultimate_shipping	combination	1	formula			
+ultimate_shipping	combination	1	groups_required			
+ultimate_shipping	combination	1	sort_order			
+ultimate_shipping	combination	1	title			single
+ultimate_shipping	display					expanded
+ultimate_shipping	distance_calculation					driving
+ultimate_shipping	distance_units					mi
+ultimate_shipping	heading_en-gb					Ultimate Shipping
+ultimate_shipping	product_group	1	member	1		Test Product [product:1]
+ultimate_shipping	product_group	1	name			Group 1
+ultimate_shipping	product_group	1	subcategories			0
+ultimate_shipping	rule_set	1	name			
+ultimate_shipping	sort_order					1
+ultimate_shipping	status					0
+ultimate_shipping	tax_class_id					0
+ultimate_shipping	testing_mode					0
+ultimate_shipping	tooltips					1

@@ -1,0 +1,1958 @@
+2020-09-16 17:05:48 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+
+FILE: system/library/template/twig.php
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+MOD: Add css from backend (cartbinder@gmail.com)
+
+FILE: admin/controller/common/column_left.php
+CODE: if ($this->user->hasPermission('access', 'tool/log')) {
+LINE: 941
+----------------------------------------------------------------
+MOD: Universal Import Export Pro
+
+FILE: admin/view/template/common/header.tpl
+CODE: <li><a href="<?php echo $feed; ?>">
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: admin/model/customer/customer.php
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "customer SET
+LINE: 12
+
+FILE: admin/model/catalog/category.php
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "category SET
+LINE: 8
+
+FILE: admin/controller/catalog/product.php
+CODE: protected function getList() {
+LINE: 342
+CODE: $url .= '&filter_name='
+LINE: 68
+LINE: 145
+LINE: 225
+LINE: 288
+LINE: 526
+LINE: 705
+LINE: 761
+LINE: 1040
+CODE: 'filter_name'	  => $filter_name,
+LINE: 585
+
+FILE: admin/view/template/catalog/product_list.tpl
+CODE: <button type="button" id="button-filter" class="btn btn-primary pull-right"><i class="fa
+LINE: 140
+CODE: var filter_name = $('input[name=\'filter_name\']').val();
+LINE: 260
+
+FILE: admin/model/catalog/product.php
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "product_filter SET
+LINE: 129
+LINE: 339
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "product SET
+LINE: 4
+CODE: $this->db->query("UPDATE " . DB_PREFIX . "product SET model = '" . $this->db->escape($data['model']) . "',
+LINE: 205
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "product_description SET
+LINE: 37
+LINE: 244
+CODE: SET product_option_id = '" . (int)$product_option['product_option_id'] . "',
+LINE: 305
+LINE: 319
+CODE: product_option_id = '" . (int)$product_option['product_option_id'] . "',
+LINE: 305
+LINE: 319
+CODE: product_option_value_id = '" . (int)$product_option_value['product_option_value_id'] . "',
+LINE: 311
+CODE: if (!empty($data['filter_name'])) {
+LINE: 570
+LINE: 907
+CODE: $this->db->escape(sha1($salt . sha1($salt . sha1($data['password']))))
+LINE: 20
+LINE: 78
+CODE: $this->db->escape($salt = token(9))
+LINE: 20
+LINE: 78
+CODE: if ($this->user->hasPermission('access', 'marketplace/modification')) {
+NOT FOUND - OPERATION SKIPPED!
+CODE: if ($this->user->hasPermission('access', 'extension/event')) {
+LINE: 338
+
+FILE: admin/controller/extension/extension/module.php
+CODE: $files = glob(DIR_APPLICATION . 'controller/extension/module/*.php');
+NOT FOUND - OPERATION SKIPPED!
+CODE: $data['extensions'][] = array(
+LINE: 226
+----------------------------------------------------------------
+MOD: Add-links-to-admin-menu
+CODE: $catalog = array();
+LINE: 77
+CODE: public function index() {
+LINE: 119
+----------------------------------------------------------------
+MOD: d_twig_manager
+CODE: $file = DIR_TEMPLATE . $template;
+NOT FOUND - OPERATION SKIPPED!
+CODE: $output = $template->render($route . '.tpl'
+LINE: 92
+----------------------------------------------------------------
+MOD: Local copy OCMOD by iSenseLabs
+
+FILE: admin/controller/extension/installer.php
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+LINE: 131
+CODE: public function unzip() {
+LINE: 292
+----------------------------------------------------------------
+MOD: scc
+----------------------------------------------------------------
+MOD: Удаление модулей
+CODE: $data['header'] = $this->load->controller('common/header');
+LINE: 50
+CODE: $data['token'] = $this->session->data['token'];
+LINE: 42
+CODE: move_uploaded_file($this->request->files['file']['tmp_name'], $file);
+LINE: 119
+LINE: 157
+CODE: $zip_name = zip_entry_name($entry);
+LINE: 222
+CODE: $json['success'] = $this->language->get('text_success');
+LINE: 746
+CODE: $json['error'] = sprintf($this->language->get('error_exists'), $modification_info['name']);
+LINE: 623
+CODE: public function unzip() {
+LINE: 507
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'], 'SSL')),
+NOT FOUND - OPERATION SKIPPED!
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'], true)),
+NOT FOUND - OPERATION SKIPPED!
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/localcopy', 'token=' . $this->session->data['token'], 'SSL')),
+NOT FOUND - OPERATION SKIPPED!
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/localcopy', 'token=' . $this->session->data['token'], true)),
+LINE: 173
+
+FILE: admin/controller/extension/modification.php
+CODE: $this->response->redirect
+LINE: 52
+LINE: 453
+LINE: 525
+LINE: 562
+LINE: 599
+LINE: 634
+
+FILE: admin/language/en-gb/extension/installer.php
+CODE: <?php
+LINE: 8
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: <?php
+LINE: 4
+CODE: if ($this->user->hasPermission('access', 'extension/extension')) {
+LINE: 427
+----------------------------------------------------------------
+2020-09-16 17:44:34 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+
+FILE: system/library/template/twig.php
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+MOD: Add css from backend (cartbinder@gmail.com)
+
+FILE: admin/controller/common/column_left.php
+CODE: if ($this->user->hasPermission('access', 'tool/log')) {
+LINE: 941
+----------------------------------------------------------------
+MOD: Universal Import Export Pro
+
+FILE: admin/view/template/common/header.tpl
+CODE: <li><a href="<?php echo $feed; ?>">
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: admin/model/customer/customer.php
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "customer SET
+LINE: 12
+
+FILE: admin/model/catalog/category.php
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "category SET
+LINE: 8
+
+FILE: admin/controller/catalog/product.php
+CODE: protected function getList() {
+LINE: 342
+CODE: $url .= '&filter_name='
+LINE: 68
+LINE: 145
+LINE: 225
+LINE: 288
+LINE: 526
+LINE: 705
+LINE: 761
+LINE: 1040
+CODE: 'filter_name'	  => $filter_name,
+LINE: 585
+
+FILE: admin/view/template/catalog/product_list.tpl
+CODE: <button type="button" id="button-filter" class="btn btn-primary pull-right"><i class="fa
+LINE: 140
+CODE: var filter_name = $('input[name=\'filter_name\']').val();
+LINE: 260
+
+FILE: admin/model/catalog/product.php
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "product_filter SET
+LINE: 129
+LINE: 339
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "product SET
+LINE: 4
+CODE: $this->db->query("UPDATE " . DB_PREFIX . "product SET model = '" . $this->db->escape($data['model']) . "',
+LINE: 205
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "product_description SET
+LINE: 37
+LINE: 244
+CODE: SET product_option_id = '" . (int)$product_option['product_option_id'] . "',
+LINE: 305
+LINE: 319
+CODE: product_option_id = '" . (int)$product_option['product_option_id'] . "',
+LINE: 305
+LINE: 319
+CODE: product_option_value_id = '" . (int)$product_option_value['product_option_value_id'] . "',
+LINE: 311
+CODE: if (!empty($data['filter_name'])) {
+LINE: 570
+LINE: 907
+CODE: $this->db->escape(sha1($salt . sha1($salt . sha1($data['password']))))
+LINE: 20
+LINE: 78
+CODE: $this->db->escape($salt = token(9))
+LINE: 20
+LINE: 78
+CODE: if ($this->user->hasPermission('access', 'marketplace/modification')) {
+NOT FOUND - OPERATION SKIPPED!
+CODE: if ($this->user->hasPermission('access', 'extension/event')) {
+LINE: 338
+
+FILE: admin/controller/extension/extension/module.php
+CODE: $files = glob(DIR_APPLICATION . 'controller/extension/module/*.php');
+NOT FOUND - OPERATION SKIPPED!
+CODE: $data['extensions'][] = array(
+LINE: 226
+----------------------------------------------------------------
+MOD: Add-links-to-admin-menu
+CODE: $catalog = array();
+LINE: 77
+CODE: public function index() {
+LINE: 119
+----------------------------------------------------------------
+MOD: d_twig_manager
+CODE: $file = DIR_TEMPLATE . $template;
+NOT FOUND - OPERATION SKIPPED!
+CODE: $output = $template->render($route . '.tpl'
+LINE: 92
+----------------------------------------------------------------
+MOD: Local copy OCMOD by iSenseLabs
+
+FILE: admin/controller/extension/installer.php
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+LINE: 131
+CODE: public function unzip() {
+LINE: 292
+----------------------------------------------------------------
+MOD: scc
+----------------------------------------------------------------
+MOD: Удаление модулей
+CODE: $data['header'] = $this->load->controller('common/header');
+LINE: 50
+CODE: $data['token'] = $this->session->data['token'];
+LINE: 42
+CODE: move_uploaded_file($this->request->files['file']['tmp_name'], $file);
+LINE: 119
+LINE: 157
+CODE: $zip_name = zip_entry_name($entry);
+LINE: 222
+CODE: $json['success'] = $this->language->get('text_success');
+LINE: 746
+CODE: $json['error'] = sprintf($this->language->get('error_exists'), $modification_info['name']);
+LINE: 623
+CODE: public function unzip() {
+LINE: 507
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'], 'SSL')),
+NOT FOUND - OPERATION SKIPPED!
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'], true)),
+NOT FOUND - OPERATION SKIPPED!
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/localcopy', 'token=' . $this->session->data['token'], 'SSL')),
+NOT FOUND - OPERATION SKIPPED!
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/localcopy', 'token=' . $this->session->data['token'], true)),
+LINE: 173
+
+FILE: admin/controller/extension/modification.php
+CODE: $this->response->redirect
+LINE: 52
+LINE: 453
+LINE: 525
+LINE: 562
+LINE: 599
+LINE: 634
+
+FILE: admin/language/en-gb/extension/installer.php
+CODE: <?php
+LINE: 8
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: <?php
+LINE: 4
+CODE: if ($this->user->hasPermission('access', 'extension/extension')) {
+LINE: 427
+----------------------------------------------------------------
+2020-09-16 17:46:48 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+
+FILE: system/library/template/twig.php
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+MOD: Add css from backend (cartbinder@gmail.com)
+
+FILE: admin/controller/common/column_left.php
+CODE: if ($this->user->hasPermission('access', 'tool/log')) {
+LINE: 941
+----------------------------------------------------------------
+MOD: Universal Import Export Pro
+
+FILE: admin/view/template/common/header.tpl
+CODE: <li><a href="<?php echo $feed; ?>">
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: admin/model/customer/customer.php
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "customer SET
+LINE: 12
+
+FILE: admin/model/catalog/category.php
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "category SET
+LINE: 8
+
+FILE: admin/controller/catalog/product.php
+CODE: protected function getList() {
+LINE: 342
+CODE: $url .= '&filter_name='
+LINE: 68
+LINE: 145
+LINE: 225
+LINE: 288
+LINE: 526
+LINE: 705
+LINE: 761
+LINE: 1040
+CODE: 'filter_name'	  => $filter_name,
+LINE: 585
+
+FILE: admin/view/template/catalog/product_list.tpl
+CODE: <button type="button" id="button-filter" class="btn btn-primary pull-right"><i class="fa
+LINE: 140
+CODE: var filter_name = $('input[name=\'filter_name\']').val();
+LINE: 260
+
+FILE: admin/model/catalog/product.php
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "product_filter SET
+LINE: 129
+LINE: 339
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "product SET
+LINE: 4
+CODE: $this->db->query("UPDATE " . DB_PREFIX . "product SET model = '" . $this->db->escape($data['model']) . "',
+LINE: 205
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "product_description SET
+LINE: 37
+LINE: 244
+CODE: SET product_option_id = '" . (int)$product_option['product_option_id'] . "',
+LINE: 305
+LINE: 319
+CODE: product_option_id = '" . (int)$product_option['product_option_id'] . "',
+LINE: 305
+LINE: 319
+CODE: product_option_value_id = '" . (int)$product_option_value['product_option_value_id'] . "',
+LINE: 311
+CODE: if (!empty($data['filter_name'])) {
+LINE: 570
+LINE: 907
+CODE: $this->db->escape(sha1($salt . sha1($salt . sha1($data['password']))))
+LINE: 20
+LINE: 78
+CODE: $this->db->escape($salt = token(9))
+LINE: 20
+LINE: 78
+CODE: if ($this->user->hasPermission('access', 'marketplace/modification')) {
+NOT FOUND - OPERATION SKIPPED!
+CODE: if ($this->user->hasPermission('access', 'extension/event')) {
+LINE: 338
+
+FILE: admin/controller/extension/extension/module.php
+CODE: $files = glob(DIR_APPLICATION . 'controller/extension/module/*.php');
+NOT FOUND - OPERATION SKIPPED!
+CODE: $data['extensions'][] = array(
+LINE: 226
+----------------------------------------------------------------
+MOD: Add-links-to-admin-menu
+CODE: $catalog = array();
+LINE: 77
+CODE: public function index() {
+LINE: 119
+----------------------------------------------------------------
+MOD: d_twig_manager
+CODE: $file = DIR_TEMPLATE . $template;
+NOT FOUND - OPERATION SKIPPED!
+CODE: $output = $template->render($route . '.tpl'
+LINE: 92
+----------------------------------------------------------------
+MOD: Import export Combo
+CODE: $report = array();
+LINE: 1173
+----------------------------------------------------------------
+MOD: Local copy OCMOD by iSenseLabs
+
+FILE: admin/controller/extension/installer.php
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+LINE: 131
+CODE: public function unzip() {
+LINE: 292
+----------------------------------------------------------------
+MOD: scc
+----------------------------------------------------------------
+MOD: Удаление модулей
+CODE: $data['header'] = $this->load->controller('common/header');
+LINE: 50
+CODE: $data['token'] = $this->session->data['token'];
+LINE: 42
+CODE: move_uploaded_file($this->request->files['file']['tmp_name'], $file);
+LINE: 119
+LINE: 157
+CODE: $zip_name = zip_entry_name($entry);
+LINE: 222
+CODE: $json['success'] = $this->language->get('text_success');
+LINE: 746
+CODE: $json['error'] = sprintf($this->language->get('error_exists'), $modification_info['name']);
+LINE: 623
+CODE: public function unzip() {
+LINE: 507
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'], 'SSL')),
+NOT FOUND - OPERATION SKIPPED!
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'], true)),
+NOT FOUND - OPERATION SKIPPED!
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/localcopy', 'token=' . $this->session->data['token'], 'SSL')),
+NOT FOUND - OPERATION SKIPPED!
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/localcopy', 'token=' . $this->session->data['token'], true)),
+LINE: 173
+
+FILE: admin/controller/extension/modification.php
+CODE: $this->response->redirect
+LINE: 52
+LINE: 453
+LINE: 525
+LINE: 562
+LINE: 599
+LINE: 634
+
+FILE: admin/language/en-gb/extension/installer.php
+CODE: <?php
+LINE: 8
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: <?php
+LINE: 4
+CODE: if ($this->user->hasPermission('access', 'extension/extension')) {
+LINE: 427
+----------------------------------------------------------------
+2020-09-16 17:47:41 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+
+FILE: system/library/template/twig.php
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+MOD: Add css from backend (cartbinder@gmail.com)
+
+FILE: admin/controller/common/column_left.php
+CODE: if ($this->user->hasPermission('access', 'tool/log')) {
+LINE: 941
+----------------------------------------------------------------
+MOD: Universal Import Export Pro
+
+FILE: admin/view/template/common/header.tpl
+CODE: <li><a href="<?php echo $feed; ?>">
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: admin/model/customer/customer.php
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "customer SET
+LINE: 12
+
+FILE: admin/model/catalog/category.php
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "category SET
+LINE: 8
+
+FILE: admin/controller/catalog/product.php
+CODE: protected function getList() {
+LINE: 342
+CODE: $url .= '&filter_name='
+LINE: 68
+LINE: 145
+LINE: 225
+LINE: 288
+LINE: 526
+LINE: 705
+LINE: 761
+LINE: 1040
+CODE: 'filter_name'	  => $filter_name,
+LINE: 585
+
+FILE: admin/view/template/catalog/product_list.tpl
+CODE: <button type="button" id="button-filter" class="btn btn-primary pull-right"><i class="fa
+LINE: 140
+CODE: var filter_name = $('input[name=\'filter_name\']').val();
+LINE: 260
+
+FILE: admin/model/catalog/product.php
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "product_filter SET
+LINE: 129
+LINE: 339
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "product SET
+LINE: 4
+CODE: $this->db->query("UPDATE " . DB_PREFIX . "product SET model = '" . $this->db->escape($data['model']) . "',
+LINE: 205
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "product_description SET
+LINE: 37
+LINE: 244
+CODE: SET product_option_id = '" . (int)$product_option['product_option_id'] . "',
+LINE: 305
+LINE: 319
+CODE: product_option_id = '" . (int)$product_option['product_option_id'] . "',
+LINE: 305
+LINE: 319
+CODE: product_option_value_id = '" . (int)$product_option_value['product_option_value_id'] . "',
+LINE: 311
+CODE: if (!empty($data['filter_name'])) {
+LINE: 570
+LINE: 907
+CODE: $this->db->escape(sha1($salt . sha1($salt . sha1($data['password']))))
+LINE: 20
+LINE: 78
+CODE: $this->db->escape($salt = token(9))
+LINE: 20
+LINE: 78
+CODE: if ($this->user->hasPermission('access', 'marketplace/modification')) {
+NOT FOUND - OPERATION SKIPPED!
+CODE: if ($this->user->hasPermission('access', 'extension/event')) {
+LINE: 338
+
+FILE: admin/controller/extension/extension/module.php
+CODE: $files = glob(DIR_APPLICATION . 'controller/extension/module/*.php');
+NOT FOUND - OPERATION SKIPPED!
+CODE: $data['extensions'][] = array(
+LINE: 226
+----------------------------------------------------------------
+MOD: Add-links-to-admin-menu
+CODE: $catalog = array();
+LINE: 77
+CODE: public function index() {
+LINE: 119
+----------------------------------------------------------------
+MOD: d_twig_manager
+CODE: $file = DIR_TEMPLATE . $template;
+NOT FOUND - OPERATION SKIPPED!
+CODE: $output = $template->render($route . '.tpl'
+LINE: 92
+----------------------------------------------------------------
+MOD: Import export Combo
+CODE: $report = array();
+LINE: 1173
+----------------------------------------------------------------
+MOD: Local copy OCMOD by iSenseLabs
+
+FILE: admin/controller/extension/installer.php
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+LINE: 131
+CODE: public function unzip() {
+LINE: 292
+----------------------------------------------------------------
+MOD: scc
+----------------------------------------------------------------
+MOD: Удаление модулей
+CODE: $data['header'] = $this->load->controller('common/header');
+LINE: 50
+CODE: $data['token'] = $this->session->data['token'];
+LINE: 42
+CODE: move_uploaded_file($this->request->files['file']['tmp_name'], $file);
+LINE: 119
+LINE: 157
+CODE: $zip_name = zip_entry_name($entry);
+LINE: 222
+CODE: $json['success'] = $this->language->get('text_success');
+LINE: 746
+CODE: $json['error'] = sprintf($this->language->get('error_exists'), $modification_info['name']);
+LINE: 623
+CODE: public function unzip() {
+LINE: 507
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'], 'SSL')),
+NOT FOUND - OPERATION SKIPPED!
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'], true)),
+NOT FOUND - OPERATION SKIPPED!
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/localcopy', 'token=' . $this->session->data['token'], 'SSL')),
+NOT FOUND - OPERATION SKIPPED!
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/localcopy', 'token=' . $this->session->data['token'], true)),
+LINE: 173
+
+FILE: admin/controller/extension/modification.php
+CODE: $this->response->redirect
+LINE: 52
+LINE: 453
+LINE: 525
+LINE: 562
+LINE: 599
+LINE: 634
+
+FILE: admin/language/en-gb/extension/installer.php
+CODE: <?php
+LINE: 8
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: <?php
+LINE: 4
+CODE: if ($this->user->hasPermission('access', 'extension/extension')) {
+LINE: 427
+----------------------------------------------------------------
+2020-09-18 16:28:18 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+
+FILE: system/library/template/twig.php
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+MOD: Add css from backend (cartbinder@gmail.com)
+
+FILE: admin/controller/common/column_left.php
+CODE: if ($this->user->hasPermission('access', 'tool/log')) {
+LINE: 941
+----------------------------------------------------------------
+MOD: Universal Import Export Pro
+
+FILE: admin/view/template/common/header.tpl
+CODE: <li><a href="<?php echo $feed; ?>">
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: admin/model/customer/customer.php
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "customer SET
+LINE: 12
+
+FILE: admin/model/catalog/category.php
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "category SET
+LINE: 8
+
+FILE: admin/controller/catalog/product.php
+CODE: protected function getList() {
+LINE: 342
+CODE: $url .= '&filter_name='
+LINE: 68
+LINE: 145
+LINE: 225
+LINE: 288
+LINE: 526
+LINE: 705
+LINE: 761
+LINE: 1040
+CODE: 'filter_name'	  => $filter_name,
+LINE: 585
+
+FILE: admin/view/template/catalog/product_list.tpl
+CODE: <button type="button" id="button-filter" class="btn btn-primary pull-right"><i class="fa
+LINE: 140
+CODE: var filter_name = $('input[name=\'filter_name\']').val();
+LINE: 260
+
+FILE: admin/model/catalog/product.php
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "product_filter SET
+LINE: 129
+LINE: 339
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "product SET
+LINE: 4
+CODE: $this->db->query("UPDATE " . DB_PREFIX . "product SET model = '" . $this->db->escape($data['model']) . "',
+LINE: 205
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "product_description SET
+LINE: 37
+LINE: 244
+CODE: SET product_option_id = '" . (int)$product_option['product_option_id'] . "',
+LINE: 305
+LINE: 319
+CODE: product_option_id = '" . (int)$product_option['product_option_id'] . "',
+LINE: 305
+LINE: 319
+CODE: product_option_value_id = '" . (int)$product_option_value['product_option_value_id'] . "',
+LINE: 311
+CODE: if (!empty($data['filter_name'])) {
+LINE: 570
+LINE: 907
+CODE: $this->db->escape(sha1($salt . sha1($salt . sha1($data['password']))))
+LINE: 20
+LINE: 78
+CODE: $this->db->escape($salt = token(9))
+LINE: 20
+LINE: 78
+CODE: if ($this->user->hasPermission('access', 'marketplace/modification')) {
+NOT FOUND - OPERATION SKIPPED!
+CODE: if ($this->user->hasPermission('access', 'extension/event')) {
+LINE: 338
+
+FILE: admin/controller/extension/extension/module.php
+CODE: $files = glob(DIR_APPLICATION . 'controller/extension/module/*.php');
+NOT FOUND - OPERATION SKIPPED!
+CODE: $data['extensions'][] = array(
+LINE: 226
+----------------------------------------------------------------
+MOD: Add-links-to-admin-menu
+CODE: $catalog = array();
+LINE: 77
+CODE: public function index() {
+LINE: 119
+----------------------------------------------------------------
+MOD: d_twig_manager
+CODE: $file = DIR_TEMPLATE . $template;
+NOT FOUND - OPERATION SKIPPED!
+CODE: $output = $template->render($route . '.tpl'
+LINE: 92
+----------------------------------------------------------------
+MOD: Import export Combo
+CODE: $report = array();
+LINE: 1173
+----------------------------------------------------------------
+MOD: Local copy OCMOD by iSenseLabs
+
+FILE: admin/controller/extension/installer.php
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+LINE: 131
+CODE: public function unzip() {
+LINE: 292
+----------------------------------------------------------------
+MOD: scc
+----------------------------------------------------------------
+MOD: Удаление модулей
+CODE: $data['header'] = $this->load->controller('common/header');
+LINE: 50
+CODE: $data['token'] = $this->session->data['token'];
+LINE: 42
+CODE: move_uploaded_file($this->request->files['file']['tmp_name'], $file);
+LINE: 119
+LINE: 157
+CODE: $zip_name = zip_entry_name($entry);
+LINE: 222
+CODE: $json['success'] = $this->language->get('text_success');
+LINE: 746
+CODE: $json['error'] = sprintf($this->language->get('error_exists'), $modification_info['name']);
+LINE: 623
+CODE: public function unzip() {
+LINE: 507
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'], 'SSL')),
+NOT FOUND - OPERATION SKIPPED!
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'], true)),
+NOT FOUND - OPERATION SKIPPED!
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/localcopy', 'token=' . $this->session->data['token'], 'SSL')),
+NOT FOUND - OPERATION SKIPPED!
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/localcopy', 'token=' . $this->session->data['token'], true)),
+LINE: 173
+
+FILE: admin/controller/extension/modification.php
+CODE: $this->response->redirect
+LINE: 52
+LINE: 453
+LINE: 525
+LINE: 562
+LINE: 599
+LINE: 634
+
+FILE: admin/language/en-gb/extension/installer.php
+CODE: <?php
+LINE: 8
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: <?php
+LINE: 4
+CODE: if ($this->user->hasPermission('access', 'extension/extension')) {
+LINE: 427
+----------------------------------------------------------------
+2020-09-18 16:53:38 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+
+FILE: system/library/template/twig.php
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+MOD: Add css from backend (cartbinder@gmail.com)
+
+FILE: admin/controller/common/column_left.php
+CODE: if ($this->user->hasPermission('access', 'tool/log')) {
+LINE: 941
+----------------------------------------------------------------
+MOD: HTML Code
+
+FILE: admin/model/design/layout.php
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "layout_module WHERE
+LINE: 37
+LINE: 53
+
+FILE: admin/controller/design/layout.php
+CODE: foreach ($extensions as $code) {
+LINE: 373
+CODE: $this->load->controller('common/header');
+LINE: 260
+LINE: 479
+
+FILE: catalog/controller/common/header.php
+CODE: $this->load->view(
+LINE: 251
+LINE: 341
+LINE: 457
+CODE: 'common/header', $data)
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/footer.php
+CODE: $this->load->view(
+LINE: 180
+
+FILE: catalog/view/theme/default/template/common/footer.tpl
+CODE: <footer
+LINE: 8
+CODE: </body>
+LINE: 75
+----------------------------------------------------------------
+MOD: Universal Import Export Pro
+
+FILE: admin/view/template/common/header.tpl
+CODE: <li><a href="<?php echo $feed; ?>">
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: admin/model/customer/customer.php
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "customer SET
+LINE: 12
+
+FILE: admin/model/catalog/category.php
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "category SET
+LINE: 8
+
+FILE: admin/controller/catalog/product.php
+CODE: protected function getList() {
+LINE: 342
+CODE: $url .= '&filter_name='
+LINE: 68
+LINE: 145
+LINE: 225
+LINE: 288
+LINE: 526
+LINE: 705
+LINE: 761
+LINE: 1040
+CODE: 'filter_name'	  => $filter_name,
+LINE: 585
+
+FILE: admin/view/template/catalog/product_list.tpl
+CODE: <button type="button" id="button-filter" class="btn btn-primary pull-right"><i class="fa
+LINE: 140
+CODE: var filter_name = $('input[name=\'filter_name\']').val();
+LINE: 260
+
+FILE: admin/model/catalog/product.php
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "product_filter SET
+LINE: 129
+LINE: 339
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "product SET
+LINE: 4
+CODE: $this->db->query("UPDATE " . DB_PREFIX . "product SET model = '" . $this->db->escape($data['model']) . "',
+LINE: 205
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "product_description SET
+LINE: 37
+LINE: 244
+CODE: SET product_option_id = '" . (int)$product_option['product_option_id'] . "',
+LINE: 305
+LINE: 319
+CODE: product_option_id = '" . (int)$product_option['product_option_id'] . "',
+LINE: 305
+LINE: 319
+CODE: product_option_value_id = '" . (int)$product_option_value['product_option_value_id'] . "',
+LINE: 311
+CODE: if (!empty($data['filter_name'])) {
+LINE: 570
+LINE: 907
+CODE: $this->db->escape(sha1($salt . sha1($salt . sha1($data['password']))))
+LINE: 20
+LINE: 78
+CODE: $this->db->escape($salt = token(9))
+LINE: 20
+LINE: 78
+CODE: if ($this->user->hasPermission('access', 'marketplace/modification')) {
+NOT FOUND - OPERATION SKIPPED!
+CODE: if ($this->user->hasPermission('access', 'extension/event')) {
+LINE: 338
+
+FILE: admin/controller/extension/extension/module.php
+CODE: $files = glob(DIR_APPLICATION . 'controller/extension/module/*.php');
+NOT FOUND - OPERATION SKIPPED!
+CODE: $data['extensions'][] = array(
+LINE: 226
+----------------------------------------------------------------
+MOD: Add-links-to-admin-menu
+CODE: $catalog = array();
+LINE: 77
+CODE: public function index() {
+LINE: 119
+----------------------------------------------------------------
+MOD: d_twig_manager
+CODE: $file = DIR_TEMPLATE . $template;
+NOT FOUND - OPERATION SKIPPED!
+CODE: $output = $template->render($route . '.tpl'
+LINE: 92
+----------------------------------------------------------------
+MOD: Import export Combo
+CODE: $report = array();
+LINE: 1173
+----------------------------------------------------------------
+MOD: Local copy OCMOD by iSenseLabs
+
+FILE: admin/controller/extension/installer.php
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+LINE: 131
+CODE: public function unzip() {
+LINE: 292
+----------------------------------------------------------------
+MOD: scc
+----------------------------------------------------------------
+MOD: Удаление модулей
+CODE: $data['header'] = $this->load->controller('common/header');
+LINE: 50
+CODE: $data['token'] = $this->session->data['token'];
+LINE: 42
+CODE: move_uploaded_file($this->request->files['file']['tmp_name'], $file);
+LINE: 119
+LINE: 157
+CODE: $zip_name = zip_entry_name($entry);
+LINE: 222
+CODE: $json['success'] = $this->language->get('text_success');
+LINE: 746
+CODE: $json['error'] = sprintf($this->language->get('error_exists'), $modification_info['name']);
+LINE: 623
+CODE: public function unzip() {
+LINE: 507
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'], 'SSL')),
+NOT FOUND - OPERATION SKIPPED!
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'], true)),
+NOT FOUND - OPERATION SKIPPED!
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/localcopy', 'token=' . $this->session->data['token'], 'SSL')),
+NOT FOUND - OPERATION SKIPPED!
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/localcopy', 'token=' . $this->session->data['token'], true)),
+LINE: 173
+
+FILE: admin/controller/extension/modification.php
+CODE: $this->response->redirect
+LINE: 52
+LINE: 453
+LINE: 525
+LINE: 562
+LINE: 599
+LINE: 634
+
+FILE: admin/language/en-gb/extension/installer.php
+CODE: <?php
+LINE: 8
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: <?php
+LINE: 4
+CODE: if ($this->user->hasPermission('access', 'extension/extension')) {
+LINE: 427
+----------------------------------------------------------------
+2020-09-18 16:55:20 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+
+FILE: system/library/template/twig.php
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+MOD: Add css from backend (cartbinder@gmail.com)
+
+FILE: admin/controller/common/column_left.php
+CODE: if ($this->user->hasPermission('access', 'tool/log')) {
+LINE: 941
+----------------------------------------------------------------
+MOD: HTML Code
+
+FILE: admin/model/design/layout.php
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "layout_module WHERE
+LINE: 37
+LINE: 53
+
+FILE: admin/controller/design/layout.php
+CODE: foreach ($extensions as $code) {
+LINE: 373
+CODE: $this->load->controller('common/header');
+LINE: 260
+LINE: 479
+
+FILE: catalog/controller/common/header.php
+CODE: $this->load->view(
+LINE: 251
+LINE: 341
+LINE: 457
+CODE: 'common/header', $data)
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/footer.php
+CODE: $this->load->view(
+LINE: 180
+
+FILE: catalog/view/theme/default/template/common/footer.tpl
+CODE: <footer
+LINE: 8
+CODE: </body>
+LINE: 75
+----------------------------------------------------------------
+MOD: Universal Import Export Pro
+
+FILE: admin/view/template/common/header.tpl
+CODE: <li><a href="<?php echo $feed; ?>">
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: admin/model/customer/customer.php
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "customer SET
+LINE: 12
+
+FILE: admin/model/catalog/category.php
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "category SET
+LINE: 8
+
+FILE: admin/controller/catalog/product.php
+CODE: protected function getList() {
+LINE: 342
+CODE: $url .= '&filter_name='
+LINE: 68
+LINE: 145
+LINE: 225
+LINE: 288
+LINE: 526
+LINE: 705
+LINE: 761
+LINE: 1040
+CODE: 'filter_name'	  => $filter_name,
+LINE: 585
+
+FILE: admin/view/template/catalog/product_list.tpl
+CODE: <button type="button" id="button-filter" class="btn btn-primary pull-right"><i class="fa
+LINE: 140
+CODE: var filter_name = $('input[name=\'filter_name\']').val();
+LINE: 260
+
+FILE: admin/model/catalog/product.php
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "product_filter SET
+LINE: 129
+LINE: 339
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "product SET
+LINE: 4
+CODE: $this->db->query("UPDATE " . DB_PREFIX . "product SET model = '" . $this->db->escape($data['model']) . "',
+LINE: 205
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "product_description SET
+LINE: 37
+LINE: 244
+CODE: SET product_option_id = '" . (int)$product_option['product_option_id'] . "',
+LINE: 305
+LINE: 319
+CODE: product_option_id = '" . (int)$product_option['product_option_id'] . "',
+LINE: 305
+LINE: 319
+CODE: product_option_value_id = '" . (int)$product_option_value['product_option_value_id'] . "',
+LINE: 311
+CODE: if (!empty($data['filter_name'])) {
+LINE: 570
+LINE: 907
+CODE: $this->db->escape(sha1($salt . sha1($salt . sha1($data['password']))))
+LINE: 20
+LINE: 78
+CODE: $this->db->escape($salt = token(9))
+LINE: 20
+LINE: 78
+CODE: if ($this->user->hasPermission('access', 'marketplace/modification')) {
+NOT FOUND - OPERATION SKIPPED!
+CODE: if ($this->user->hasPermission('access', 'extension/event')) {
+LINE: 338
+
+FILE: admin/controller/extension/extension/module.php
+CODE: $files = glob(DIR_APPLICATION . 'controller/extension/module/*.php');
+NOT FOUND - OPERATION SKIPPED!
+CODE: $data['extensions'][] = array(
+LINE: 226
+----------------------------------------------------------------
+MOD: Add-links-to-admin-menu
+CODE: $catalog = array();
+LINE: 77
+CODE: public function index() {
+LINE: 119
+----------------------------------------------------------------
+MOD: d_twig_manager
+CODE: $file = DIR_TEMPLATE . $template;
+NOT FOUND - OPERATION SKIPPED!
+CODE: $output = $template->render($route . '.tpl'
+LINE: 92
+----------------------------------------------------------------
+MOD: Import export Combo
+CODE: $report = array();
+LINE: 1173
+----------------------------------------------------------------
+MOD: Local copy OCMOD by iSenseLabs
+
+FILE: admin/controller/extension/installer.php
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+LINE: 131
+CODE: public function unzip() {
+LINE: 292
+----------------------------------------------------------------
+MOD: scc
+----------------------------------------------------------------
+MOD: Удаление модулей
+CODE: $data['header'] = $this->load->controller('common/header');
+LINE: 50
+CODE: $data['token'] = $this->session->data['token'];
+LINE: 42
+CODE: move_uploaded_file($this->request->files['file']['tmp_name'], $file);
+LINE: 119
+LINE: 157
+CODE: $zip_name = zip_entry_name($entry);
+LINE: 222
+CODE: $json['success'] = $this->language->get('text_success');
+LINE: 746
+CODE: $json['error'] = sprintf($this->language->get('error_exists'), $modification_info['name']);
+LINE: 623
+CODE: public function unzip() {
+LINE: 507
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'], 'SSL')),
+NOT FOUND - OPERATION SKIPPED!
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'], true)),
+NOT FOUND - OPERATION SKIPPED!
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/localcopy', 'token=' . $this->session->data['token'], 'SSL')),
+NOT FOUND - OPERATION SKIPPED!
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/localcopy', 'token=' . $this->session->data['token'], true)),
+LINE: 173
+
+FILE: admin/controller/extension/modification.php
+CODE: $this->response->redirect
+LINE: 52
+LINE: 453
+LINE: 525
+LINE: 562
+LINE: 599
+LINE: 634
+
+FILE: admin/language/en-gb/extension/installer.php
+CODE: <?php
+LINE: 8
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: <?php
+LINE: 4
+CODE: if ($this->user->hasPermission('access', 'extension/extension')) {
+LINE: 427
+----------------------------------------------------------------
+2020-09-18 17:00:07 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+
+FILE: system/library/template/twig.php
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+MOD: Add css from backend (cartbinder@gmail.com)
+
+FILE: admin/controller/common/column_left.php
+CODE: if ($this->user->hasPermission('access', 'tool/log')) {
+LINE: 941
+----------------------------------------------------------------
+MOD: HTML Code
+
+FILE: admin/model/design/layout.php
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "layout_module WHERE
+LINE: 37
+LINE: 53
+
+FILE: admin/controller/design/layout.php
+CODE: foreach ($extensions as $code) {
+LINE: 373
+CODE: $this->load->controller('common/header');
+LINE: 260
+LINE: 479
+
+FILE: catalog/controller/common/header.php
+CODE: $this->load->view(
+LINE: 251
+LINE: 341
+LINE: 457
+CODE: 'common/header', $data)
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/footer.php
+CODE: $this->load->view(
+LINE: 180
+
+FILE: catalog/view/theme/default/template/common/footer.tpl
+CODE: <footer
+LINE: 8
+CODE: </body>
+LINE: 75
+----------------------------------------------------------------
+MOD: Universal Import Export Pro
+
+FILE: admin/view/template/common/header.tpl
+CODE: <li><a href="<?php echo $feed; ?>">
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: admin/model/customer/customer.php
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "customer SET
+LINE: 12
+
+FILE: admin/model/catalog/category.php
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "category SET
+LINE: 8
+
+FILE: admin/controller/catalog/product.php
+CODE: protected function getList() {
+LINE: 342
+CODE: $url .= '&filter_name='
+LINE: 68
+LINE: 145
+LINE: 225
+LINE: 288
+LINE: 526
+LINE: 705
+LINE: 761
+LINE: 1040
+CODE: 'filter_name'	  => $filter_name,
+LINE: 585
+
+FILE: admin/view/template/catalog/product_list.tpl
+CODE: <button type="button" id="button-filter" class="btn btn-primary pull-right"><i class="fa
+LINE: 140
+CODE: var filter_name = $('input[name=\'filter_name\']').val();
+LINE: 260
+
+FILE: admin/model/catalog/product.php
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "product_filter SET
+LINE: 129
+LINE: 339
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "product SET
+LINE: 4
+CODE: $this->db->query("UPDATE " . DB_PREFIX . "product SET model = '" . $this->db->escape($data['model']) . "',
+LINE: 205
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "product_description SET
+LINE: 37
+LINE: 244
+CODE: SET product_option_id = '" . (int)$product_option['product_option_id'] . "',
+LINE: 305
+LINE: 319
+CODE: product_option_id = '" . (int)$product_option['product_option_id'] . "',
+LINE: 305
+LINE: 319
+CODE: product_option_value_id = '" . (int)$product_option_value['product_option_value_id'] . "',
+LINE: 311
+CODE: if (!empty($data['filter_name'])) {
+LINE: 570
+LINE: 907
+CODE: $this->db->escape(sha1($salt . sha1($salt . sha1($data['password']))))
+LINE: 20
+LINE: 78
+CODE: $this->db->escape($salt = token(9))
+LINE: 20
+LINE: 78
+CODE: if ($this->user->hasPermission('access', 'marketplace/modification')) {
+NOT FOUND - OPERATION SKIPPED!
+CODE: if ($this->user->hasPermission('access', 'extension/event')) {
+LINE: 338
+
+FILE: admin/controller/extension/extension/module.php
+CODE: $files = glob(DIR_APPLICATION . 'controller/extension/module/*.php');
+NOT FOUND - OPERATION SKIPPED!
+CODE: $data['extensions'][] = array(
+LINE: 226
+----------------------------------------------------------------
+MOD: Add-links-to-admin-menu
+CODE: $catalog = array();
+LINE: 77
+CODE: public function index() {
+LINE: 119
+----------------------------------------------------------------
+MOD: d_twig_manager
+CODE: $file = DIR_TEMPLATE . $template;
+NOT FOUND - OPERATION SKIPPED!
+CODE: $output = $template->render($route . '.tpl'
+LINE: 92
+----------------------------------------------------------------
+MOD: Import export Combo
+CODE: $report = array();
+LINE: 1173
+----------------------------------------------------------------
+MOD: Local copy OCMOD by iSenseLabs
+
+FILE: admin/controller/extension/installer.php
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+LINE: 131
+CODE: public function unzip() {
+LINE: 292
+----------------------------------------------------------------
+MOD: scc
+----------------------------------------------------------------
+MOD: Удаление модулей
+CODE: $data['header'] = $this->load->controller('common/header');
+LINE: 50
+CODE: $data['token'] = $this->session->data['token'];
+LINE: 42
+CODE: move_uploaded_file($this->request->files['file']['tmp_name'], $file);
+LINE: 119
+LINE: 157
+CODE: $zip_name = zip_entry_name($entry);
+LINE: 222
+CODE: $json['success'] = $this->language->get('text_success');
+LINE: 746
+CODE: $json['error'] = sprintf($this->language->get('error_exists'), $modification_info['name']);
+LINE: 623
+CODE: public function unzip() {
+LINE: 507
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'], 'SSL')),
+NOT FOUND - OPERATION SKIPPED!
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'], true)),
+NOT FOUND - OPERATION SKIPPED!
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/localcopy', 'token=' . $this->session->data['token'], 'SSL')),
+NOT FOUND - OPERATION SKIPPED!
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/localcopy', 'token=' . $this->session->data['token'], true)),
+LINE: 173
+
+FILE: admin/controller/extension/modification.php
+CODE: $this->response->redirect
+LINE: 52
+LINE: 453
+LINE: 525
+LINE: 562
+LINE: 599
+LINE: 634
+
+FILE: admin/language/en-gb/extension/installer.php
+CODE: <?php
+LINE: 8
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: <?php
+LINE: 4
+CODE: if ($this->user->hasPermission('access', 'extension/extension')) {
+LINE: 427
+----------------------------------------------------------------
+2020-09-18 17:03:54 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+
+FILE: system/library/template/twig.php
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+MOD: Add css from backend (cartbinder@gmail.com)
+
+FILE: admin/controller/common/column_left.php
+CODE: if ($this->user->hasPermission('access', 'tool/log')) {
+LINE: 941
+----------------------------------------------------------------
+MOD: Universal Import Export Pro
+
+FILE: admin/view/template/common/header.tpl
+CODE: <li><a href="<?php echo $feed; ?>">
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: admin/model/customer/customer.php
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "customer SET
+LINE: 12
+
+FILE: admin/model/catalog/category.php
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "category SET
+LINE: 8
+
+FILE: admin/controller/catalog/product.php
+CODE: protected function getList() {
+LINE: 342
+CODE: $url .= '&filter_name='
+LINE: 68
+LINE: 145
+LINE: 225
+LINE: 288
+LINE: 526
+LINE: 705
+LINE: 761
+LINE: 1040
+CODE: 'filter_name'	  => $filter_name,
+LINE: 585
+
+FILE: admin/view/template/catalog/product_list.tpl
+CODE: <button type="button" id="button-filter" class="btn btn-primary pull-right"><i class="fa
+LINE: 140
+CODE: var filter_name = $('input[name=\'filter_name\']').val();
+LINE: 260
+
+FILE: admin/model/catalog/product.php
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "product_filter SET
+LINE: 129
+LINE: 339
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "product SET
+LINE: 4
+CODE: $this->db->query("UPDATE " . DB_PREFIX . "product SET model = '" . $this->db->escape($data['model']) . "',
+LINE: 205
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "product_description SET
+LINE: 37
+LINE: 244
+CODE: SET product_option_id = '" . (int)$product_option['product_option_id'] . "',
+LINE: 305
+LINE: 319
+CODE: product_option_id = '" . (int)$product_option['product_option_id'] . "',
+LINE: 305
+LINE: 319
+CODE: product_option_value_id = '" . (int)$product_option_value['product_option_value_id'] . "',
+LINE: 311
+CODE: if (!empty($data['filter_name'])) {
+LINE: 570
+LINE: 907
+CODE: $this->db->escape(sha1($salt . sha1($salt . sha1($data['password']))))
+LINE: 20
+LINE: 78
+CODE: $this->db->escape($salt = token(9))
+LINE: 20
+LINE: 78
+CODE: if ($this->user->hasPermission('access', 'marketplace/modification')) {
+NOT FOUND - OPERATION SKIPPED!
+CODE: if ($this->user->hasPermission('access', 'extension/event')) {
+LINE: 338
+
+FILE: admin/controller/extension/extension/module.php
+CODE: $files = glob(DIR_APPLICATION . 'controller/extension/module/*.php');
+NOT FOUND - OPERATION SKIPPED!
+CODE: $data['extensions'][] = array(
+LINE: 226
+----------------------------------------------------------------
+MOD: Add-links-to-admin-menu
+CODE: $catalog = array();
+LINE: 77
+CODE: public function index() {
+LINE: 119
+----------------------------------------------------------------
+MOD: d_twig_manager
+CODE: $file = DIR_TEMPLATE . $template;
+NOT FOUND - OPERATION SKIPPED!
+CODE: $output = $template->render($route . '.tpl'
+LINE: 92
+----------------------------------------------------------------
+MOD: Import export Combo
+CODE: $report = array();
+LINE: 1173
+----------------------------------------------------------------
+MOD: Local copy OCMOD by iSenseLabs
+
+FILE: admin/controller/extension/installer.php
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+LINE: 131
+CODE: public function unzip() {
+LINE: 292
+----------------------------------------------------------------
+MOD: scc
+----------------------------------------------------------------
+MOD: Удаление модулей
+CODE: $data['header'] = $this->load->controller('common/header');
+LINE: 50
+CODE: $data['token'] = $this->session->data['token'];
+LINE: 42
+CODE: move_uploaded_file($this->request->files['file']['tmp_name'], $file);
+LINE: 119
+LINE: 157
+CODE: $zip_name = zip_entry_name($entry);
+LINE: 222
+CODE: $json['success'] = $this->language->get('text_success');
+LINE: 746
+CODE: $json['error'] = sprintf($this->language->get('error_exists'), $modification_info['name']);
+LINE: 623
+CODE: public function unzip() {
+LINE: 507
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'], 'SSL')),
+NOT FOUND - OPERATION SKIPPED!
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'], true)),
+NOT FOUND - OPERATION SKIPPED!
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/localcopy', 'token=' . $this->session->data['token'], 'SSL')),
+NOT FOUND - OPERATION SKIPPED!
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/localcopy', 'token=' . $this->session->data['token'], true)),
+LINE: 173
+
+FILE: admin/controller/extension/modification.php
+CODE: $this->response->redirect
+LINE: 52
+LINE: 453
+LINE: 525
+LINE: 562
+LINE: 599
+LINE: 634
+
+FILE: admin/language/en-gb/extension/installer.php
+CODE: <?php
+LINE: 8
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: <?php
+LINE: 4
+CODE: if ($this->user->hasPermission('access', 'extension/extension')) {
+LINE: 427
+----------------------------------------------------------------
+2020-09-18 17:24:30 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+
+FILE: system/library/template/twig.php
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+MOD: Add css from backend (cartbinder@gmail.com)
+
+FILE: admin/controller/common/column_left.php
+CODE: if ($this->user->hasPermission('access', 'tool/log')) {
+LINE: 941
+----------------------------------------------------------------
+MOD: Universal Import Export Pro
+
+FILE: admin/view/template/common/header.tpl
+CODE: <li><a href="<?php echo $feed; ?>">
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: admin/model/customer/customer.php
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "customer SET
+LINE: 12
+
+FILE: admin/model/catalog/category.php
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "category SET
+LINE: 8
+
+FILE: admin/controller/catalog/product.php
+CODE: protected function getList() {
+LINE: 342
+CODE: $url .= '&filter_name='
+LINE: 68
+LINE: 145
+LINE: 225
+LINE: 288
+LINE: 526
+LINE: 705
+LINE: 761
+LINE: 1040
+CODE: 'filter_name'	  => $filter_name,
+LINE: 585
+
+FILE: admin/view/template/catalog/product_list.tpl
+CODE: <button type="button" id="button-filter" class="btn btn-primary pull-right"><i class="fa
+LINE: 140
+CODE: var filter_name = $('input[name=\'filter_name\']').val();
+LINE: 260
+
+FILE: admin/model/catalog/product.php
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "product_filter SET
+LINE: 129
+LINE: 339
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "product SET
+LINE: 4
+CODE: $this->db->query("UPDATE " . DB_PREFIX . "product SET model = '" . $this->db->escape($data['model']) . "',
+LINE: 205
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "product_description SET
+LINE: 37
+LINE: 244
+CODE: SET product_option_id = '" . (int)$product_option['product_option_id'] . "',
+LINE: 305
+LINE: 319
+CODE: product_option_id = '" . (int)$product_option['product_option_id'] . "',
+LINE: 305
+LINE: 319
+CODE: product_option_value_id = '" . (int)$product_option_value['product_option_value_id'] . "',
+LINE: 311
+CODE: if (!empty($data['filter_name'])) {
+LINE: 570
+LINE: 907
+CODE: $this->db->escape(sha1($salt . sha1($salt . sha1($data['password']))))
+LINE: 20
+LINE: 78
+CODE: $this->db->escape($salt = token(9))
+LINE: 20
+LINE: 78
+CODE: if ($this->user->hasPermission('access', 'marketplace/modification')) {
+NOT FOUND - OPERATION SKIPPED!
+CODE: if ($this->user->hasPermission('access', 'extension/event')) {
+LINE: 338
+
+FILE: admin/controller/extension/extension/module.php
+CODE: $files = glob(DIR_APPLICATION . 'controller/extension/module/*.php');
+NOT FOUND - OPERATION SKIPPED!
+CODE: $data['extensions'][] = array(
+LINE: 226
+----------------------------------------------------------------
+MOD: Add-links-to-admin-menu
+CODE: $catalog = array();
+LINE: 77
+CODE: public function index() {
+LINE: 119
+----------------------------------------------------------------
+MOD: d_twig_manager
+CODE: $file = DIR_TEMPLATE . $template;
+NOT FOUND - OPERATION SKIPPED!
+CODE: $output = $template->render($route . '.tpl'
+LINE: 92
+----------------------------------------------------------------
+MOD: Import export Combo
+CODE: $report = array();
+LINE: 1173
+----------------------------------------------------------------
+MOD: Local copy OCMOD by iSenseLabs
+
+FILE: admin/controller/extension/installer.php
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+LINE: 131
+CODE: public function unzip() {
+LINE: 292
+----------------------------------------------------------------
+MOD: scc
+----------------------------------------------------------------
+MOD: Удаление модулей
+CODE: $data['header'] = $this->load->controller('common/header');
+LINE: 50
+CODE: $data['token'] = $this->session->data['token'];
+LINE: 42
+CODE: move_uploaded_file($this->request->files['file']['tmp_name'], $file);
+LINE: 119
+LINE: 157
+CODE: $zip_name = zip_entry_name($entry);
+LINE: 222
+CODE: $json['success'] = $this->language->get('text_success');
+LINE: 746
+CODE: $json['error'] = sprintf($this->language->get('error_exists'), $modification_info['name']);
+LINE: 623
+CODE: public function unzip() {
+LINE: 507
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'], 'SSL')),
+NOT FOUND - OPERATION SKIPPED!
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'], true)),
+NOT FOUND - OPERATION SKIPPED!
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/localcopy', 'token=' . $this->session->data['token'], 'SSL')),
+NOT FOUND - OPERATION SKIPPED!
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/localcopy', 'token=' . $this->session->data['token'], true)),
+LINE: 173
+
+FILE: admin/controller/extension/modification.php
+CODE: $this->response->redirect
+LINE: 52
+LINE: 453
+LINE: 525
+LINE: 562
+LINE: 599
+LINE: 634
+
+FILE: admin/language/en-gb/extension/installer.php
+CODE: <?php
+LINE: 8
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: <?php
+LINE: 4
+CODE: if ($this->user->hasPermission('access', 'extension/extension')) {
+LINE: 427
+----------------------------------------------------------------

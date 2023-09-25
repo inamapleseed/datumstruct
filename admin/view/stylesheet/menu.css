@@ -1,0 +1,171 @@
+.pointer{
+    cursor: pointer;
+}
+
+body.dragging,
+body.dragging * {
+    cursor: move !important;
+}
+
+.menuDrag-body{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.dragged {
+    position: absolute;
+    opacity: 0.5;
+    z-index: 2000;
+}
+
+ul#menuList {
+    list-style-type: none;
+    padding-left: 0px;
+    margin: 0px 0px;
+}
+
+ul#menuList li div.new-tab,
+ul#menuList li div.modify,
+ul#menuList li div.remove,
+ul#menuList li div.handler {
+    cursor: pointer;
+    width: 1px;
+    border-right: 1px solid #ccc;
+}
+
+ul#menuList li div.modify,
+ul#menuList li div.remove{
+    border-right: 0px;
+    border-left: 1px solid #ccc;
+}
+
+ul#menuList li div.modify i{
+    font-size: 18px;
+}
+
+ul#menuList li i,
+ul#menuList li {
+    font-size: 14px
+}
+
+ul#menuList li {
+    position: relative;
+    display: table;
+    margin: 10px 0px;
+    padding: 0px;
+    border: 1px solid #cccccc;
+    background: #fff;
+    width: 450px;
+}
+
+ul#menuList li .menu-cell{
+    width: 100%;
+}
+
+ul#menuList li .menu-cell > *{
+    display: table-cell;
+    padding: 10px 14px;
+    width: 1px;
+}
+
+ul#menuList li .menu-cell > .text{
+    width: 100%;
+}
+
+ul#menuList li.placeholder {
+    position: relative;
+}
+
+ul#menuList li.placeholder:before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 0px;
+    height: 0px;
+    border: 6px solid transparent;
+    border-left: 7px solid #f00;
+    top: 50%;
+    transform: translate(-100%, -50%);
+}
+
+.input-group + .input-group{
+    margin-top: 6px;
+}
+
+.ui-sortable-placeholder{
+    background: #f1f1f1 !important;
+    border: 1px solid #f1f1f1 !important;
+    visibility: visible !important;
+}
+
+#samplebox{
+    width: 100%;
+    height: 250px;
+}
+
+.list label{
+    padding-left: 18px;
+    position: relative;
+    width: 100%;
+}
+
+.list label input{
+    position: absolute;
+    left:0px;
+    top: 2px;
+    margin: 0px;
+}
+
+.list label span{
+    display: inline-block;
+    vertical-align: top;
+}
+
+.list label i + span{
+    width: calc(100% - 14px);
+}
+
+.list label i + span + span{
+    width: calc(100% - 28px);
+}
+
+.menu-name-area{
+    display: none;
+}
+
+.menu-name-area .menu-area{
+    padding: 7px;
+    border-top: 1px solid #ccc;
+}
+
+#accordion .panel-heading{ 
+    padding: 0px;
+}
+
+#accordion .panel-heading a{
+    display: block;
+    padding: 10px 15px;
+}
+
+.new-tab.on > .fa{
+    color: #2eaf10;
+    text-shadow: 0px 0px 3px #2eaf10;
+}
+
+.new-tab:not(.on):hover .fa{
+    color: #2a91ec;
+    text-shadow: 0px 0px 3px #2a91ec;
+}
+
+.fake-btn{
+    padding: 8px 0px 8px 7px;
+    font-weight: bold;
+}
+
+ul#menuList .icon a,
+ul#menuList .icon img{
+    width: 40px;
+    height: 40px;
+    padding: 0px;
+}

@@ -1,0 +1,61 @@
+<modification>
+	<name>Add css from backend (cartbinder@gmail.com)</name>
+	<version>1.1</version>
+	<link>http://store.cartbinder.com/</link>
+	<author>Pavan Mehta | CartBinder.com</author>
+	<code>acssfb</code>
+	<file path="admin/controller/common/menu.php">
+		<operation>
+			<search><![CDATA[$data['text_zone']]]></search>
+			<add position="before"><![CDATA[$data['text_addcss'] = $this->language->get('text_addcss');
+				]]></add>
+		</operation>
+		<operation>
+			<search><![CDATA[$data['zone']]]></search>
+			<add position="before"><![CDATA[$data['addcss'] = $this->url->link('tool/freecss','token=' . $this->session->data['token']);
+				]]></add>
+		</operation>
+	</file>
+	<file path="admin/language/*/common/menu.php">
+		<operation>
+			<search><![CDATA[
+				$_['text_zone']
+				]]>
+			</search>
+			<add position="before">
+				<![CDATA[
+				$_['text_addcss']  = 'Add Css';
+				]]>
+			</add>
+		</operation>
+	</file>
+	<file path="admin/view/template/common/menu.tpl">
+		<operation>
+			<search><![CDATA[<li><a href="<?php echo $error_log; ?>"><?php echo $text_error_log; ?></a></li>]]></search>
+			<add position="before"><![CDATA[<li><a href="<?php echo $addcss; ?>"><?php echo $text_addcss; ?></a></li>]]>
+			</add>
+		</operation>
+	</file>
+	<file path="admin/controller/common/column_left.php">
+		<operation>
+			<search><![CDATA[if ($this->user->hasPermission('access', 'tool/log')) {]]></search>
+			<add position="before"><![CDATA[
+				if ($this->user->hasPermission('access', 'tool/freecss')) {
+					$tool[] = array(
+						'name'	   => "Add Css",
+						'href'     => $this->url->link('tool/freecss', 'token=' . $this->session->data['token'], true),
+						'children' => array()		
+					);
+				}
+				]]></add>
+		</operation>
+	</file>
+	<file path="catalog/view/theme/*/template/common/header.tpl">
+		<operation>
+			<search><![CDATA[</head>]]>
+			</search>
+			<add position="before"><![CDATA[<link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/freecss.css" />]]>
+			</add>
+		</operation>
+	</file>
+</modification>

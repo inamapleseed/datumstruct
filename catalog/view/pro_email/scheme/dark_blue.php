@@ -1,0 +1,18 @@
+<?php return array(
+  'text' => '#444',
+  'link' => '#3572B0',
+  'btn' => '#3572B0',
+  'btn_text' => '#fff',
+  'bg_page' => '#383838',
+  'bg_header' => '#3572B0',
+  'bg_body' => '#fff',
+  'bg_footer' => '#ededed',
+  'text_top' => '#ffffff',
+  'text_head' => '#ffffff',
+  'text_foot' => '#444444',
+  'text_bottom' => '#ffffff',
+  'link_top' => '#3572B0',
+  'link_head' => '#3572B0',
+  'link_foot' => '#3572B0',
+  'link_bottom' => '#3572B0',
+);

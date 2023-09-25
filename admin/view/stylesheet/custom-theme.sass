@@ -1,0 +1,138 @@
+$border_color: #e1e1e1
+$gutter: 15px
+$i: !important
+
+.flex-row
+    display: flex
+    flex-direction: row-reverse
+
+    & > .btn
+        flex: 1
+        margin-left: $gutter
+#flex-body
+    & > .flex-section-block
+        &:last-child
+            margin-bottom: -$gutter
+
+.flex-grid
+    display: flex
+    width: 100%
+    flex-direction: column
+
+    & > .btn
+        justify-content: center
+        flex-direction: column
+        display: flex
+        margin-left: $gutter
+
+    .flex-content
+        display: flex
+        flex: 1
+        flex-wrap: wrap
+        & > *
+            flex: 1 1 calc(100% / 6)
+            @media (max-width: 1199px)
+                flex: 1 1 calc(100% / 3)
+
+    .flex-section-body
+        display: flex    
+
+        & > .btn 
+            display: flex
+            flex-direction: column
+            justify-content: center
+            margin-bottom: $gutter + 2
+
+    .flex-section-block + .flex-section-block
+        margin-top: $gutter * 3
+        padding-top: $gutter * 3
+        border-top: 3px solid rgba(#000, 0.3)
+        position: relative
+
+    .flex-content-block
+        display: flex
+        flex-direction: column
+        padding-right: $gutter
+        padding-bottom: $gutter
+
+        & > .btn-group
+            margin-bottom: $gutter
+            display: flex
+            .btn + .btn
+                flex: 1
+        .html-block
+            border: 1px solid $border_color
+            padding: 0px
+            min-height: 200px
+            flex: 1
+            .preview-multi-content
+                border: 1px solid $border_color
+                border-radius: 5px
+                padding: 8px
+                margin-bottom: 8px
+
+    .flex-section-header
+        padding: 10px 0px
+        display: flex
+        .flex-section-background
+            padding-right: $gutter
+            display: flex
+            flex-direction: column
+            img
+                width: 100%
+        .flex-section-background + div
+            flex: 1
+
+.img-responsive
+    height: auto $i
+
+.content-area
+    display: flex
+    .content-filling-area
+        flex: 1
+    .content-multiply-area
+        overflow: hidden
+        width: 0px
+        margin: 0px
+        padding-left: 0px
+        transition: all 0.3s ease
+        .content-multiply-preview
+            margin-top: 15px
+        &.open
+            width: 260px
+            height: 597px
+            padding-left: $gutter
+
+            .content-multiply-preview
+                border: 1px solid $border_color
+                background: #fefefe
+                overflow: auto
+                height: 100%
+
+    .add_to_multiply_area
+        display: none
+        width: 100%
+        &.open
+            display: table
+    .preview-multi-content
+        border: 1px solid $border_color
+        border-radius: 5px
+        padding: 8px
+        margin: 5px
+        
+.truncate
+    display: block
+    overflow: hidden
+    white-space: nowrap
+    text-overflow: ellipsis
+    *
+        display: inline $i
+.float-none
+    float: none $i
+
+
+span[data-toggle="tooltip"]::after
+    font-family: FontAwesome
+    color: #1E91CF
+    content: "\f059"
+    margin-left: 4px

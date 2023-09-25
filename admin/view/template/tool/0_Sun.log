@@ -1,0 +1,14 @@
+---------- Date: 2017-03-12 18:58:02 ~ IP : 182.187.138.139 ----------
+REQUEST URI : /
+MOD DETAILS:
+   modFile   : /home/cartgeek/public_html/vqmod/xml/a_vqmod_d_quickcheckout.xml
+   id        : AJAX QUICK CHECKOUT V6 BY DREAMVENTION
+   version   : 2.0.0.0
+   vqmver    : 2.2.1
+   author    : dreamvention.com
+VQModObject::parseMods - Could not resolve path for [system/library/tax.php] (SKIPPED)
+VQModObject::parseMods - Could not resolve path for [system/library/tax.php] (SKIPPED)
+VQModObject::parseMods - Could not resolve path for [system/library/tax.php] (SKIPPED)
+----------------------------------------------------------------------
+
+

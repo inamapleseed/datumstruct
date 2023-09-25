@@ -1,0 +1,444 @@
+/* ADMIN PANEL STYLES */
+
+/* ExcelPorts */
+.ExcelPortContent ul, li {
+  list-style:none;
+  padding:0;
+  margin:0; 
+}
+
+.ExcelPortContent h1 .ExcelPortsTitle {
+  color:#333;
+  font-family: Trebuchet MS;
+  font-size: 15px;
+  display: block;
+  float: left;
+  margin-right:20px;
+}
+
+.ExcelPortContent .box > .heading h1 {
+  width: 680px; 
+}
+
+ul.ExcelPortAdminMenu {
+  width: 160px;
+  list-style:none;
+  padding:0;
+  margin:-10px 0 0 -30px;
+  background:#EDEDED;
+  min-height: 319px;
+  float:left;
+  font-family: Trebuchet MS;
+  border-left: 1px solid #CCC;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #CCC;
+}
+
+.ExcelPortAdminMenu li {
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:block;
+  height: 38px;
+  margin-bottom: 0px;
+  line-height:38px;
+  padding-left: 30px;
+  font-size: 14px;
+  cursor:pointer;
+  color:#333;
+  text-shadow: #fff 1px 1px 0px;
+}
+
+.ExcelPortAdminMenu li.selected {
+  background:#CFDE55;
+}
+
+.ExcelPortAdminMenu li:hover {
+  color:#000;
+}
+
+
+.ExcelPortAdminSuperMenu {
+  float: left;  
+  margin-left: 19px;
+}
+
+.ExcelPortAdminSuperMenu li {
+  float: left;  
+  font-size: 14px;
+  line-height:23px;
+  cursor: pointer;
+  color: #333;
+  font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+  font-weight:normal;
+  padding: 0 10px;
+  padding-bottom: 6px;
+  padding-top: 6px;
+  margin-top: -7px;
+  margin-right: 5px;
+  background: #DBDBDB;
+  -webkit-border-top-left-radius: 6px;
+  -webkit-border-top-right-radius: 6px;
+  -moz-border-radius-topleft: 6px;
+  -moz-border-radius-topright: 6px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+.ExcelPortAdminSuperMenu li.selected {
+  background:#fff;
+  font-weight:bold;
+  color:#333;
+}
+
+
+.ExcelPortAdminWrappers {
+  list-style:none;
+  padding:0;
+  margin:0; 
+}
+
+.ExcelPortAdminWrappers li {
+  list-style:none;
+  padding:0;
+  margin:0;
+  height: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  display: none;
+}
+
+.ExcelPortAdminWrappers hr {
+  border: none;
+  border-bottom: 1px dashed #ccc;
+}
+
+.ExcelPortAdminWrappers label {
+  min-width: 200px; 
+  margin-top:5px;
+  display:block;
+  float:left;
+  padding-right: 15px;
+}
+
+.ExcelPortAdminWrappers .ExcelPortFields > span {
+  float:left !important;  
+}
+
+.ExcelPortAdminWrappers select, .ExcelPortAdminWrappers input, .ExcelPortAdminWrappers textarea {
+  min-width: 140px; 
+}
+
+.ExcelPortAdminWrappers textarea {
+  min-height:140px; 
+  min-width:400px;
+}
+
+.ExcelPortAdminWrappers li:first-child {
+  display:block;  
+}
+
+.ExcelPortWrapperTitle {
+  font-size: 16px;
+  margin-bottom: 15px;  
+}
+
+.ExcelPortAdminSuperWrappers .content {
+  padding: 10px;
+  margin-left: 160px;
+  min-height: 320px;
+}
+
+.ExcelPortAdminSuperWrappers > li {
+  display:none; 
+}
+
+.ExcelPortAdminSuperWrappers > li:first-child {
+  display: block;
+}
+
+.ExcelPortContent .clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+ 
+.ExcelPortContent .clearfix {
+  display: inline-block;
+}
+ 
+html[xmlns] .ExcelPortContent .clearfix {
+  display: block;
+}
+ 
+* html .ExcelPortContent .clearfix {
+  height: 1%;
+}
+
+.ExcelPortAdminSuperWrappers .ExcelPortWrapperTitle h2 {
+  color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+  border-bottom:none;
+  text-transform:none;
+  font-size: 24px;
+}
+
+.ExcelPortAdminSuperWrappers .ExcelPortWrapperTitle h3 {
+  color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+  border-bottom:none;
+  text-transform:none;
+  font-size: 18px;
+}
+
+.ExcelPortAdminSuperWrappers .ExcelPortWrapperText {
+  font-size: 12px;  
+}
+
+.ExcelPortAdminSuperWrappers .supportUL, .ExcelPortAdminSuperWrappers .ExcelPortUL {
+  padding-left: 20px; 
+}
+
+.ExcelPortAdminSuperWrappers .ExcelPortSupportButton {
+  background:#51AA68;
+  padding: 10px 20px;
+  color:white;
+  border: 2px solid #fff;
+  outline: 2px solid #4E9660;
+  text-decoration:none;
+  display:inline-block;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  
+}
+
+.ExcelPortAdminSuperWrappers .ExcelPortSupportButton:hover {
+  background:#4E9660;
+}
+
+.ExcelPortContent .box .notActivatedContent {
+  padding: 10px;
+  border-left: 1px solid #CCC;
+  border-right: 1px solid #CCC;
+  border-bottom: 1px solid #CCC;
+  min-height: 300px;
+  overflow: auto; 
+  text-align:center;
+  padding-top: 80px;
+}
+
+.ExcelPortContent .box .notActivatedContent h1 {
+  font-size:28px;
+  
+}
+
+.ExcelPortContent .ExcelPortActivateButton {
+  background:#069;
+  padding: 16px 28px;
+  color:white;
+  border: 4px solid #fff;
+  outline: 4px solid #ccc;
+  text-decoration:none;
+  display:inline-block;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 34px;
+  
+}
+
+.ExcelPortContent .ExcelPortActivateButton:hover {
+  background:#06d;
+}
+
+.wideBoxes input, .wideBoxes textarea {
+  width:320px;
+}
+
+.licensedTable td {
+  padding: 5px 10px 5px 0;
+}
+
+.licensedTable ul {
+  padding:0;
+  list-style:none;
+}
+
+a.continueAction {
+  height: 42px;
+  width: 157px;
+  color: #fff;
+  font-size: 14px;
+  padding: 0;
+  margin: 15px 0 10px 0;
+  display: block;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  line-height: 42px;
+}
+
+a.continueAction:active {
+  
+}
+
+div.help {
+  font-size: 12px;
+  color: #4a584e;
+  display: block;
+  line-height: 20px;
+  font-family: Arial, Verdana, Geneva, sans-serif;
+}
+
+div.help a.needMoreSize {
+  text-decoration: none;
+  color: #0074B6;
+  display: inline-block;
+  margin: 0 0 0 3px;
+  line-height: 20px;
+  height: 20px;
+}
+
+div.help a.needMoreSize:hover {
+  color: #006097;
+}
+
+div.question {
+  font-family: Arial, Verdana, Geneva, sans-serif;
+  font-size: 14px;
+  margin-top: 10px;
+  margin-left: 5px;
+}
+
+div.option {
+  margin: 5px 0 5px 13px;
+}
+
+
+.ui-widget-overlay {
+  background: #000;
+  opacity: .50;
+  filter: Alpha(Opacity=50);  
+}
+
+.ui-dialog {
+  padding: 0;
+  overflow: hidden;   
+  -moz-box-shadow: 0 0 20px -3px #000;
+  -webkit-box-shadow: 0 0 20px -3px #000;
+  box-shadow: 0 0 20px -3px #000;
+  background: #fff !important;
+  border: none;
+}
+
+.ui-dialog .ui-dialog-content {
+  padding: 20px;  
+}
+
+img.loadingImage {
+  margin: 32px auto;
+  display: block;
+}
+
+img.loadingImage2 {
+  margin: 0px auto;
+  display: inline;
+}
+
+#progressinfo {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  color: #000;
+  margin: 10px 0 0 0;
+  line-height: 16px;  
+  width: 530px;
+}
+
+button.finishActionButton {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  width: 94px;
+  height: 34px;
+  font-family: Arial, Helvetica;
+  font-size: 12px;
+}
+
+button.finishActionButton:active {
+}
+
+.padding20 {
+    padding: 20px 20px 80px 20px;
+}
+
+.option label, .question label {
+  margin: 0 10px;
+  padding: 0;
+  line-height: 15px;
+  display: inline-block;
+}
+
+h1, h2, h3, body, .btn, li {
+  line-height: inherit;
+}
+
+body, li, a {
+  font-size: 12px;
+}
+
+label {
+  display: inline-block;
+  font-size: 12px;
+}
+
+input[type="checkbox"], input[type="radio"] {
+  margin: 0 0 0 0;
+}
+
+a.button:hover {
+  color: white;
+  text-decoration: none;
+}
+.dataTypeFilter {
+  display: none;
+  margin: 0 0 0 35px;
+  padding: 15px;
+  border: solid 1px #ddd;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.dataTypeFilter table {
+  min-width: 720px;
+}
+.dataTypeFilter table td {
+  padding: 5px;
+}
+.dataTypeFilter table td input, .dataTypeFilter table td select {
+  margin-bottom: 4px;
+}
+.dataTypeFilter table td.right {
+  text-align: right;
+}
+.conjunctionSelect {
+  width: 70px;
+}
+select option[disabled="disabled"] {
+  color: #ccc;
+}
+.license_info {
+  display: inline-block;
+  margin-bottom: 5px;
+  padding-left: 0;
+}
+.license_label {
+  float: left;
+  width: 200px;
+}
+
+.alert {
+  padding: 10px 30px 10px 10px;
+}

@@ -1,0 +1,743 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+  <id>ExcelPort OpenStock</id>
+  <version>2.5.5</version>
+  <vqmver>2.x</vqmver>
+  <author>iSenseLabs Team | http://isenselabs.com</author>
+  
+  <file name="admin/model/extension/module/excelport.php">
+  <operation error="log">
+    <search position="after"><![CDATA[/* {EXTRA_PRODUCT_FIELDS} */]]></search>   
+            <add><![CDATA[
+      array(
+        'title' => 'Has Options',
+        'column_full' => 'S',
+        'column_light' => 'AO',
+        'column_bulk' => array(
+          'product' => 'AO'
+        ),
+        'name' => 'custom_has_options',
+        'select_sql' => "SELECT DISTINCT product_id, has_option as value FROM {DB_PREFIX}product",
+        'select_eval' => NULL,
+        'eval_add' => '',
+        'eval_edit' => ''
+      )
+      ]]></add>
+        </operation>
+    <operation>
+      <search position="replace"><![CDATA[public $productSize = 26;]]></search>
+      <add><![CDATA[public $productSize = 33;]]></add>
+    </operation>
+    <operation>
+      <search position="after"><![CDATA["reward points",]]></search>
+      <add><![CDATA[
+        "option stock",
+        "Option Stock",
+      ]]></add>
+    </operation>
+  </file>
+  
+  <file name="admin/model/extension/module/excelport_product.php">
+    <operation>
+      <search position="after"><![CDATA[class ModelExtensionModuleExcelportproduct extends ModelExtensionModuleExcelport {]]></search>
+      <add><![CDATA[
+        public function getCustomerGroupName($customer_group_id) {
+            if (version_compare(VERSION, '2.1.0.1', '>=')) {
+                $this->load->model('customer/customer_group');
+                $cg = $this->model_customer_customer_group->getCustomerGroup($customer_group_id);
+            } else {
+                $this->load->model('sale/customer_group');
+                $cg = $this->model_sale_customer_group->getCustomerGroup($customer_group_id);
+            }
+            
+            return !empty($cg['name']) ? $cg['name'] : '';
+        }
+
+        public function getCustomerGroupId($customer_group_name) {
+            $cg_id_query = $this->db->query("SELECT customer_group_id FROM " . DB_PREFIX . "customer_group_description WHERE name='" . $this->db->escape($customer_group_name) . "'");
+
+            return !empty($cg_id_query->row['customer_group_id']) ? (int)$cg_id_query->row['customer_group_id'] : 0;
+        }
+      ]]></add>
+    </operation>
+    <operation>
+      <search position="after"><![CDATA[$merges = array]]></search>
+      <add><![CDATA[
+      $merges[] = 2;
+      $merges[] = 26;
+      $merges[] = 2;
+      $merges[] = 32;
+      ]]></add>
+    </operation>
+    <operation>
+      <search position="before"><![CDATA[$leftColumnStaticText = array]]></search>
+      <add><![CDATA[$dynamicTemplates['open_stock'] = array(4,26,4,32);]]></add>
+    </operation>
+    <operation>
+      <search position="after"><![CDATA[$leftColumnStaticTextColumn4 = array]]></search>
+      <add><![CDATA[
+      $leftColumnStaticTextColumn1[] = null;
+      $leftColumnStaticTextColumn1[] = null;
+      $leftColumnStaticTextColumn1[] = null;
+      $leftColumnStaticTextColumn1[] = null;
+      $leftColumnStaticTextColumn1[] = null;
+      $leftColumnStaticTextColumn1[] = null;
+      $leftColumnStaticTextColumn1[] = null;
+      $leftColumnStaticTextColumn2[] = null;
+      $leftColumnStaticTextColumn2[] = null;
+      $leftColumnStaticTextColumn2[] = null;
+      $leftColumnStaticTextColumn2[] = null;
+      $leftColumnStaticTextColumn2[] = null;
+      $leftColumnStaticTextColumn2[] = null;
+      $leftColumnStaticTextColumn2[] = null;
+      $leftColumnStaticTextColumn3[] = 'Open Stock';
+      $leftColumnStaticTextColumn3[] = null;
+      $leftColumnStaticTextColumn3[] = null;
+      $leftColumnStaticTextColumn3[] = null;
+      $leftColumnStaticTextColumn3[] = null;
+      $leftColumnStaticTextColumn3[] = null;
+      $leftColumnStaticTextColumn3[] = null;
+      $leftColumnStaticTextColumn4[] = 'Combination/Type';
+      $leftColumnStaticTextColumn4[] = 'SKU/Group';
+      $leftColumnStaticTextColumn4[] = 'Weight/Date Start';
+      $leftColumnStaticTextColumn4[] = 'Stock/Date End';
+      $leftColumnStaticTextColumn4[] = 'Price';
+      $leftColumnStaticTextColumn4[] = 'Status/Quantity';
+      $leftColumnStaticTextColumn4[] = 'Image';
+      ]]></add>
+    </operation>
+    <operation>
+      <search position="before"><![CDATA[if (!empty($designLayoutRange[1])) {]]></search>
+      <add><![CDATA[
+      
+      // Open Stock
+      $this->load->model('tool/image');
+      $this->load->model('extension/module/openstock');
+      
+      $productOpenStocks = $this->model_extension_module_openstock->getVariants($row['product_id']);
+      
+      $i3 = $dynamicTemplates['open_stock'][0];
+      
+      foreach ($productOpenStocks as $productOpenStock) {
+        
+        $var = $productOpenStock['variant_values'];
+        $resulting_var = array();
+        foreach ($var as $item) {
+          if (isset($productOpenStock['option_values'][$item['product_option_value_id']]) && trim($productOpenStock['option_values'][$item['product_option_value_id']]) !== '') {
+            $resulting_var[] = $productOpenStock['option_values'][$item['product_option_value_id']];
+          }
+        }
+        
+        if (!empty($resulting_var)) {       
+          $productSheetObj->setCellValueExplicit(PHPExcel_Cell::stringFromColumnIndex($target[0] + $i3) . ($target[1] + $dynamicTemplates['open_stock'][1] + 0), implode('|', $resulting_var), PHPExcel_Cell_DataType::TYPE_STRING);
+          
+          $productSheetObj->setCellValueExplicit(PHPExcel_Cell::stringFromColumnIndex($target[0] + $i3) . ($target[1] + $dynamicTemplates['open_stock'][1] + 1), $productOpenStock['sku'], PHPExcel_Cell_DataType::TYPE_STRING);
+          
+          $productSheetObj->setCellValueExplicit(PHPExcel_Cell::stringFromColumnIndex($target[0] + $i3) . ($target[1] + $dynamicTemplates['open_stock'][1] + 2), $productOpenStock['weight'], PHPExcel_Cell_DataType::TYPE_STRING);
+          
+          $productSheetObj->setCellValueExplicit(PHPExcel_Cell::stringFromColumnIndex($target[0] + $i3) . ($target[1] + $dynamicTemplates['open_stock'][1] + 3), $productOpenStock['stock'], PHPExcel_Cell_DataType::TYPE_STRING);
+          
+          $productSheetObj->setCellValueExplicit(PHPExcel_Cell::stringFromColumnIndex($target[0] + $i3) . ($target[1] + $dynamicTemplates['open_stock'][1] + 4), $productOpenStock['price'], PHPExcel_Cell_DataType::TYPE_STRING);
+          
+          $productSheetObj->setCellValueExplicit(PHPExcel_Cell::stringFromColumnIndex($target[0] + $i3) . ($target[1] + $dynamicTemplates['open_stock'][1] + 5), !empty($productOpenStock['active']) ? 'Enabled' : 'Disabled', PHPExcel_Cell_DataType::TYPE_STRING);
+          
+          $productSheetObj->setCellValueExplicit(PHPExcel_Cell::stringFromColumnIndex($target[0] + $i3) . ($target[1] + $dynamicTemplates['open_stock'][1] + 6), $productOpenStock['image'], PHPExcel_Cell_DataType::TYPE_STRING);
+
+          $i3++;
+
+          foreach ($productOpenStock['specials'] as $special) {
+
+            $productSheetObj->setCellValueExplicit(PHPExcel_Cell::stringFromColumnIndex($target[0] + $i3) . ($target[1] + $dynamicTemplates['open_stock'][1] + 0), ':special:', PHPExcel_Cell_DataType::TYPE_STRING);
+            
+            $productSheetObj->setCellValueExplicit(PHPExcel_Cell::stringFromColumnIndex($target[0] + $i3) . ($target[1] + $dynamicTemplates['open_stock'][1] + 1), $this->getCustomerGroupName($special['customer_group_id']), PHPExcel_Cell_DataType::TYPE_STRING);
+            
+            $productSheetObj->setCellValueExplicit(PHPExcel_Cell::stringFromColumnIndex($target[0] + $i3) . ($target[1] + $dynamicTemplates['open_stock'][1] + 2), $special['date_start'], PHPExcel_Cell_DataType::TYPE_STRING);
+            
+            $productSheetObj->setCellValueExplicit(PHPExcel_Cell::stringFromColumnIndex($target[0] + $i3) . ($target[1] + $dynamicTemplates['open_stock'][1] + 3), $special['date_end'], PHPExcel_Cell_DataType::TYPE_STRING);
+            
+            $productSheetObj->setCellValueExplicit(PHPExcel_Cell::stringFromColumnIndex($target[0] + $i3) . ($target[1] + $dynamicTemplates['open_stock'][1] + 4), $special['price'], PHPExcel_Cell_DataType::TYPE_STRING);
+            
+            $i3++;
+          }
+
+          foreach ($productOpenStock['discounts'] as $discount) {
+
+            $productSheetObj->setCellValueExplicit(PHPExcel_Cell::stringFromColumnIndex($target[0] + $i3) . ($target[1] + $dynamicTemplates['open_stock'][1] + 0), ':discount:', PHPExcel_Cell_DataType::TYPE_STRING);
+            
+            $productSheetObj->setCellValueExplicit(PHPExcel_Cell::stringFromColumnIndex($target[0] + $i3) . ($target[1] + $dynamicTemplates['open_stock'][1] + 1), $this->getCustomerGroupName($discount['customer_group_id']), PHPExcel_Cell_DataType::TYPE_STRING);
+            
+            $productSheetObj->setCellValueExplicit(PHPExcel_Cell::stringFromColumnIndex($target[0] + $i3) . ($target[1] + $dynamicTemplates['open_stock'][1] + 2), $discount['date_start'], PHPExcel_Cell_DataType::TYPE_STRING);
+            
+            $productSheetObj->setCellValueExplicit(PHPExcel_Cell::stringFromColumnIndex($target[0] + $i3) . ($target[1] + $dynamicTemplates['open_stock'][1] + 3), $discount['date_end'], PHPExcel_Cell_DataType::TYPE_STRING);
+            
+            $productSheetObj->setCellValueExplicit(PHPExcel_Cell::stringFromColumnIndex($target[0] + $i3) . ($target[1] + $dynamicTemplates['open_stock'][1] + 4), $discount['price'], PHPExcel_Cell_DataType::TYPE_STRING);
+
+            $productSheetObj->setCellValueExplicit(PHPExcel_Cell::stringFromColumnIndex($target[0] + $i3) . ($target[1] + $dynamicTemplates['open_stock'][1] + 5), $discount['quantity'], PHPExcel_Cell_DataType::TYPE_STRING);
+
+            $i3++;
+          }
+        }
+      }
+      
+      
+      ]]></add>
+    </operation>
+    <operation>
+      <search position="before"><![CDATA[$source = array(0,2 + $this->productSize*($progress['importedCount']));]]></search>
+      <add><![CDATA[$map['product_open_stock'] = array(4,26);]]></add>
+    </operation>
+    <operation>
+      <search position="before"><![CDATA[// Layouts (Design)]]></search>
+      <add><![CDATA[
+      
+        // Open Stock
+        $i = 0;
+        $openStockCombination = $productSheetObj->getCell(PHPExcel_Cell::stringFromColumnIndex($source[0] + $map['product_open_stock'][0] + $i) . ($source[1] + $map['product_open_stock'][1]))->getValue();
+        $product_open_stock = array();
+        while(!empty($openStockCombination)) {
+          $open_stock_price = (float)str_replace(array(' ', ','), array('', '.'), trim($productSheetObj->getCell(PHPExcel_Cell::stringFromColumnIndex($source[0] + $map['product_open_stock'][0] + $i) . ($source[1] + $map['product_open_stock'][1] + 4))->getValue()));
+          
+          $open_stock_sku = trim($productSheetObj->getCell(PHPExcel_Cell::stringFromColumnIndex($source[0] + $map['product_open_stock'][0] + $i) . ($source[1] + $map['product_open_stock'][1] + 1))->getValue());
+          
+          $open_stock_weight = str_replace(array(' ', ','), array('', '.'), trim($productSheetObj->getCell(PHPExcel_Cell::stringFromColumnIndex($source[0] + $map['product_open_stock'][0] + $i) . ($source[1] + $map['product_open_stock'][1] + 2))->getValue()));
+          
+          $open_stock_stock = trim($productSheetObj->getCell(PHPExcel_Cell::stringFromColumnIndex($source[0] + $map['product_open_stock'][0] + $i) . ($source[1] + $map['product_open_stock'][1] + 3))->getValue());
+          
+          $open_stock_status = trim($productSheetObj->getCell(PHPExcel_Cell::stringFromColumnIndex($source[0] + $map['product_open_stock'][0] + $i) . ($source[1] + $map['product_open_stock'][1] + 5))->getValue()) == 'Enabled' ? 1 : 0;
+
+          $open_stock_image = trim($productSheetObj->getCell(PHPExcel_Cell::stringFromColumnIndex($source[0] + $map['product_open_stock'][0] + $i) . ($source[1] + $map['product_open_stock'][1] + 6))->getValue());
+
+          $option_stock_values = (array_map('trim', explode('|', $openStockCombination)));
+          
+          if ($openStockCombination == ':special:') {
+            $product_open_stock[count($product_open_stock) - 1]['specials'][] = array(
+              'customer_group_id' => $this->getCustomerGroupId($open_stock_sku),
+              'price' => $open_stock_price,
+              'date_start' => $open_stock_weight,
+              'date_end' => $open_stock_stock
+            );
+          } else if ($openStockCombination == ':discount:') {
+            $product_open_stock[count($product_open_stock) - 1]['discounts'][] = array(
+              'customer_group_id' => $this->getCustomerGroupId($open_stock_sku),
+              'price' => $open_stock_price,
+              'date_start' => $open_stock_weight,
+              'date_end' => $open_stock_stock,
+              'quantity' => trim($productSheetObj->getCell(PHPExcel_Cell::stringFromColumnIndex($source[0] + $map['product_open_stock'][0] + $i) . ($source[1] + $map['product_open_stock'][1] + 5))->getValue())
+            );
+          } else {
+
+              $product_open_stock[] = array(
+                'var_texts' => $option_stock_values,
+                'image' => $open_stock_image,
+                'sku' => $open_stock_sku,
+                'weight' => $open_stock_weight,
+                'stock' => $open_stock_stock,
+                'price' => $open_stock_price,
+                'specials' => array(),
+                'discounts' => array(),
+                'subtract' => 1,
+                'active' => $open_stock_status
+              );
+          }
+          
+          $i++;
+          $openStockCombination = $productSheetObj->getCell(PHPExcel_Cell::stringFromColumnIndex($source[0] + $map['product_open_stock'][0] + $i) . ($source[1] + $map['product_open_stock'][1]))->getValue();
+        }
+        
+      ]]></add>
+    </operation>
+    <operation>
+      <search position="after"><![CDATA['product_image' => $product_image,]]></search>
+      <add><![CDATA['product_open_stock' => $product_open_stock,]]></add>
+    </operation>
+    
+    <operation>
+        <search position="before"><![CDATA[if (isset($data['product_option'])) {]]></search>
+        <add><![CDATA[ if (!empty($data['custom_has_options'])) ]]></add>
+        </operation>
+        <operation>
+                <search position="after"><![CDATA[/* OPENSTOCK_HOOK */]]></search>
+                <add><![CDATA[
+                  if (empty($specific_field) || !empty($specific_field['option stock'])) {
+                    if (!empty($data['custom_has_options']) && !empty($data['product_open_stock'])) {
+                      $this->db->query("DELETE FROM `" . DB_PREFIX . "product_option_variant_special` WHERE `product_id` = '" . (int)$product_id. "'");
+                      $this->db->query("DELETE FROM `" . DB_PREFIX . "product_option_variant_discount` WHERE `product_id` = '" . (int)$product_id. "'");
+
+                      if (!empty($data['custom_has_options']) && $data['custom_has_options'] == '1') {
+                          $this->db->query("DELETE FROM `" . DB_PREFIX . "product_option_variant_special` WHERE `product_id` = '" . (int)$product_id. "'");
+                          $this->db->query("DELETE FROM `" . DB_PREFIX . "product_option_variant_discount` WHERE `product_id` = '" . (int)$product_id. "'");
+                          $this->db->query("DELETE FROM `" . DB_PREFIX . "product_option_variant` WHERE `product_id` = '" . (int)$product_id . "'");
+                          $this->db->query("DELETE FROM `" . DB_PREFIX . "product_option_variant_value` WHERE `product_id` = '" . (int)$product_id . "'");
+
+                          $this->load->model('extension/module/openstock');
+                          $all_variants = $this->model_extension_module_openstock->calculateVariants($product_id);
+
+                          $data['variant'] = array();
+
+                          $i = 1;
+
+                          foreach ($data['product_open_stock'] as $product_open_stock_item) {
+                              $my_variant_ids = array();
+                              $variant_values = array();
+
+                              foreach ($product_open_stock_item['var_texts'] as $pov_name) {
+                                  $value_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "product_option_value pov LEFT JOIN " . DB_PREFIX . "option_value_description ovd ON (ovd.option_value_id = pov.option_value_id) WHERE TRIM(ovd.name)='" . $this->db->escape(trim($pov_name)) . "' AND pov.product_id='" . (int)$product_id . "' ORDER BY pov.product_id ASC LIMIT 0,1");
+
+                                  if (isset($value_query->row['name'])) {
+                                      $my_variant_ids[] = $value_query->row['product_option_value_id'];
+                                      $variant_values[$i++] = $value_query->row['product_option_value_id'];
+                                  }
+                              }
+
+                              sort($my_variant_ids);
+                              $variant_string = implode(':', $my_variant_ids);
+
+                              $data['variant'][] = array(
+                                  'variant_string' => $variant_string,
+                                  'variant_values' => $variant_values,
+                                  'product_id' => (int)$product_id,
+                                  'sku' => $product_open_stock_item['sku'],
+                                  'stock' => $product_open_stock_item['stock'],
+                                  'active' => $product_open_stock_item['active'],
+                                  'subtract' => $product_open_stock_item['subtract'],
+                                  'price' => $product_open_stock_item['price'],
+                                  'image' => $product_open_stock_item['image'],
+                                  'weight' => $product_open_stock_item['weight'],
+                                  'discounts' => $product_open_stock_item['discounts'],
+                                  'specials' => $product_open_stock_item['specials']
+                              );
+                          }
+
+                          foreach ($data['variant'] as $variant) {
+                              if (array_key_exists($variant['variant_string'], $all_variants)) {
+                                  unset($all_variants[$variant['variant_string']]);
+
+                                  $this->db->query("
+                                      INSERT INTO `" . DB_PREFIX . "product_option_variant`
+                                      SET
+                                           `product_id`    = '" . (int)$product_id . "',
+                                           `sku`           = '" . $this->db->escape($variant['sku']) . "',
+                                           `stock`         = '" . (int)$variant['stock'] . "',
+                                           `active`        = '" . (int)$variant['active'] . "',
+                                           `subtract`      = '" . (int)$variant['subtract'] . "',
+                                           `price`         = '" . (float)$variant['price'] . "',
+                                           `image`         = '" . $this->db->escape($variant['image']) . "',
+                                           `weight`        = '" . $this->db->escape($variant['weight']) . "'
+                                  ");
+
+                                  $variant_id = $this->db->getLastId();
+
+                                  foreach ($variant['variant_values'] as $sort_order => $variant_value) {
+                                      $this->db->query("
+                                          INSERT INTO `" . DB_PREFIX . "product_option_variant_value`
+                                          SET
+                                               `product_option_variant_id`  = '" . (int)$variant_id . "',
+                                               `product_option_value_id`    = '" . (int)$variant_value . "',
+                                               `product_id`                 = '" . (int)$product_id . "',
+                                               `sort_order`                 = '" . (int)$sort_order . "'
+                                      ");
+                                  }
+
+                                  foreach ($variant['discounts'] as $discount) {
+                                      $this->db->query("
+                                          INSERT INTO `" . DB_PREFIX . "product_option_variant_discount`
+                                          SET
+                                              `product_option_variant_id`     = '" . (int)$variant_id . "',
+                                              `product_id`                    = '" . (int)$product_id . "',
+                                              `customer_group_id`             = '" . (int)$discount['customer_group_id'] . "',
+                                              `quantity`                      = '" . (int)$discount['quantity'] . "',
+                                              `price`                         = '" . (float)$discount['price'] . "',
+                                              `date_start`                    = '" . $this->db->escape($discount['date_start']) . "',
+                                              `date_end`                      = '" . $this->db->escape($discount['date_end']) . "'
+                                      ");
+                                  }
+
+                                  foreach ($variant['specials'] as $special) {
+                                      $this->db->query("
+                                          INSERT INTO " . DB_PREFIX . "product_option_variant_special
+                                          SET
+                                              `product_option_variant_id`     = '" . (int)$variant_id . "',
+                                              `product_id`                    = '" . (int)$product_id . "',
+                                              `customer_group_id`             = '" . (int)$special['customer_group_id'] . "',
+                                              `price`                         = '" . (float)$special['price'] . "',
+                                              `date_start`                    = '" . $this->db->escape($special['date_start']) . "',
+                                              `date_end`                      = '" . $this->db->escape($special['date_end']) . "'
+                                      ");
+                                  }
+
+                              }
+                          }
+
+                          foreach ($all_variants as $new_variant) {
+                              $this->db->query("
+                                  INSERT INTO `" . DB_PREFIX . "product_option_variant`
+                                  SET
+                                      `product_id`    = '" . (int)$product_id . "',
+                                      `sku`           = '',
+                                      `stock`         = '" . (int)$this->config->get('openstock_default_stock') . "',
+                                      `active`        = '" . (int)$this->config->get('openstock_default_active') . "',
+                                      `subtract`      = '" . (int)$this->config->get('openstock_default_subtract') . "',
+                                      `price`         = '0.00',
+                                      `image`         = '',
+                                      `weight`        = '0.00'
+                              ");
+
+                              $variant_id = $this->db->getLastId();
+
+                              foreach ($new_variant as $new_variant_value) {
+                                  $this->db->query("
+                                      INSERT INTO `" . DB_PREFIX . "product_option_variant_value`
+                                      SET
+                                          `product_option_variant_id`  = '" . (int)$variant_id . "',
+                                          `product_option_value_id`    = '" . (int)$new_variant_value . "',
+                                          `product_id`                 = '" . (int)$product_id . "',
+                                          `sort_order`                 = '" . (int)$i++ . "'
+                                  ");
+                              }
+                          }
+                          
+
+                      } else if (!empty($data['custom_has_options']) && $data['custom_has_options'] == '2') {
+                          $this->db->query("DELETE FROM `" . DB_PREFIX . "product_option_variant` WHERE `product_id` = '" . (int)$product_id. "'");
+                          $this->db->query("DELETE FROM `" . DB_PREFIX . "product_option_variant_value` WHERE `product_id`= '" . (int)$product_id. "'");
+                      } else {
+                          $this->db->query("DELETE FROM `" . DB_PREFIX . "product_option` WHERE `product_id` = '" . (int)$product_id . "'");
+                          $this->db->query("DELETE FROM `" . DB_PREFIX . "product_option_value` WHERE `product_id` = '" . (int)$product_id . "'");
+                      }
+                    }
+                  }
+                ]]></add>
+        </operation>
+    <operation>
+                <search position="replace"><![CDATA[model = '" . $this->db->escape($data['model']) . "', sku = '" . $this->db->escape($data['sku']) . "', ]]></search>
+                <add><![CDATA[model = '" . $this->db->escape($data['model']) . "', sku = '" . $this->db->escape($data['sku']) . "', has_option = '" . (int)$this->db->escape($data['custom_has_options']) . "', ]]></add>
+        </operation>
+  </file>
+
+  <file name="admin/model/extension/module/excelport_product_bulk.php">
+    <operation>
+      <search position="replace"><![CDATA[$metaSheet = 9;]]></search>
+      <add><![CDATA[
+        $openstockSheet = 10;
+        $metaSheet = 9;]]></add>
+    </operation>
+
+    <operation>
+      <search position="after"><![CDATA[$designSheetObj = $objPHPExcel->setActiveSheetIndex($designSheet);]]></search>
+      <add><![CDATA[
+        $objPHPExcel->createSheet($openstockSheet);
+        $openstockSheetObj = $objPHPExcel->setActiveSheetIndex($openstockSheet);
+        $openstockSheetObj->setTitle("Option Stock");
+      ]]></add>
+    </operation>
+
+    <operation>
+      <search position="after"><![CDATA['reward' => array(0,2),]]></search>
+      <add><![CDATA[
+        'openstock' => array(0,2),
+      ]]></add>
+    </operation>
+
+    <operation>
+      <search position="before"><![CDATA[$productRewards = $this->model_catalog_product->getProductRewards($row['product_id']);]]></search>
+      <add><![CDATA[
+        // Open Stock
+        $this->load->model('tool/image');
+        $this->load->model('extension/module/openstock');
+        
+        $productOpenStocks = $this->model_extension_module_openstock->getVariants($row['product_id']);
+        
+        foreach ($productOpenStocks as $productOpenStock) {
+          
+          $var = $productOpenStock['variant_values'];
+          $resulting_var = array();
+          foreach ($var as $item) {
+            if (isset($productOpenStock['option_values'][$item['product_option_value_id']]) && trim($productOpenStock['option_values'][$item['product_option_value_id']]) !== '') {
+              $resulting_var[] = $productOpenStock['option_values'][$item['product_option_value_id']];
+            }
+          }
+
+          $openstockSheetObj->setCellValueExplicit(PHPExcel_Cell::stringFromColumnIndex($t['openstock'][0] + 0) . (1), 'Product ID', PHPExcel_Cell_DataType::TYPE_STRING);
+
+          $openstockSheetObj->setCellValueExplicit(PHPExcel_Cell::stringFromColumnIndex($t['openstock'][0] + 1) . (1), 'Option Value Combination', PHPExcel_Cell_DataType::TYPE_STRING);
+          
+          $openstockSheetObj->setCellValueExplicit(PHPExcel_Cell::stringFromColumnIndex($t['openstock'][0] + 2) . (1), 'SKU', PHPExcel_Cell_DataType::TYPE_STRING);
+          
+          $openstockSheetObj->setCellValueExplicit(PHPExcel_Cell::stringFromColumnIndex($t['openstock'][0] + 3) . (1), 'Weight', PHPExcel_Cell_DataType::TYPE_STRING);
+          
+          $openstockSheetObj->setCellValueExplicit(PHPExcel_Cell::stringFromColumnIndex($t['openstock'][0] + 4) . (1), 'Stock', PHPExcel_Cell_DataType::TYPE_STRING);
+          
+          $openstockSheetObj->setCellValueExplicit(PHPExcel_Cell::stringFromColumnIndex($t['openstock'][0] + 5) . (1), 'Price', PHPExcel_Cell_DataType::TYPE_STRING);
+          
+          $openstockSheetObj->setCellValueExplicit(PHPExcel_Cell::stringFromColumnIndex($t['openstock'][0] + 6) . (1), 'Status', PHPExcel_Cell_DataType::TYPE_STRING);
+          
+          $openstockSheetObj->setCellValueExplicit(PHPExcel_Cell::stringFromColumnIndex($t['openstock'][0] + 7) . (1), 'Image', PHPExcel_Cell_DataType::TYPE_STRING);
+
+          $openstockSheetObj->setCellValueExplicit(PHPExcel_Cell::stringFromColumnIndex($t['openstock'][0] + 8) . (1), 'Subtract', PHPExcel_Cell_DataType::TYPE_STRING);
+          
+          $openstockSheetObj->setCellValueExplicit(PHPExcel_Cell::stringFromColumnIndex($t['openstock'][0] + 9) . (1), 'Special Customer Group', PHPExcel_Cell_DataType::TYPE_STRING);
+          
+          $openstockSheetObj->setCellValueExplicit(PHPExcel_Cell::stringFromColumnIndex($t['openstock'][0] + 10) . (1), 'Special Date Start', PHPExcel_Cell_DataType::TYPE_STRING);
+          
+          $openstockSheetObj->setCellValueExplicit(PHPExcel_Cell::stringFromColumnIndex($t['openstock'][0] + 11) . (1), 'Special Date End', PHPExcel_Cell_DataType::TYPE_STRING);
+          
+          $openstockSheetObj->setCellValueExplicit(PHPExcel_Cell::stringFromColumnIndex($t['openstock'][0] + 12) . (1), 'Special Price', PHPExcel_Cell_DataType::TYPE_STRING);
+          
+          $openstockSheetObj->setCellValueExplicit(PHPExcel_Cell::stringFromColumnIndex($t['openstock'][0] + 13) . (1), 'Discount Customer Group', PHPExcel_Cell_DataType::TYPE_STRING);
+          
+          $openstockSheetObj->setCellValueExplicit(PHPExcel_Cell::stringFromColumnIndex($t['openstock'][0] + 14) . (1), 'Discount Date Start', PHPExcel_Cell_DataType::TYPE_STRING);
+          
+          $openstockSheetObj->setCellValueExplicit(PHPExcel_Cell::stringFromColumnIndex($t['openstock'][0] + 15) . (1), 'Discount Date End', PHPExcel_Cell_DataType::TYPE_STRING);
+          
+          $openstockSheetObj->setCellValueExplicit(PHPExcel_Cell::stringFromColumnIndex($t['openstock'][0] + 16) . (1), 'Discount Price', PHPExcel_Cell_DataType::TYPE_STRING);
+          
+          $openstockSheetObj->setCellValueExplicit(PHPExcel_Cell::stringFromColumnIndex($t['openstock'][0] + 17) . (1), 'Discount Quantity', PHPExcel_Cell_DataType::TYPE_STRING);
+
+          $styleMap = array(
+            'alignment' => array(
+              'horizontal' => 'left',
+              'vertical' => 'center'
+            ),
+            'font' => array(
+              'color' => array(
+                'rgb' => 'ffffff'
+              ),
+              'bold' => true
+            ),
+            'fill' => array(
+              'type' => PHPExcel_Style_Fill::FILL_SOLID,
+              'color' => array(
+                'rgb' => '254061'
+              )
+            )
+          );
+
+          $openstockSheetObj->getStyle('A1:ZZ1')->applyFromArray($styleMap);
+
+          if (!empty($resulting_var)) {
+            $var_text = implode('|', $resulting_var);
+
+            $openstockSheetObj->setCellValueExplicit(PHPExcel_Cell::stringFromColumnIndex($t['openstock'][0] + 0) . ($t['openstock'][1]), $row['product_id'], PHPExcel_Cell_DataType::TYPE_STRING);
+
+            $openstockSheetObj->setCellValueExplicit(PHPExcel_Cell::stringFromColumnIndex($t['openstock'][0] + 1) . ($t['openstock'][1]), $var_text, PHPExcel_Cell_DataType::TYPE_STRING);
+            
+            $openstockSheetObj->setCellValueExplicit(PHPExcel_Cell::stringFromColumnIndex($t['openstock'][0] + 2) . ($t['openstock'][1]), $productOpenStock['sku'], PHPExcel_Cell_DataType::TYPE_STRING);
+            
+            $openstockSheetObj->setCellValueExplicit(PHPExcel_Cell::stringFromColumnIndex($t['openstock'][0] + 3) . ($t['openstock'][1]), $productOpenStock['weight'], PHPExcel_Cell_DataType::TYPE_STRING);
+            
+            $openstockSheetObj->setCellValueExplicit(PHPExcel_Cell::stringFromColumnIndex($t['openstock'][0] + 4) . ($t['openstock'][1]), $productOpenStock['stock'], PHPExcel_Cell_DataType::TYPE_STRING);
+            
+            $openstockSheetObj->setCellValueExplicit(PHPExcel_Cell::stringFromColumnIndex($t['openstock'][0] + 5) . ($t['openstock'][1]), $productOpenStock['price'], PHPExcel_Cell_DataType::TYPE_STRING);
+            
+            $openstockSheetObj->setCellValueExplicit(PHPExcel_Cell::stringFromColumnIndex($t['openstock'][0] + 6) . ($t['openstock'][1]), !empty($productOpenStock['active']) ? 'Enabled' : 'Disabled', PHPExcel_Cell_DataType::TYPE_STRING);
+            
+            $openstockSheetObj->setCellValueExplicit(PHPExcel_Cell::stringFromColumnIndex($t['openstock'][0] + 7) . ($t['openstock'][1]), $productOpenStock['image'], PHPExcel_Cell_DataType::TYPE_STRING);
+
+            $openstockSheetObj->setCellValueExplicit(PHPExcel_Cell::stringFromColumnIndex($t['openstock'][0] + 8) . ($t['openstock'][1]), !empty($productOpenStock['subtract']) ? 'Yes' : 'No', PHPExcel_Cell_DataType::TYPE_STRING);
+
+            $extra_columns = array();
+            $extra_column_i = 0;
+
+            foreach ($productOpenStock['specials'] as $special) {
+              $extra_columns[$extra_column_i][9] = $this->getCustomerGroupName($special['customer_group_id']);
+              $extra_columns[$extra_column_i][10] = $special['date_start'];
+              $extra_columns[$extra_column_i][11] = $special['date_end'];
+              $extra_columns[$extra_column_i][12] = $special['price'];
+              $extra_column_i++;
+            }
+
+            $extra_column_i = 0;
+            foreach ($productOpenStock['discounts'] as $discount) {
+              $extra_columns[$extra_column_i][13] = $this->getCustomerGroupName($discount['customer_group_id']);
+              $extra_columns[$extra_column_i][14] = $discount['date_start'];
+              $extra_columns[$extra_column_i][15] = $discount['date_end'];
+              $extra_columns[$extra_column_i][16] = $discount['price'];
+              $extra_columns[$extra_column_i][17] = $discount['quantity'];
+              $extra_column_i++;
+            }
+
+            foreach ($extra_columns as $extra_column_row => $extra_data) {
+              foreach ($extra_data as $cell_column => $cell_data) {
+                $openstockSheetObj->setCellValueExplicit(PHPExcel_Cell::stringFromColumnIndex($t['openstock'][0] + $cell_column) . ($t['openstock'][1]), $cell_data, PHPExcel_Cell_DataType::TYPE_STRING);
+              }
+            }
+            $t['openstock'][1]++;
+          }
+        }
+      ]]></add>
+    </operation>
+
+    <operation>
+      <search position="after"><![CDATA[$product['product_layout'] = $this->loadBulkSheetData('design', $file, $product_id);]]></search>
+      <add><![CDATA[
+        $product['product_open_stock'] = $this->loadBulkSheetData('option stock', $file, $product_id);
+      ]]></add>
+    </operation>
+
+    <operation>
+      <search position="before"><![CDATA[case 'design' : {]]></search>
+      <add><![CDATA[
+        case 'option stock' : {
+          return $this->getOptionStockRowsByProductId($this->readSheetCache($type), $product_id);
+        } break;
+      ]]></add>
+    </operation>
+
+    <operation>
+      <search position="before"><![CDATA[public function getOptionRowsByProductId($sheet, $product_id) {]]></search>
+      <add><![CDATA[
+        public function getOptionStockRowsByProductId($sheet, $product_id) {
+          $data = array();
+
+          $openstock_read_map = array(
+            'product_id' => 'A',
+            'option_values' => 'B',
+            'sku' => 'C',
+            'weight' => 'D',
+            'stock' => 'E',
+            'price' => 'F',
+            'status' => 'G',
+            'image' => 'H',
+            'subtract' => 'I',
+            'special_customer_group' => 'J',
+            'special_date_start' => 'K',
+            'special_date_end' => 'L',
+            'special_price' => 'M',
+            'discount_customer_group' => 'N',
+            'discount_date_start' => 'O',
+            'discount_date_end' => 'P',
+            'discount_price' => 'Q',
+            'discount_quantity' => 'R'
+          );
+
+          $this_product_id = null;
+          $this_option_values = null;
+          $this_sku = null;
+          $this_weight = null;
+          $this_stock = null;
+          $this_price = null;
+          $this_status = null;
+          $this_image = null;
+          $this_special = array();
+          $this_discount = array();
+
+          foreach ($sheet as $row) {
+            $new_option_row = array();
+
+            foreach ($row as $cell_index => $cell_value) {
+
+              foreach ($openstock_read_map as $map_key => $map_value) {
+                if ($cell_index != $map_value) continue;
+
+                $new_option_row[$map_key] = trim($cell_value);
+              }
+            }
+
+            if (!empty($new_option_row['product_id'])) {
+              $this_product_id = (int)$new_option_row['product_id'];
+              $this_option_values = (array_map('trim', explode('|', $new_option_row['option_values'])));
+              $this_sku = $new_option_row['sku'];
+              $this_weight = (float)str_replace(' ', '', $new_option_row['weight']);
+              $this_stock = (int)$new_option_row['stock'];
+              $this_price = (float)str_replace(' ', '', $new_option_row['price']);
+              $this_status = $new_option_row['status'] == 'Enabled';
+              $this_image = $new_option_row['image'];
+              $this_subtract = $new_option_row['subtract'] == 'Yes';
+
+              if (!empty($this_openstock['product_id']) && $this_openstock['product_id'] == (int)$product_id) {
+                $data[] = $this_openstock;
+              }
+
+              $this_openstock = array(
+                'product_id' => $this_product_id,
+                'var_texts' => $this_option_values,
+                'sku' => $this_sku,
+                'stock' => $this_stock,
+                'active' => $this_status,
+                'subtract' => $this_subtract,
+                'price' => $this_price,
+                'image' => $this_image,
+                'weight' => $this_weight,
+                'specials' => array(),
+                'discounts' => array()
+              );
+            }
+
+            if ((int)$this_product_id != (int)$product_id) {
+              continue;
+            }
+
+            $this_special_customer_group = $new_option_row['special_customer_group'];
+            $this_discount_customer_group = $new_option_row['discount_customer_group'];
+
+            $this_special_customer_group_id = $this->getCustomerGroupIdByName($this_special_customer_group);
+            $this_discount_customer_group_id = $this->getCustomerGroupIdByName($this_discount_customer_group);
+
+            if (!empty($this_special_customer_group_id)) {
+              $this_openstock['specials'][] = array(
+                'customer_group_id' => $this_special_customer_group_id,
+                'price' => (float)str_replace(array('+', '-', ' ', ','), array('', '', '', '.'), $new_option_row['special_price']),
+                'date_start' => $new_option_row['special_date_start'],
+                'date_end' => $new_option_row['special_date_end']
+              );
+            }
+
+            if (!empty($this_discount_customer_group_id)) {
+              $this_openstock['discounts'][] = array(
+                'customer_group_id' => $this_discount_customer_group_id,
+                'price' => (float)str_replace(array('+', '-', ' ', ','), array('', '', '', '.'), $new_option_row['discount_price']),
+                'quantity' => (int)str_replace(' ', '', $new_option_row['discount_quantity']),
+                'date_start' => $new_option_row['discount_date_start'],
+                'date_end' => $new_option_row['discount_date_end']
+              );
+            }
+          }
+
+          if (!empty($this_openstock['product_id']) && $this_openstock['product_id'] == (int)$product_id) {
+            $data[] = $this_openstock;
+          }
+
+          return $data;
+        }
+      ]]></add>
+    </operation>
+  </file>
+
+  <file error="skip" name="admin/model/extension/module/openstock.php">
+    <operation>
+      <search position="replace"><![CDATA[return $final;]]></search>
+      <add><![CDATA[return $this->reorderKeys($final);]]></add>
+    </operation>
+
+    <operation>
+      <search position="before"><![CDATA[public function install() {]]></search>
+      <add><![CDATA[
+        public function reorderKeys($data) {
+          if (empty($data)) return $data;
+
+          $result = array();
+
+          foreach ($data as $key => $value) {
+            $key_parts = explode(':', $key);
+            sort($key_parts);
+            $result[implode(':', $key_parts)] = $value;
+          }
+
+          return $result;
+        }
+      ]]></add>
+    </operation>
+  </file>
+
+  <file error="skip" name="admin/controller/extension/module/openstock.php">
+    <operation>
+      <search position="after"><![CDATA[foreach ($this->request->post['variant'] as $variant_id => $variant) {]]></search>
+      <add><![CDATA[
+        $key_parts = explode(':', $variant['variant_string']);
+        sort($key_parts);
+        $variant['variant_string'] = implode(':', $key_parts);
+      ]]></add>
+    </operation>
+  </file>
+
+</modification>

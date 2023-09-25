@@ -1,0 +1,2115 @@
+// template
+$bg: #F32891
+$font: #F23C9D
+$w: #fff
+$b: #000
+
+
+.page-banner
+	max-height: 31em
+	overflow: hidden
+
+.humanscale-container
+	.humanscale-container-inner
+		overflow: hidden
+	.sticker, .options_product
+		display: none
+
+.d-none
+	display: none !important
+.custom_button
+	background: $bg
+	color: $w
+	border: none
+	&:hover
+		border-radius: 25px
+		color: $w
+
+*
+	outline: none !important				
+	font-family: 'Poppins', sans-serif
+
+.breadcrumb
+	display: none
+
+.product-search 
+	#content
+		padding-top: 3%
+
+.account-login  				
+	.alert.alert-danger
+		margin-top: 3%
+	#content
+		padding-top: 3%
+		.text-center
+			input
+				background: $bg
+				border: none
+				&:hover
+					border-radius: 25px 
+
+.account-forgotten
+	#content
+		padding-top: 3%
+		form
+			fieldset
+				padding-top: 3%
+			.buttons
+				a, input
+					transition: .5s ease
+					&:hover
+						border-radius: 25px
+				.pull-right
+					input
+						background: $bg
+						border: none
+.account-register
+	.alert.alert-danger
+		margin-top: 3%	
+	#content
+		padding-top: 3%
+		.col-sm-12
+			input
+				background: $bg
+				border: none
+				&:hover
+					border-radius: 25px
+
+.account-success, .information-contact-success
+	#content
+		padding-top: 3%
+		line-height: 2em
+		.buttons
+			a
+				background: $bg
+				&:hover
+					border-radius: 25px
+.account-account
+	#content
+		padding: 3%
+.account-container
+	padding-top: 3%
+
+.account-edit, .account-password , .account-address-edit, .account-address-add 
+	#content
+		padding-top: 3%
+		form
+			.buttons
+				input
+					background: $bg
+					&:hover
+						border-radius: 25px
+.account-wishlist
+	#content
+		padding: 3%
+		.text-right
+			button
+				background: $bg
+				border: none
+				&:hover
+					border-radius: 25px
+			a
+				&:hover
+					border-radius: 25px
+		.pull-right
+			a
+				background: $bg
+				&:hover
+					border-radius: 25px				
+.account-order, .account-enquiry, .account-reward  
+	#content
+		padding-top: 3%
+		.buttons
+			a
+				background: $bg
+				&:hover
+					border-radius: 25px
+.account-address
+	#content
+		padding-top: 3%
+		.buttons
+			.pull-right
+				a
+					background: $bg
+					&:hover
+						border-radius: 25px
+
+.information-information
+	#content
+		padding: 3%
+
+.checkout-cart
+	.err-only
+		display: none
+.error-not_found
+	#content
+		padding-top: 3%
+		line-height: 2em
+		.buttons
+			a
+				border: none
+				background: $bg
+				&:hover
+					border-radius: 25px
+
+.cart-dorpdown-footer					
+	a
+		&:hover
+			border-radius: 25px
+		&:first-of-type
+			color: $b !important
+		&:last-of-type
+			background: $bg
+			border: none
+			color: $w
+			&:hover
+				background: $bg
+
+.checkout-cart
+	#content
+		padding-top: 3%
+		line-height: 2em
+		.cart-quantity
+			.glyphicon-plus
+				&:hover
+					color: $font
+		.buttons
+			a
+				&:hover
+					border-radius: 25px	
+			.pull-right
+				a
+					border: none
+					background: $bg
+
+.quickcheckout-checkout					
+	button
+		background: $bg
+		border: none
+		&:hover
+			background: $bg
+			border-radius: 25px
+		&:active, &:focus	
+			background: $bg !important
+	#content
+		padding: 3%
+		#quickcheckout-back, #button-confirm
+			border: none
+			&:hover
+				border-radius: 25px
+		#button-confirm
+			background: $bg
+.checkout-success
+	#content
+		padding: 3%
+		.line-4
+			a
+				background: $bg
+				border: none
+				&:hover
+					border-radius: 25px
+
+// end of template
+// ---------- common ---------- 
+.input-number::-ms-clear
+	display: none
+input[type="text"]::-ms-clear
+	display: none
+input
+	&::-ms-clear,
+	&::-ms-reveal
+		display: none !important
+
+.pull-right
+	a, input
+		border: none
+.contain
+	margin: 1.5% 4.5%
+
+h2
+	letter-spacing: 5px
+	margin-bottom: 0 !important
+	padding-bottom: 2%
+	&:after
+		display: none !important
+h3		
+	text-transform: uppercase
+	font-size: 2em
+	letter-spacing: 5px
+	font-weight: bold
+hr
+	background: $bg !important
+	border-color: $bg !important
+	height: 1.5px !important
+	width: 5%
+
+.account-register, .account-edit
+	hr
+		width: 100%
+.texts_inner
+	hr
+		width: 10% !important
+.product-product		
+	[type=radio]
+		position: absolute
+		opacity: 0
+		width: 0
+		height: 0
+	[type=radio] ~ img 
+		cursor: pointer
+		border-bottom: 2px solid transparent
+	[type=radio]:checked ~ img
+		border-bottom: 2px solid $font
+.common-home
+	.slick-arrow
+		box-shadow: 0 0 5px 2px #999
+		border: none
+		padding: 1%
+		position: absolute
+		z-index: 99
+		cursor: pointer
+		background: $bg
+		&:last-of-type
+			right: 0
+		&:hover
+			background: $w
+			&.def-right, &.def-left
+				opacity: 0
+			&.onhover
+				opacity: 1
+		&.onhover
+			opacity: 0
+		&.def-right
+			right: 0
+		&.def-left
+			left: 0	
+	h3
+		text-align: center
+// ----------end of common ---------- 
+// ---------- navbar ---------- 
+body
+	padding-top: 0 !important
+	.fixed-header
+		.header-logo
+			.onscroll
+				display: none
+		.header-top
+			display: block
+			.authmark
+				display: flex
+				justify-content: flex-end
+				margin-bottom: 1%
+				.authmark-inner
+					text-align: left
+					h3
+						color: $w
+						font-size: .7em
+						margin-bottom: 0
+						text-transform: uppercase
+						letter-spacing: 1.5px
+					h4
+						color: $w
+						font-size: 1.6em
+						sup
+							font-size: .3em
+							vertical-align: super
+			.header-menu-outer				
+				display: flex
+				justify-content: flex-end
+				#main-menu
+					li
+						text-align: center
+						a
+							color: $w
+							font-size: .85em
+							text-transform: uppercase
+							letter-spacing: 1.5px
+							overflow: hidden
+							padding-right: 0							
+							.sub-arrow
+								display: none
+							&:hover
+								color: $font
+								ul
+									background: red
+						ul
+							li
+								background: #D6D4D5
+								opacity: .7
+								a
+									color: $b
+						&.active
+							a
+								span
+									&:before
+										content: ""
+										position: absolute
+										background-color: $font
+										width: 100%
+										height: 4px
+										top: 0
+										display: inline-block
+				.header-top-inner
+					display: flex
+					align-items: center
+					padding-left: 1em
+					a, i
+						color: $w
+						&:hover
+							color: $font
+					#account		
+						ul
+							li
+								a
+									color: $b
+									&:hover	
+										background: $bg !important
+										border-radius: 25px
+										color: $w !important
+					#cartwo
+						display: flex
+						#cart_dropdown_icon, .cart-quantity-total
+							width: 1.7em
+							text-align: center
+							#cart-quantity-total
+								color: $font
+								font-weight: bold
+								font-size: 1em
+		&.nav_scroll
+			background: $w
+			opacity: .9
+			.header-logo
+				.default
+					display: none
+				.onscroll
+					display: block
+			.header-top
+				.authmark	
+					h3, h4
+						color: $b !important
+				#main-menu
+					li
+						a
+							color: $b 
+							&:hover
+								color: $font								
+				.header-top-inner
+					a, i
+						color: $b
+						&:hover
+							color: $font			
+
+// ---------- end of navbar ---------- 
+// custom nav by Sir Dex 
+.menu-sub
+	display: none
+	position: absolute
+	left: 0
+	right: 0
+	.container
+		-webkit-box-shadow: 1px 3px 9px 0px rgba(0,0,0,0.27)
+		-moz-box-shadow: 1px 3px 9px 0px rgba(0,0,0,0.27)
+		box-shadow: 1px 3px 9px 0px rgba(0,0,0,0.27)
+		background: #D6D4D5
+		opacity: .9
+		padding: 1%
+		#cat-sub-container	
+			.cat-sub-col
+				display: flex
+				justify-content: center
+				ul
+					padding: 1%
+					h4
+						font-size: 1.3em
+						text-transform: uppercase
+						font-weight: bold
+						letter-spacing: 2px
+						a
+							color: #000
+							transition: 0.3s
+							&:hover
+								color: #494844
+					.sub-2
+						a
+							letter-spacing: 2px
+							font-weight: bold
+							text-transform: uppercase
+							color: $font
+							line-height: 2em
+							font-size: .8em
+							&:hover
+								color: #fff
+// end of custom nav
+
+// ----------  footer ---------- 
+footer						
+	background: #D6D4D5
+	.contain
+		margin-top: 0
+		margin-bottom: 0
+		.footer-upper-contet
+			justify-content: space-around
+			li
+				list-style: none
+				a
+					color: $b
+					text-transform: uppercase
+					letter-spacing: 1px
+					font-size: .8em
+					font-weight: bold
+					&:hover
+						color: $font
+						cursor: pointer
+		hr
+			background: #EDE9E6 !important
+			width: 100% !important
+			border-bottom: 0
+			margin-bottom: 0
+		.lower-footer
+			text-align: center			
+			padding: 10px 0
+			p
+				&:first-of-type
+					text-transform: capitalize
+			.fcs
+				display: flex
+				justify-content: center
+				a
+					text-decoration: none
+					font-weight: bold
+					&:hover
+						color: $font
+			p, a
+				color: #EDE9E6
+				font-size: .9em	
+// ---------- end of footer ---------- 
+// ----------  About Us	---------- 			
+.iid-4
+	#about
+		.tab
+			display: flex
+			flex-wrap: wrap			
+			justify-content: center
+			a
+				border-bottom: 2px solid #ccc
+				text-transform: uppercase
+				color: #ccc
+				letter-spacing: 1px
+				cursor: pointer
+				padding: 0 2%
+				&:hover
+					background: transparent 
+				&.active
+					border-bottom: 2px solid $font
+					color: $b 
+					background: transparent 
+				&:first-of-type
+					padding-left: 0
+				&:last-of-type
+					padding-right: 0
+		.tabcontent
+			.tabdesc
+				p
+					line-height: 2em
+			img
+				width: 100%
+				box-shadow: 1px 1px 10px 2px #ccc
+// ----------  End of About Us... ---------- 		
+// ---------- contact ----------
+.information-contact
+	#content
+		padding: 3%
+		.inner-content
+			padding: 5% 0
+			.panel
+				border: none
+				box-shadow: none
+				iframe
+					width: 100%
+				.contact_details	
+					address, a
+						color: $b
+						margin-bottom: 0
+					a
+						&:hover
+							color: $font
+							font-weight: bold
+					.ad
+						display: flex
+						.ad_icon
+							margin: 0 2%
+					.tel, .mail
+						margin: 3% 0
+					img
+						margin: 0 1%
+			.contact-body
+				.form-group
+					input, textarea
+						padding-top: 4.5%
+						padding-bottom: 4.5%
+		.contact-footer			
+			text-align: center
+			margin: auto
+			#google_recaptcha
+				.g-recaptcha
+					transform: scale(.6) !important
+			input
+				background: $bg
+				border: none
+				&:hover
+					border-radius: 25px
+
+
+// ---------- end of contact ----------
+
+// ---------- homepage ----------
+.page-banner-title
+	font-size: 2em
+	text-transform: uppercase
+	display: flex
+	justify-content: center
+	letter-spacing: 10px
+	text-align: center
+
+#slideshow0	
+	position: fixed
+	z-index: -1
+	height: 100%
+.main-bg	
+	width: 100%
+	background-repeat: no-repeat
+	background-size: cover
+	background-attachment: fixed !important
+	position: relative
+	height: 100vh !important
+	.row
+		height: 100%
+		#content
+			height: 100%
+			.h2
+				height: 100%
+				display: flex
+				justify-content: center
+				align-items: center				
+				margin: 0 !important
+				h2
+					color: $w
+					font-size: 1.3em
+					text-align: center
+#slideshow0
+	.owl-stage-outer, .owl-stage, .owl-item, .relative, img
+		height: 100% !important
+		object-fit: cover
+.landing-icon
+	text-align: center
+	position: absolute
+	bottom: 6%
+	left: 0
+	right: 0
+	display: flex
+	justify-content: center
+	align-items: center
+	text-align: center
+	img
+		height: 2.5em
+	.landing-idesc
+		text-transform: uppercase
+		color: $w
+		margin-bottom: 0
+		font-size: .9em
+		width: 6em
+		margin: auto
+.fore
+	position: relative
+	.fore_img
+		height: 100%
+		position: relative
+		overflow: hidden
+		img
+			position: absolute
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%)
+			width: 100%
+			height: 100%
+	.fore_content
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		display: flex
+		align-items: center
+		.fore_content_inner
+			margin: 5%
+			h2, p
+				color: $w
+			hr
+				margin-left: 0
+				margin-right: auto
+	// >>fcategory
+.category_home
+	padding-bottom: 5%
+	background-color: white
+
+	.cat_text
+		padding: 2% 0
+
+.cat_container		
+	display: flex !important
+	align-items: center
+
+	.cat_inner
+		position: relative
+		width: 90% !important
+		margin: auto
+		display: flex !important
+		justify-content: center
+
+		.cat_image
+			height: 20em
+			margin: auto
+			border-bottom: 3px solid transparent
+
+			img
+				height: 100%
+				width: 100%
+				object-fit: cover
+			&:hover
+				border-bottom: 3px solid $font
+		.a
+			position: absolute
+			z-index: 9
+			display: flex
+			justify-content: center
+			align-items: center
+			left: 8%
+			bottom: 15%
+			font-size: 2.3em
+			text-transform: uppercase
+			letter-spacing: 3px
+			color: $font
+			line-height: 1em
+	// >>end of fcategory
+	// << partners
+.partners_container
+	height: 18em
+	background: #f1f1f1
+	.partners_heading
+		padding-top: 2%
+	.partners_container_inner
+		display: flex
+		align-items: center	
+		padding-top: 1.5%
+		.slick-list
+			.slick-track
+				display: flex
+				align-items: center
+		.partners
+			width: 9em !important
+			display: flex !important
+			margin: auto
+			img
+				width: 100%
+				height: auto
+				object-fit: cover
+	// >> partners
+	//<<featured products
+.common-home	
+	.featured-module
+		padding-bottom: 3%
+		background: $w
+		h3
+			padding-top: 3%
+		.slick-arrow
+			display: none !important
+		.slick-slide
+			margin: 7.5px
+			border-bottom: 2px solid transparent
+			&:hover
+				border-bottom: 2px solid $bg
+			.product-block
+				padding-bottom: 0
+.featured-module
+	.product-name
+		height: 4em
+	//>>end of featured products
+	//>> contact section
+.contact_home
+	height: auto
+	.contact_map
+		flex-basis: 50%
+		height: 20em
+		iframe
+			width: 100%
+			height: 100%
+	.contact_texts
+		flex-basis: 50%
+		display: flex
+		justify-content: center
+		align-items: center
+		text-align: center
+		*
+			color: $b
+		.texts_inner
+			padding: 5% 0
+			.contact_address	
+				font-size: 1em			
+				p
+					margin-bottom: 0
+				address
+					width: 75%
+					margin: auto
+			.btn
+				margin: 10% 0
+				color: $w !important
+			.open
+				h4
+					font-size: 1em
+					margin-bottom: 3%
+				p
+					margin-bottom: 0
+					font-size: 1em
+			
+	//>>end of contact section
+	//>>brochure
+.brochure_home_cont	
+	background: #F1F1F1
+	display: flex
+	justify-content: center
+	align-items: center
+	height: 100%
+	.brochure_home_inner
+		padding-top: 2%
+		width: 100%
+		.bh_text
+			text-align: center
+		.brochure_img_container
+
+			.brochure_img
+				height: 100%
+				padding: 3%
+				img
+					height: 100%
+					width: 100%
+					cursor: pointer
+					box-shadow: 0 -3px 4px -1px #ccc
+					border-bottom: 2px solid #F1F1F1
+					&:hover
+						border-bottom: 2px solid $font
+						box-shadow: 0 0 5px 5px #ccc
+		.a
+			text-align: center
+			padding-bottom: 3%
+			letter-spacing: 2px
+	//>>end of brochure
+	//>>Media
+.common-home	
+	.media_container
+		padding-bottom: 3%
+		background: $w
+		.media_heading
+			text-align: center
+			padding: 2.5%		
+		.media_container_inner
+			display: flex
+			align-items: center
+			.slick-list
+				width: 90% !important
+				margin: auto
+			.media_outer
+				padding: 0 3%
+				.media
+					height: 30em !important
+					pre, p
+						// margin: 0 6%
+						display: flex
+						height: 100%
+					pre
+						background-color: transparent
+						border-bottom: none
+						border-radius: 0
+						background: #F1F1F1
+						iframe
+							width: 100%
+				.a
+					// margin: 0 6%
+					padding: 2%
+					background: #F1F1F1
+					border: 1px solid #ccc
+					border-top: 0
+	//>>end of media
+
+// ---------- end of homepage ----------
+// ---------- Category ----------
+.modal
+	.modal-dialog
+		height: 100%
+		display: flex
+		align-items: center
+		justify-content: center	
+	.modal-body
+		.close
+			padding: 0 4px
+	.mi-button
+		a
+			background: $bg
+			border-color: transparent
+.announcement_container
+	background: #4C4944
+	color: $w
+	transition: .5s ease
+	// padding: .9%
+	a
+		color: $w
+		display: flex
+		justify-content: center
+		align-items: center
+		p
+			text-align: center
+			font-size: 0.9em
+			margin-bottom: 0
+		i
+			font-size: 2em
+			padding: 0 1%
+		&:hover
+			color: $w
+	&:hover
+		background: $bg
+
+.product-shop_product
+	.product-block
+		width: calc(33.3333% - 15px)
+		margin-bottom: 15px
+		margin-left: 15px
+.product-category, .product-shop_product
+	h2
+		padding-top: 5%
+	.category_products
+		display: flex
+		#content
+			padding: 3% 5% 5%
+			.sorts_inner
+				display: flex
+				justify-content: flex-end
+				margin: 2%
+				.form-group
+					margin: 0 1%
+				select
+					border: none
+					box-shadow: none
+	aside
+		.item-header
+			color: $font
+			font-size: 1.1em
+			font-weight: bold
+			letter-spacing: 1px
+		.list-group-item
+			border: none
+			padding: 0
+		.item
+			margin-bottom: 2.5%
+		#filter-groups
+			#side-categories
+				margin: 3em 0
+				.list-group-item
+					padding-top: 1em
+					.side-categories-level-1
+						border: none
+						.item.level-2
+							background: $bg
+							a
+								color: $w
+								padding: 5%
+							&.active
+								background: #4C4944
+						.item.level-2, a, .toggle
+							&:hover
+								background: #4C4944
+							.toggle
+								border: none									
+								i
+									color: $w
+							&.active
+								i
+									&:before
+										content: "\f106"
+						.sub.level-3			
+							border: none
+							a
+								color: $b
+								&:hover
+									background: none
+									color: $font
+			#side_filter				
+				box-shadow: none
+				margin: 3em 0
+				.list-group
+					border: none
+			#side-price			
+				display: none
+				margin: 3em 0
+				.price-container
+					input
+						border: none
+						box-shadow: none
+						text-align: left
+						padding-left: 0
+					label
+						padding: 0
+				#slider-price
+					border: 1px solid #ccc
+					border-radius: 2px
+					.ui-slider-handle
+						border: 2px solid black
+						background: $w
+#filter_group_tigger_open					
+	background: $bg
+	border: none
+	&:hover
+		border-radius: 25px
+//unindented to be read by multiple pages >>		
+.product-block
+	border-bottom: 2px solid transparent
+	padding-bottom: 0 !important
+	&:hover
+		box-shadow: 0 0 10px 1px #ccc
+		border-bottom: 2px solid $font
+	.product-name	
+		a
+			color: $font
+			font-weight: bold
+	.product-details
+		display: none
+		.price
+			display: none
+	li
+		list-style: none
+		.sticker
+			text-transform: uppercase
+			font-weight: bold
+			padding: 2% 7% !important
+			margin-top: 10%
+			right: 1em
+	&.out-of-stock
+		.sticker
+			padding: 5% !important
+			width: 60%
+			transition: .5s ease
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%)
+			-ms-transform: translate(-50%, -50%)
+			text-align: center			
+		img
+			opacity: .5
+	// >>end of products info	
+
+	// sort
+.select-style
+	overflow: hidden
+	background: #fff url("https://img.icons8.com/metro/26/000000/chevron-down.png") no-repeat 90% 50%
+	background-size: 1em
+	filter: gray
+	width: 8em !important
+	select 
+		font-family: Poppins
+		border: none
+		box-shadow: none
+		background: transparent
+		background-image: none
+		-webkit-appearance: none
+		-moz-appearance: none
+		-ms-appearance: none
+		-o-appearance: none
+		appearance: none
+		&:focus 
+			outline: none	
+	// end of sort
+.options_product
+	background: #4C4944
+	color: $w
+	font-size: .9em
+	height: 4em
+	padding: 2%
+	text-align: center	
+	display: flex
+	justify-content: center
+	align-items: center	
+// ---------- end of category ----------
+// ---------- inner product ----------
+.img-con
+	position: relative
+	.slash
+		position: absolute
+		top: 0
+		left: 0
+		height: 100%
+.inner-prod
+	padding: 3%
+	.product-image-main-container
+		.sticker
+			padding: .5em 2em
+			text-transform: uppercase
+			font-weight: bold
+			top: 1em
+	.product-image-main
+		border: 1px solid #e2e2e2
+	.prod-desc
+		h3
+			text-transform: uppercase
+			letter-spacing: 5px
+			font-size: 1.5em
+		.inside-price
+			display: flex
+			font-size: 1.7em
+			color: #ccc
+			margin-top: 3%
+			margin-bottom: 5%
+			.new-prices
+				color: $font
+				font-weight: bold
+		.product-price
+			color: $font
+			font-weight: bold
+		.product-description
+			p
+				overflow: hidden
+				text-overflow: ellipsis
+				display: -webkit-box
+				line-height: 1.6em
+				max-height: 100%
+				-webkit-line-clamp: 5
+				-webkit-box-orient: vertical
+		#product-tabs
+			display: flex
+			align-items: center		
+			li
+				&:first-of-type
+					a
+						padding-left: 0
+				&:last-of-type
+					width: 100%
+					text-align: right
+				a
+					border: 0
+					border-bottom: 1px solid #ddd
+		.tab-content
+			border-bottom: 1px solid #ddd
+			margin-bottom: 2em
+			.tab-pane
+				margin: 3em 0
+				.features-con
+					display: flex
+					justify-content: space-between
+					.features-con-inner
+						width: 18%
+						text-align: center
+						p
+							&:first-of-type
+								height: 3em !important
+							&:last-of-type
+								font-size: .9em
+								margin-bottom: 0
+		#product
+			.this
+				display: flex
+				label
+					width: 19%
+				select
+					width: 50%
+				.text-danger
+					width: 27%
+					padding-left: 1.5em
+			hr
+				border-color: #ccc !important
+				background-color: transparent !important
+				width: 100%
+			.form-group
+				text-align: center
+				.glyphicon
+					color: #ccc
+					font-size: .7em
+					top: 0
+				.input-group-flex 
+					margin: 2em 0
+				.wlbutton
+					background: #4C4944
+					color: $w
+					border: none
+					&:hover
+						border-radius: 25px
+				label + div
+					display: flex
+					flex-wrap: wrap					
+				.cute-buttons
+					button
+						margin: 3px !important			
+				&.required
+					margin-bottom: 5%
+					&:last-of-type
+						margin-bottom: 0 !important
+					select
+						padding: 4px
+					label
+						&:before
+							display: none
+				.radio
+					margin: 0 .2em .2em 0
+					label
+						color: transparent	
+						padding-left: 0
+						.img-thumbnail
+							border: none
+	.featured_related_products_
+		padding-top: 5%
+		h2
+			padding-bottom: 5%
+		.product-block
+			box-shadow: none
+.st-btn
+	border: none
+	display: inline-block !important
+	padding: 0 3px !important
+	img
+		height: 2.5em
+		width: auto
+		top: 2px !important
+
+	// features
+.features_heading
+	display: flex
+	justify-content: space-between
+#features_content
+	padding: 1%
+	display: flex
+	.features_inner
+		text-align: center
+		img
+			width: 60%
+			height: auto
+			object-fit: cover
+			padding-bottom: 10%
+		p
+			font-size: .8em
+			width: 70%
+			line-height: 1em
+			margin: auto			
+	// end of features
+// ---------- end of inner product ----------			
+.st-btn
+	border: none !important
+	img
+		height: 2.5em !important
+		width: auto !important
+// ---------- pagination ----------			
+.pagination
+	padding-top: 0
+	li
+		a 
+			border: 0px
+			color: black
+			font-size: .9em
+			&:hover
+				background: none
+				color: $font
+		span 
+			background-color: transparent !important
+			color: $b !important
+			border-radius: 50% !important
+			border: 1px solid $b !important
+			font-size: .9em
+// ---------- end of pagination ----------			
+// ---------- waiting module ----------			
+.waiting_list_container
+	padding: 4%
+	.waiting_list_description
+		strong
+			color: $font
+		p
+			margin-top: 1%
+	.flex-group
+		input
+			padding-left: .3em
+			width: 70%
+		button
+			width: 30%
+			background: #4C4944
+			color: $w
+			border: none
+			height: auto !important
+			&:hover
+				background: $bg
+.input-group-flex 
+	margin: 3% 0 !important
+// ---------- end of waiting module ----------			
+
+// ---------- brochures ----------			
+.news-ncategory
+	padding-top: 3%
+	.ncat
+		#content
+			padding: 5% 5% 0
+		.page
+			padding-top: 3em
+	.brochure_container 
+		.brochure_image
+			height: 25em
+			position: relative
+			img 
+				width: 100%
+				height: 100%
+				object-fit: cover
+			i
+				display: flex
+				align-items: center
+				justify-content: center
+				position: absolute
+				top: 0 
+				bottom: 0
+				right: 0
+				left: 0
+		.brochure_texts 
+			// text-align: center
+			font-size: .9em
+			padding: 5% 0
+			overflow: hidden
+			.name
+				height: 3em
+				overflow: hidden
+				h4 
+					a
+						color: $font
+		.description
+			height: 5em
+			overflow: auto
+			margin-bottom: 1em
+			&.i
+				text-align: center
+		a
+			&:focus
+				color: $w !important
+		.dlbtn
+			text-align: center
+	aside
+		padding-top: 5%
+		.list-group
+			a
+				padding: 5%
+				background: $bg
+				color: $w
+				margin-bottom: 2.5%
+				border-radius: 0 !important
+				&:hover, &.active
+					background: #4C4944
+					color: $w
+					text-shadow: none
+				&.list-group-item
+					&:first-child
+						border-radius: 0 !important	
+// ---------- end of brochures ----------			
+// ---------- side panel ----------			
+#mobileNav
+	i
+		color: $font
+.sidr-left
+	background-color: $bg
+	.header-mobile
+		.mobile-account
+			border-color: $w
+	ul
+		li
+			a
+				background: $bg
+				text-transform: uppercase
+			&:hover
+				a
+					background: $w
+					color: $font
+	a
+		&:hover
+			color: $b
+
+// ---------- end of side panel ----------			
+// ---------- media ----------			
+.iid-8
+	h2
+		padding-bottom: 3%
+.post_container
+	.post
+		padding-bottom: 5%
+		&:last-of-type
+			padding-bottom: 0
+		.post_inner
+			display: flex
+			justify-content: center
+			pre
+				background: none
+				border-radius: 0
+				border-color: #ccc
+		.a		
+			margin: 0 15%
+			text-align: center
+			a
+				&:focus, &:visited
+					color: $w
+.footer-social-icons
+	text-align: right
+	width: 70% !important
+	margin: auto
+	padding: 1em 0 !important
+	.social
+		height: 1.5em
+		img
+			height: 100% !important
+// ---------- end of media ----------			
+//landing page
+.iid-9
+	padding: 0 !important
+	.container
+		width: 100% !important
+		#content
+			padding: 0 !important
+	header, #footer-area, .page-banner, h2
+		display: none
+	.hs-bg
+		height: 100vh
+		.humanscale-container
+			display: flex
+			justify-content: center
+			align-items: center
+			.humanscale-container-inner
+				overflow: visible
+				.humanscale-texts, .humanscale-products
+					align-items: center
+				.humanscale-texts
+					justify-content: space-between
+					border-bottom: 1px solid $b
+					h3
+						text-transform: capitalize
+						font-weight: normal
+						letter-spacing: 0
+						sup
+							font-size: .4em
+							top: -1em
+					h4
+						text-transform: uppercase
+						font-weight: bold
+						letter-spacing: 2px
+	.product-block
+		background: transparent
+		box-shadow: none
+		border: 0
+		.product-image-block
+			height: auto
+			img
+				width: 100%			
+		.product-name
+			padding: 1em 0 0
+			a
+				font-size: 1.2em
+		.product-details, .price
+			display: block !important
+		.product-details
+			padding: 0
+			margin: 0
+			.price
+				font-size: .9em
+				color: $b
+				font-weight: bold
+
+//end of landing page
+#pagination-container
+	margin-top: 3em
+.simple-pagination
+	ul
+		margin: 0 0 20px
+		padding: 0
+		list-style: none
+		text-align: center
+		li
+			display: inline-block
+			margin-right: 5px
+			&:first-of-type, &:last-of-type
+				span, a
+					border: none !important
+			a, span
+				color: #666
+				padding: 5px 10px
+				text-decoration: none
+				&.current
+					background-color: transparent
+					border-color: $b
+					color: $b
+					border-radius: 25px
+					border: 1.5px solid $b
+					&:hover
+						color: $b
+						border-color: $b
+						background-color: transparent
+			a
+				color: $b
+				background-color: transparent
+				border-radius: 25px !important
+				border: 1px solid $b
+				opacity: .5
+				&:hover
+					color: $b
+					border-color: $b
+					background-color: transparent		
+// --------------------  MEDIA QUERY --------------------
+@media (min-width: 1200px)
+	.tabcontent
+		.tabdesc
+			width: 90%
+	.fore
+		height: 60em
+		.fore_img
+			img
+				width: 100%
+		.fore_content
+			.fore_content_inner
+				width: 50%
+				margin: 12%
+				hr
+					width: 10%
+					margin-left: 0
+				h3
+					font-size: 2.8em
+					letter-spacing: 6px
+					margin-bottom: 3%
+					line-height: 1.2em	
+	.inner-prod
+		.prod-desc
+			h3
+				font-size: 3em
+				width: 80%
+			.inside-price
+				font-size: 1.7em
+			.product-price
+				font-size: 1.1em
+			#product
+				.form-group
+					&.option
+						display: flex
+					label + div
+						display: flex
+					.text-danger
+						margin-left: 1em
+				.form-group
+					text-align: left
+	.contact_home
+		.contact_texts
+			.texts_inner
+				h3
+					font-size: 2em !important
+					padding-bottom: 2em
+				.contact_address	
+					font-size: 1.4em			
+					p
+						margin-bottom: 0
+					address
+						width: 50%
+						margin: auto
+				.btn
+					margin: 5% 0
+				.open
+					h4
+						font-size: 1.4em
+						margin-bottom: 3%
+					p
+						margin-bottom: 0
+						font-size: 1.2em
+	.iid-8
+		h2	
+			width: 70%
+			margin: auto
+	.brochure_img_container
+		display: flex
+		height: 40em
+	.main-bg
+		height: 55em			
+	.cute-buttons
+		display: flex	
+	.humanscale-container
+		.humanscale-container-inner
+			width: 70%
+			height: 70%	
+	.iid-9
+		.slick-slide
+			.product-image-block
+				width: 20em !important
+
+@media (max-width: 1199px)
+	.main-bg
+		height: 38em
+	.humanscale-container
+		.humanscale-container-inner
+			width: 90%
+			height: 85%	
+
+@media (min-width: 1024px)
+	.common-home
+		.featured-module
+			h3
+				padding: 3%
+				font-size: 2em !important
+				font-weight: bold
+				&:before
+					margin: 0px 6em
+					transform: translateY(-1rem)		
+			.slick-slide
+				width: 230px !important
+				margin: 7.5px
+	.landing-icon
+		bottom: 4em
+		img
+			height: 1.9em
+		p
+			width: 100% !important
+			font-size: 12px !important	
+
+@media (min-width: 992px)
+	.page-banner-title
+		font-size: 2.5em
+	.header-logo
+		.img-responsive
+			height: 6em !important
+	.main-bg	
+		width: 100%
+		.row
+			#content
+				.h2
+					h2
+						font-size: 1.3em
+	.brochures 
+		display: flex
+		flex-wrap: wrap
+		padding-top: 3%
+		.brochure_container 
+			width: 28%
+			margin: 1%
+			.brochure_image
+				height: 25em
+				img 
+					width: 100%
+					height: 100%
+					object-fit: cover
+			.brochure_texts 
+				text-align: center
+				font-size: .9em
+				padding: 5% 0
+	.footer-upper-contet
+		width: 65%
+		margin: auto
+	h2
+		font-size: 3em
+	.iid-9
+		.hs-bg
+			.humanscale-container
+				display: flex
+				justify-content: center
+				align-items: center
+				height: 100vh
+				.humanscale-container-inner
+					.humanscale-texts, .humanscale-products
+						display: flex
+						align-items: center
+					.humanscale-texts
+						justify-content: space-between
+						margin-bottom: 6em
+						h3
+							font-size: 3em
+							sup
+								font-size: .4em
+								top: -1em
+						h4
+							text-transform: uppercase
+							font-weight: bold
+							font-size: 1.5em
+							letter-spacing: 2px
+		.slick-slide
+			.product-image-block
+				width: 18em
+				img
+					width: 100%			
+			&:nth-child(2)
+				margin: 0 1em
+			.product-name
+				padding: 1em 0 0
+				text-align: left
+				a
+					font-size: 1.2em
+			.product-details, .price
+				display: block !important
+				text-align: left
+			.product-details
+				.price
+					font-size: .9em
+	.contact-footer
+		width: 95%
+	.news-ncategory
+		.ncat
+			display: flex
+	.iid-9
+		.humanscale-products
+			.slick-nav
+				.absolute
+					top: 25% !important
+@media (max-width: 991px)
+	.fixed-header
+		.contain
+			padding: 0 15px !important
+			img
+				height: 3em !important
+
+	.iid-4
+		#content
+			padding: 5% !important
+
+	.information-contact
+		#content
+			padding: 5%
+		.contact-footer
+			.btn
+				min-width: 115px !important
+
+	.main-bg
+		height: 28em
+		.landing-icon
+			bottom: 0
+			img
+				height: 1.9em
+			p
+				width: 100% !important
+				font-size: 12px !important	
+
+	.iid-9
+		.hs-bg
+			.humanscale-container
+				display: flex
+				justify-content: center
+				align-items: center
+				height: 100vh
+				.humanscale-container-inner
+					width: 100%
+					padding: 1em
+					.humanscale-texts, .humanscale-products
+						display: flex
+						align-items: center
+						justify-content: center
+						width: 90%
+						margin: auto
+					.humanscale-texts
+						justify-content: space-between
+						margin: 0 auto 3em
+						h3
+							sup
+								font-size: .4em
+								top: -1em
+						h4
+							text-transform: uppercase
+							font-weight: bold
+							letter-spacing: 2px
+		.slick-slide
+			.product-image-block
+				width: 15em
+				margin: auto
+				img
+					width: 100%			
+
+			.product-name, .product-details
+				margin: 0 1em
+				
+			.product-name
+				padding: 1em 0 0
+				a
+					font-size: 1.2em
+			.product-details, .price
+				display: block !important
+			.product-details
+				.price
+					font-size: .9em
+
+	.news-ncategory
+		.ncat
+			text-align: center
+			aside
+				width: 100% !important
+				.list-group
+					width: 75%
+					margin: auto
+					height: 17em
+					overflow: auto					
+			.brochures
+				.brochure_container
+					padding: 1em 0
+					.brochure_texts
+						text-align: center			
+
+@media (min-width: 769px)
+	#about
+		padding: 3% 0
+		.tabcontent
+			.tabdesc
+				margin: 5% auto
+	#content
+		width: 100%
+		.inner-content		
+			display: flex
+			.panel
+				width: 50%
+			form
+				width: 50%
+				.contact-body
+					width: 95%
+					margin-left: auto
+			.contact-footer
+				display: flex
+				align-items: center
+				justify-content: space-between
+				#google_recaptcha
+					margin: 0		
+	footer
+		.contain
+			.lower-footer
+				display: flex
+				justify-content: space-between
+	#product
+		.form-group
+			&.option
+				display: flex
+				align-items: center
+			.control-label
+				width: 8em
+			select
+				margin: 0 !important
+				width: 80%
+			.radio
+				margin: 0
+				label
+					padding-left: 0 !important
+		.form-group
+			text-align: left !important
+			.input-group
+				width: 91%
+				margin-left: auto
+	.iid-7
+		h3
+			padding: 2%	6%			
+	.common-home
+		.featured-module
+			h3
+				&:before
+					margin: 0 13rem
+					transform: translateY(-2rem)			
+			.slick-slide
+				width: 230px !important
+				margin: 7.5px
+	.announcement_container
+		&.min
+			display: none
+
+	.brochures 
+		display: flex
+		flex-wrap: wrap
+		.brochure_container 
+			width: 48%
+			.brochure_image
+				height: 25em
+					object-fit: cover
+
+	.brochure_home_inner
+		.brochure_img_container
+			display: flex
+			.brochure_img
+				width: calc((100% / 2) - 25px)
+				margin: 0 1%
+	.main-bg
+		.h2
+			h2
+				font-size: 1em	
+
+@media (min-width: 768px) and (max-width: 1199px)
+	.fore
+		height: 33.5em !important
+@media (min-width: 768px)
+	#product
+		.form-group
+			button
+				margin: 1% 0 !important
+	.account-wishlist
+		.table
+			tr
+				td
+					&:last-child
+						button, a
+							margin: 1% 0
+	#google_recaptcha
+		width: 13em
+
+@media (max-width: 768px)
+	.page-banner-title
+		font-size: 1.5em
+	.iid-4
+		h3
+			text-align: center
+		#content
+			#about
+				.tabcontent
+					padding: 5px 15px
+				.tab
+					margin: 5% 0
+					a
+						border-radius: 0
+						padding-top: 10px
+	.inner-prod
+		#product
+			margin: auto
+			.form-group
+					label + div
+						justify-content: center !important
+					.option
+						select
+							width: 22em
+							margin: auto
+						label
+							text-align: center
+			.input-group
+				width: 19em
+				margin: auto
+			.input-group-flex 
+				justify-content: center
+	.product-category
+		h3
+			font-size: 2em !important			
+			text-align: center
+	.announcement_container
+		&.max
+			display: none
+	.iid-8
+		pre
+			width: 100%
+			iframe
+				width: 100%
+	.brochures 
+		.brochure_texts
+			padding: 3% 0 !important
+			p
+				height: 100% !important
+	.main-bg
+		.h2
+			h2
+				font-size: 1em !important
+		.landing-icon
+			bottom: 0
+			img
+				height: 1.9em
+			p
+				width: 100% !important
+				font-size: 12px !important
+	.fore
+		height: 25em
+	.waiting_list_container
+		.flex-group
+			button
+				min-width: 1px !important
+	#google_recaptcha
+		transform: translate(0em, 0.6em)				
+
+@media (max-width: 768px) and (min-width: 427px)
+	.contact-footer
+		#google_recaptcha
+			width: 0
+@media (max-width: 768px) and (min-width: 425px)
+	.information-contact
+		#content
+			margin: auto
+	.iid-7
+		h3
+			text-align: center
+	.brochures
+		.brochure_container
+			margin: auto
+			height: auto
+			img
+				width: 100%
+				height: 50%
+				object-fit: cover
+	#filter-groups
+		&.open
+			width: 50% !important
+@media (max-width: 767px)
+	#google_recaptcha
+		max-width: 300px
+		transform-origin: 0 !important
+		margin: auto
+
+	.iid-9
+		.slick-slide
+			.product-image-block
+				width: 100% !important
+
+@media (max-width: 540px)
+	.product-category
+		.product-view
+			.product-block
+				width: calc(50% - 20px)
+				margin: 2% !important
+@media (min-width: 530px)
+	.contact_home
+		display: flex
+		.contact_map
+			height: auto
+	#filter_group_tigger_close		
+		display: none !important
+@media (max-width: 530px)
+	.page-banner-title
+		padding-top: 10%
+		font-size: 1em
+	.fore
+		height: 17em
+		.fore_content_inner
+			h2
+				letter-spacing: 1px
+				font-size: 1.3em
+			p
+				font-size: 1em
+				line-height: 1.2em
+	.main-bg
+		.h2
+			h2
+				font-size: 16px !important
+		.landing-icon
+			bottom: 0
+			img
+				height: 1.9em
+			p
+				width: 100% !important
+				font-size: 12px !important
+@media (min-width: 427px)
+	.contact-footer
+		display: flex
+		align-items: center
+		justify-content: space-between
+		#google_recaptcha
+			margin-left: 0
+
+@media (max-width: 426px)
+	footer
+		hr
+			margin-top: 10px !important	
+		.footer-upper-contet
+			display: block !important
+			text-align: center
+			li
+				&:nth-child(1), &:nth-child(2),&:nth-child(4),&:nth-child(5),&:nth-child(6)
+					display: none			
+			a
+				width: 100%
+	.form-group
+		button
+			margin-left: 0 !important
+			margin: 1% 0 !important
+	.common-home
+		.featured-module
+			h2
+				&:before
+					display: none
+	hr
+		width: 10%
+		margin-top: 10px  !important
+		margin-bottom: 10px  !important
+	.iid-8
+		h3
+			margin: 0
+			text-align: center
+		.post_inner
+			height: 40em
+			pre, p
+				height: 100%
+			iframe
+				height: 100%
+				width: 100%
+		.a
+			margin: 3% !important
+	#column-left
+		padding-left: 0
+
+	h2
+		font-size: 1.5em
+	.options_product
+		span
+			line-height: 1.2em
+			font-size: .8em !important
+
+	.partners_container
+		height: 13.5em !important
+		.partners
+			width: 11em !important
+
+	.humanscale-texts
+		margin: 0 1em 3em !important
+		h3
+			font-size: 1.3em
+			margin-bottom: 0
+		h4
+			font-size: .8em
+			margin-bottom: 0
+
+	.contact-footer
+		text-align: center
+		#google_recaptcha
+			transform: translate(0, 1em)
+			margin: auto
+			width: 13em	
+
+@media (max-width: 425px)
+	.fore
+		height: 17em
+		.fore_content_inner
+			p
+				font-size: 0.9em
+				line-height: 1.1em
+			h2
+				font-size: 1.1em
+
+@media (min-width: 401px)
+	.page-banner-title
+		top: 60% !important
+@media (max-width: 400px)
+	.page-banner-title
+		padding-top: 17%
+		font-size: .8em
+@media (max-width: 375px)
+@media (min-width: 371px)
+	.fore
+		.fore_content_inner
+			width: 60%
+@media (max-width: 370px)
+	h2
+		font-size: 1.1em
+	.common-home
+		.contact_texts
+			.btn
+				min-width: 0 !important
+	.brochure_home_cont	
+		height: 37em
+		.bh_text
+			h3
+				font-size: 1.6em
+	.fore
+		height: 15em
+		.fore_content_inner
+			h2
+				letter-spacing: 1px
+				width: 85%
+			p
+				font-size: 0.7em
+				line-height: 1.4em
+				width: 65%
+@media (max-width: 360px)
+	.h2
+		margin: 0 !important
+	.landing-icon
+		bottom: 2% !important		

@@ -1,0 +1,396 @@
+/* Bootstrap and OpenCart compatibility */
+
+.box-heading {
+	margin-top: 20px;
+}
+
+.box-content {
+	min-height: 100px;
+}
+
+.help {
+	display: block;
+	width: 200px;
+	font-size: 12px;
+	color: #999999;
+}
+
+table.form > tbody > tr > td:first-child,
+table.form > tr > td:first-child {
+	width: 250px;
+}
+
+table.form tr td {
+	padding: 10px;
+}
+
+.cron_input_box input {
+	margin-top: 0;
+}
+
+.cron_input_box span {
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.spacer10 {
+		margin-bottom: 10px;
+}
+
+.breadcrumb {
+	padding: 12px 15px;
+}
+
+.breadcrumb a {
+	font-size: 14px;
+	color: #0088cc;
+}
+
+.breadcrumb .btn {
+	color: white;
+	margin-left: 8px;
+	margin-bottom: 0;
+	margin-top: -6px;
+	padding: 2px 12px;
+	font-size: 13px;
+}
+
+
+.premium-widget {
+	overflow: hidden;
+}
+.box-content p {
+	min-height:initial;
+	font-size:14px;
+	line-height:24px;
+	margin-top: 20px;
+	word-break: break-word;
+}
+
+input[type="checkbox"].form-control {
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+}
+
+.buttons {
+	text-align: right;
+	border: 1px solid #DBDBDB;
+	padding: 5px;
+	margin-bottom: 15px;
+}
+
+.box-heading {	
+	padding: 4px 10px;
+	background-color:#fff;
+	border:none;
+	border-bottom:1px solid #dbdbdb;
+
+}
+
+.box-heading h1 {
+	font-weight:normal;	
+	font-size:18px;
+	color:#454545;
+}
+
+.box-content {
+	border-color:#DBDBDB;
+	line-height:20px;
+}
+
+.pagespeedMainTable h3 {
+	margin-top: 10px;
+}
+
+.icon-pagespeed {
+	background:url(../image/nitro/google_pagespeed.png);
+	width:77px;
+	height:28px;
+	float:right;
+	display:block;
+	margin-right:0px !important;
+}
+
+.tab-navigation {
+	position:relative;
+}
+
+.tab-buttons {
+	position:absolute;
+	right:0;
+	top:0;
+}
+
+.icon-refresh {
+	cursor:pointer;	
+}
+
+.performersSuccess {
+	margin: 2px 25px 20px 20px;
+	font-size: 18px;
+	padding: 12px 35px 12px 14px;
+}
+
+.text-greatscore {
+	margin: 26px;
+	line-height: 22px;
+	color: #444;
+	font-size: 12px;	
+}
+
+.bigGauge {
+	width:400px; height:320px;
+	display: block;
+	margin-top: -20px;
+}
+      
+.smallGauge {
+	width:150px; height:120px;
+	display: inline-block;
+	margin: 1em;
+	display:none;
+}
+
+.gaugeFilterUL {
+	display:inline-block;
+	margin-left: 25px;	
+}
+
+.pagespeedMainTable h3 {
+	color:#757575;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:26px;
+	font-weight:normal;
+}
+
+.stepsToTake td, .premiumServices td {
+	vertical-align:middle;
+}
+
+.stepsToTake td:last-child {
+	text-align:right;	
+}
+
+.stepsToTake tr.disabled {
+	text-decoration:line-through;	
+}
+
+.premiumServices {
+	width: 100%;	
+}
+
+.premiumServices .price {
+	text-align:right;
+	width: 52px;
+}
+
+.premiumServices .buynow {
+	text-align:right;
+	width: 90px;
+}
+
+.browserCache h4 {
+	color: #757575;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-weight: normal;
+}
+
+.bcHeaders td {
+	height: 20px;
+	line-height:20ppx;
+	padding: 3px;
+	vertical-align:middle;
+}
+
+.bcHeaders td label {
+	line-height:20ppx;
+	font-size: 12px;
+	margin:0;
+	display:inline-block;
+	margin-right: 5px;
+}
+
+.bcHeaders td a:hover {
+	text-decoration:none;
+}
+
+.bcHeaders td input[type=checkbox] {
+	margin:0;	
+}
+
+.cacheDirLink {
+	color:#858585;	
+	cursor:pointer;
+}
+
+.cacheDirLink:hover {
+	text-decoration:none;
+	color: #000;
+}
+
+.clearDbCache {
+	margin-top: 10px;
+}
+
+.center {
+	text-align: center;
+}
+
+.smush-log {
+	margin-top: 10px;
+	width: 100%;
+}
+
+.ftp-log-entries, .amazon-log-entries {
+	display: none;
+}
+
+.ftp-alert-error, .info-error {
+	color: #900;
+}
+
+.ftp-alert-success, .info-success {
+	color: #090;
+}
+
+.ftp-alert-warning, .info-warning {
+	color: #C90;
+}
+
+.inline-input {
+	display: inline-block;
+	width: auto;
+}
+
+.cdn-error, .compression-error {
+	display: inline-block;
+	margin-left: 10px;
+	color: #900;
+}
+
+.licenseAlerts {
+	margin-top:10px;	
+}
+
+.nav-tabs>li>a {
+	color:#08c;	
+}
+
+.nav-tabs>li>a {
+	color:#08c;	
+}
+
+a.btn:visited {
+	color:#333;	
+}
+
+a.btn-primary:visited, a.btn-info:visited,a.btn-inverse:visited {
+	color:white;	
+}
+
+.supportThumbs .thumbnail {
+	border:none;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+	border-right: 1px solid #ddd;
+}
+
+.supportThumbs .col-md-4:last-child .thumbnail {
+	border-right:none;	
+}
+
+.registeredDomains {
+	padding:0;
+	margin:0;
+	list-style:none;
+}
+
+#infoGoogleRawText {
+	width: 90%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	height: 350px;
+}
+
+.box-minibox {
+	display:inline-block;
+	margin-right: 10px;	
+}
+#extendedInfo {
+	margin-left:25px;	
+}
+#extendedInfo ul,
+#extendedInfo li {
+	margin:0;
+	padding:0;
+	list-style:none;	
+}
+
+#extendedInfo ul.passedRules,
+#extendedInfo ul.notPassedRules {
+	width:50%;
+	padding-right:20px;
+	float:left;
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+}
+
+#extendedInfo li.notPassedRule,
+#extendedInfo li.passedRule {
+	list-style-type: none;
+	display: block;
+	padding:10px 8px;
+	line-height:20px;
+	
+}
+#extendedInfo li.notPassedRule + li ,
+#extendedInfo li.passedRule + li {
+	border-top:1px solid #ddd;	
+}
+#extendedInfo li.foldable ul {
+	margin-top:10px;
+}
+#extendedInfo li.foldable ul > li {
+	margin-left:20px;
+	list-style:square;
+}
+#extendedInfo li.foldable ul {
+	padding:5px;
+	border:1px solid #CCC;
+	border-radius:5px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;	
+}
+#mobileExtendedReport li.foldable, #desktopExtendedReport li.foldable, #mobileExtendedReport li.resultsToggle, #desktopExtendedReport li.resultsToggle {
+	cursor: pointer;
+}
+
+#mobileExtendedReport li.passedRulesCounter,
+#desktopExtendedReport li.passedRulesCounter {
+	background: #40A540;
+	padding: 5px 10px;
+	margin-bottom:10px;
+	color: #fff;
+	border-radius:5px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+}
+
+#mobileExtendedReport li.notPassedRulesCounter, #desktopExtendedReport li.notPassedRulesCounter {
+	background: #D3342C;
+	padding: 5px 10px;
+	margin-bottom:10px;
+	color: #fff;
+	border-radius:5px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+}
+
+#mobileExtendedReport li.passedRule, #desktopExtendedReport li.passedRule {
+	display: none;
+}

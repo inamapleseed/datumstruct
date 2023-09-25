@@ -1,0 +1,139 @@
+<?php
+    class ControllerSettingQourier extends Controller{
+        private $error = array();
+        
+        public function index(){
+            
+            $this->load->language('setting/qourier');
+            
+            $this->load->model('setting/setting');
+            
+            $this->document->setTitle($this->language->get('heading_title'));
+            
+            if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validate()) {
+                $this->model_setting_setting->editSetting('qourier', $this->request->post);
+                
+                $this->session->data['success'] = $this->language->get('text_success');
+                
+                $this->response->redirect($this->url->link('setting/qourier', 'token=' . $this->session->data['token']));
+            }
+            
+            $fields = array(
+                'qourier_status'        =>  true,
+                'qourier_mode'          =>  'staging',
+                'qourier_staging_url'   =>  'https://staging.qourier.com/oapi/v0/',
+                'qourier_live_url'      =>  'https://api.qourier.com/v0/',
+                'qourier_staging_api'   =>  'xEfyIG5VYua2OfDizmuFTBgmxKOix9',
+                'qourier_live_api'      =>  'Please fill after obtaining an actual api key', 
+                'qoureir_shipping'      =>  array(),
+            );
+            
+            // Success
+            $data['success'] = '';
+            if(isset($this->session->data['success'])){
+                $data['success'] = $this->session->data['success'];
+                unset($this->session->data['success']);
+            }
+            
+            // General Error
+            $data['error_warning'] = '';
+            if(isset($this->error['qourier_warning'])){
+                $data['error_warning'] = $this->error['qourier_warning'];
+            }
+            
+            // Load
+            foreach($fields as $field => $defaults){
+                
+                // Language
+                $data['entry_' . $field] = $this->language->get('entry_' . $field);
+                
+                // Error
+                $data['error_' . $field] = '';
+                if(isset($this->error[$field])){ 
+                    $data['error_' . $field] = $this->error[$field];
+                }
+                
+                // Initialze
+                $data[$field] = '';
+                if(isset($this->request->post[$field])){
+                    $data[$field] = $this->request->post[$field];
+                }
+                elseif($this->config->get($field) != null){
+                    $data[$field] = $this->config->get($field);
+                }
+                else{
+                    $data[$field] = $defaults;
+                }
+            }
+            
+            
+            // Load static Text
+            $static = array(
+                'mode_staging',
+                'mode_live',
+                'text_enabled',
+                'text_disabled',
+                'button_save',
+                'button_cancel',
+                'heading_title',
+                'text_edit',
+            );
+            
+            foreach($static as $each){
+                $data[$each] = $this->language->get($each);    
+            }
+            
+            $data['breadcrumbs'] = array();
+    
+    		$data['breadcrumbs'][] = array(
+    			'text' => $this->language->get('text_home'),
+    			'href' => $this->url->link('common/dashboard', 'token=' . $this->session->data['token'], true)
+    		);
+    
+    		$data['breadcrumbs'][] = array(
+    			'text' => $this->language->get('heading_title'),
+    			'href' => $this->url->link('setting/qourier', 'token=' . $this->session->data['token'], true)
+    		);
+    		
+    		$data['action'] = $this->url->link('setting/qourier', 'token=' . $this->session->data['token']);
+            
+            $data = $this->load->controller('common/common', $data);
+            
+            
+            // Load Shipping
+            $this->load->model('extension/extension');
+            
+            $extensions = $this->model_extension_extension->getInstalled('shipping');
+            
+            debug($extensions);
+            
+            
+            $this->response->setOutput($this->load->view('setting/qourier', $data));
+        }
+        
+        protected function validate(){
+            if (!$this->user->hasPermission('modify', 'setting/qourier')) {
+    			$this->error['qourier_warning'] = $this->language->get('error_permission');
+    		}
+    		
+    		if (utf8_strlen( trim($this->request->post['qourier_staging_url']) ) < 1) {
+    			$this->error['qourier_staging_url'] = $this->language->get('error_staging_url');
+    		}
+    		
+    		if (utf8_strlen( trim($this->request->post['qourier_live_url']) ) < 1) {
+    			$this->error['qourier_live_url'] = $this->language->get('error_live_url');
+    		}
+    		
+    		
+    		if (utf8_strlen( trim($this->request->post['qourier_staging_api']) ) < 1) {
+    			$this->error['qourier_staging_api'] = $this->language->get('error_staging_api');
+    		}
+    		
+    		
+    		if (utf8_strlen( trim($this->request->post['qourier_live_api']) ) < 1) {
+    			$this->error['qourier_live_api'] = $this->language->get('error_live_api');
+    		}
+    		
+            return !$this->error;
+        }
+    }

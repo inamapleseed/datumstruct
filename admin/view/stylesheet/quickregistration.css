@@ -1,0 +1,215 @@
+/* 
+    Created on : 23.12.2016, 14:46:08
+    Author     : Oleh Vasylyev (TobikSoft.com)
+*/
+
+/* Border Radius */
+
+    .borderswitch {
+        position: relative; width: 100px; padding: 8px 0px;
+        -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+    }
+    .borderswitch-checkbox {
+        display: none;
+    }
+    .borderswitch-label {
+        position: relative;
+        display: block; overflow: hidden; cursor: pointer;
+        border: 1px solid #999999; border-radius: 20px;
+    }
+    .borderswitch-inner {
+        display: block; width: 200%; margin-left: -100%;
+        transition: margin 0.3s ease-in 0s;
+    }
+    .borderswitch-inner:before, .borderswitch-inner:after {
+        display: block; float: left; width: 50%; height: 25px; padding: 0; line-height: 25px;
+        font-size: 12px; color: white; font-family: FontAwesome, Trebuchet, Arial, sans-serif; font-weight: bold;
+        box-sizing: border-box;
+    }
+    .borderswitch-inner:before {
+        content: "Sharp";
+        padding-left: 15px;
+        background-color: #EEEEEE; color: #737373;
+    }
+    .borderswitch-inner:after {
+        content: "Rounded";
+        padding-right: 15px;
+        background-color: #EEEEEE; color: #737373;
+        text-align: right;
+    }
+    .borderswitch-switch {
+        display: block; width: 15px; margin: 5px;
+        background: #1e91cf;
+        position: absolute; top: 0; bottom: 0;
+        right: 71px;
+        border: 1px solid #999999; border-radius: 20px;
+        transition: all 0.3s ease-in 0s; 
+    }
+    .borderswitch-checkbox:checked + .borderswitch-label .borderswitch-inner {
+        margin-left: 0;
+    }
+    .borderswitch-checkbox:checked + .borderswitch-label .borderswitch-switch {
+        right: 0px; 
+        background-color: #1e91cf;
+        border-radius: 0px;
+    }
+    
+    
+/* ON OFF */ 
+
+    .onoffswitch {
+        position: relative; width: 70px; padding: 8px 0px;
+        -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+    }
+    .onoffswitch-checkbox {
+        display: none;
+    }
+    .onoffswitch-label {
+        position: relative;
+        display: block; overflow: hidden; cursor: pointer;
+        border: 1px solid #999999; border-radius: 20px;
+    }
+    .onoffswitch-inner {
+        display: block; width: 200%; margin-left: -100%;
+        transition: margin 0.3s ease-in 0s;
+    }
+    .onoffswitch-inner:before, .onoffswitch-inner:after {
+        display: block; float: left; width: 50%; height: 20px; padding: 0; line-height: 20px;
+        font-size: 10px; color: white; font-family: FontAwesome, Trebuchet, Arial, sans-serif; font-weight: bold;
+        box-sizing: border-box;
+    }
+    .onoffswitch-inner:before {
+        content: "ON";
+        padding-left: 0px;
+        background-color: #F7F7F7; color: #666666;
+    }
+    .onoffswitch-inner:after {
+        content: "OFF";
+        padding-right: 15px;
+        background-color: #F7F7F7; color: #666666;
+        text-align: right; 
+    }
+    .onoffswitch-switch {
+        display: block; width: 16px; margin: 2px;
+        background: #CCCCCC;
+        position: absolute; top: 0; bottom: 0;
+        right: 46px;
+        border: 1px solid #999999; border-radius: 20px;
+        transition: all 0.3s ease-in 0s; 
+    }
+    .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+        margin-left: 0;
+    }
+    .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+        right: 0px; 
+        background-color: #00FF22;
+    }
+    
+/* fields - placaholders */ 
+    
+    .reg-fields {
+            margin-top: 5px;
+            margin-bottom: 5px;
+            margin-left: 0px;
+            margin-right: 0px;
+        display: flex;
+        display: -webkit-flex;
+    }
+    .reg-field {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+    
+
+/* Info. Accordion types */
+
+    .accordion {
+        font-family: FontAwesome; 
+        margin:0 auto;
+        font-size:14px;
+        padding:10px;
+        background:#fff;
+    }
+    .accordion ul {
+        list-style:none;
+        margin:0;
+        padding:0;    
+    }
+    .accordion li {
+        margin:0;
+        padding:0;
+    }
+    .accordion [type=radio], .accordion [type=checkbox] {
+        display:none;
+    }
+    .accordion label {
+        display:block;
+        font-size:14px;
+        line-height:16px;
+        background:#f7f7f7;
+        border:1px solid #cccccc;
+        font-weight:500;
+        cursor:pointer;
+        text-transform:uppercase;
+        -webkit-transition: all .2s ease-out;
+        -moz-transition: all .2s ease-out;
+    }
+    .accordion ul li label:hover, .accordion [type=radio]:checked ~ label, .accordion [type=checkbox]:checked ~ label {
+        background:#fff;
+        color:#1e91cf;
+        border-color: #1e91cf;
+    }
+    .accordion .content {
+        padding:0 10px;
+        overflow:hidden;
+        border:1px solid #fff; 
+        -webkit-transition: all .5s ease-out;
+        -moz-transition: all .5s ease-out;
+    }
+    .accordion p {
+        margin:0 0 10px;
+    }
+    .accordion h3 {
+        padding:0;
+        margin:10px 0;
+    }
+
+    /* Vertical */
+    .vertical ul li {
+        overflow:hidden;
+        margin:0 0 1px;
+    }
+    .vertical ul li label {
+        padding:10px;
+    }
+    .vertical [type=radio]:checked ~ label, .vertical [type=checkbox]:checked ~ label {
+        
+    }
+    .vertical ul li label:hover {
+        border:1px solid #1e91cf; 
+        font-size:15px;
+    }
+    .vertical ul li .content {
+        height:0px;
+        border-top:0;
+    }
+    .vertical [type=radio]:checked ~ label ~ .content, .vertical [type=checkbox]:checked ~ label ~ .content {
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    input[type=checkbox] + .manuals:before {
+        content: "\f0fe"; 
+    } 
+    input[type=checkbox] + .manuals:before {
+        letter-spacing: 10px; 
+    } 
+
+    input[type=checkbox]:checked + .manuals:before {
+        content: "\f147"; 
+    } 
+    input[type=checkbox]:checked + .manuals:before {
+        letter-spacing: 10px;
+    } 

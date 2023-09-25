@@ -1,0 +1,112 @@
+.section-wrap {
+  background-color: #F8F8F8;
+  border-radius: 8px;
+  padding: 1em;
+  border: 1px solid #E0E0E0;
+  margin: 1em 0 1em 0;
+}
+
+.image_crusher_compression_level {
+  width: 40%;
+}
+
+#form-image_crusher input[type='range'] {
+    width: 40%;
+}
+
+.level {
+  font-size: 20px;
+  width: 400px;
+  padding-top: 8px;
+  text-align: center;
+  display: block;
+}
+
+.title {
+  padding-top: 30px;
+  text-transform: uppercase;
+  color: #ffa500;
+  font-weight: bold;
+}
+
+.warning {
+    background-color: #F08080;
+    border-radius: 8px;
+    padding: 1em;
+    border: 1px solid #f00;
+    width: 70%;
+}
+
+.existing-images-input-box {
+  margin-top: 2em;
+}
+
+#existing-images-dialog-confirm {
+  display:none;
+  margin-bottom: 2em;
+  overflow: visible;
+}
+
+#existing-images-submit {
+  background: #34d955;
+  background-image: -webkit-linear-gradient(top, #34d955, #2e8c17);
+  background-image: -moz-linear-gradient(top, #34d955, #2e8c17);
+  background-image: -ms-linear-gradient(top, #34d955, #2e8c17);
+  background-image: -o-linear-gradient(top, #34d955, #2e8c17);
+  background-image: linear-gradient(to bottom, #34d955, #2e8c17);
+  -webkit-border-radius: 6;
+  -moz-border-radius: 6;
+  border-radius: 6px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 13px 0 14px 0;
+  text-decoration: none;
+  width: 8em;
+  text-align: center;
+  margin-top: 0.8em;
+}
+
+#existing-images-submit:hover {
+  background: #18961c;
+  text-decoration: none;
+}
+
+#image-crush-results {
+  margin-top: 0.8em;
+}
+
+#image-crush-results .error {
+  color: #f00;
+}
+
+.checkmark {
+    display:inline-block;
+    width: 60px;
+    
+    -ms-transform: rotate(45deg); /* IE 9 */
+    -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+    transform: rotate(45deg);
+}
+
+.stem {
+    position: absolute;
+    width:3px;
+    height:9px;
+    background-color:#008000;
+    left:11px;
+    top:6px;
+}
+
+.kick {
+    position: absolute;
+    width:3px;
+    height:3px;
+    background-color:#008000;
+    left:8px;
+    top:12px;
+}
+
+.red {
+    color: #f00; 
+}

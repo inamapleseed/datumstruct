@@ -1,0 +1,32 @@
+SETTING	NUMBER	SUB-SETTING	SUB-NUMBER	SUB-SUB-SETTING	VALUE
+autosave					0
+charge	1	charges			0
+charge	1	group			
+charge	1	rule	1	comparison	is
+charge	1	rule	1	type	geo_zone
+charge	1	rule	1	value	5
+charge	1	title_admin			Free Shipping
+charge	1	title_en-gb			Delivery
+charge	1	type			flat
+charge	2	charges			0
+charge	2	group			
+charge	2	rule	1	comparison	is
+charge	2	rule	1	type	geo_zone
+charge	2	rule	1	value	5
+charge	2	title_admin			Self-collection
+charge	2	title_en-gb			Self-collection
+charge	2	type			flat
+combination	1	formula			
+combination	1	groups_required			
+combination	1	sort_order			
+combination	1	title			single
+display					expanded
+distance_calculation					driving
+distance_units					mi
+heading_en-gb					Formula-Based Shipping
+rule_set	1	name			
+sort_order					1
+status					1
+tax_class_id					0
+testing_mode					0
+tooltips					1
